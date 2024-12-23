@@ -20,6 +20,7 @@
         "allowSyntheticDefaultImports": true,
         "importHelpers": true,
         "strict": true,
+        "noImplicitAny": false,
         "noFallthroughCasesInSwitch": true,
         "noUnusedLocals": false,
         "noImplicitReturns": true,
