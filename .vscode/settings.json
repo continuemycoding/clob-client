@@ -15,5 +15,8 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "javascript.suggestionActions.enabled": false,
-    "typescript.suggestionActions.enabled": false
+    "typescript.suggestionActions.enabled": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }
