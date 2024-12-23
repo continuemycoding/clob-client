@@ -203,12 +203,12 @@ async function main() {
     console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL }));
     // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
 
-    // const order = await clobClient.createOrder({
-    //     tokenID: tokens[0].token_id,
-    //     price: 0.01,//min: 0.01 - max: 0.99
-    //     side: Side.BUY,
-    //     size: 6
-    // });
+    const order = await clobClient.createOrder({
+        tokenID: tokens[0].token_id,
+        price: 0.01,//min: 0.01 - max: 0.99
+        side: Side.BUY,
+        size: 6
+    });
 
     // const order = await clobClient.createOrder({
     //     tokenID: tokens[1].token_id,
@@ -217,19 +217,17 @@ async function main() {
     //     size: 5
     // });
 
-    const order = await clobClient.createOrder({
-        tokenID: tokens[1].token_id,
-        side: Side.SELL,
-        price: 0.15,
-        size: 6
-    });
+    // const order = await clobClient.createOrder({
+    //     tokenID: tokens[1].token_id,
+    //     side: Side.SELL,
+    //     price: 0.15,
+    //     size: 6
+    // });
 
     console.log(await clobClient.postOrder(order));
 
-    // await clobClient.cancelOrders();
+    // await Utility.waitForSeconds(3);
     // await clobClient.cancelAll();
-
-    console.log(await clobClient.getOpenOrders());
 }
 
 main().catch(console.error);
