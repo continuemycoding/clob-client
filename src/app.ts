@@ -1,12 +1,13 @@
 import dotenv from "dotenv";
 import { WebSocket } from "ws";
 import { ethers } from "ethers";
-import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, Side } from ".";
+import { ApiKeyCreds, AssetType, BookParams, Chain, ClobClient, OpenOrder, OrderBookSummary, PriceHistoryInterval, Side, Trade } from ".";
 // import { ApiKeyCreds, AssetType, Chain, ClobClient } from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import Utility from "./Utility";
 import fs from 'fs';
+import { MarketData } from "./market-data-types";
 
 dotenv.config();
 
@@ -57,60 +58,19 @@ async function main() {
     // const CONDITION_ID = "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87"; //Will Elon tweet 350-374 times Dec 20-27?
     // const CONDITION_ID = "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07"; //Will Elon tweet 375-399 times Dec 20-27?
     // const CONDITION_ID = "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7"; //Will Elon tweet 400-424 times Dec 20-27?
-    const CONDITION_ID = "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb"; //Will Elon tweet 425-449 times Dec 20-27?
-    // const CONDITION_ID = "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35"; //Will Elon tweet 450-474 times Dec 20-27?
+    // const CONDITION_ID = "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb"; //Will Elon tweet 425-449 times Dec 20-27?
+    const CONDITION_ID = "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35"; //Will Elon tweet 450-474 times Dec 20-27?
     // const CONDITION_ID = "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de"; //Will Elon tweet 475-499 times Dec 20-27?
 
     await clobClient.cancelAll();
 
     const { tokens } = await clobClient.getMarket(CONDITION_ID);
 
-    interface subscriptionMessage {
-        // only necessary for 'user' subscriptions
-        auth?: { apiKey: string; secret: string; passphrase: string };
-        type: string;
-        markets: string[];
-        assets_ids: string[];
-    }
-
     let reconnectAttempts = 0;
-    const maxReconnectAttempts = 5;
+    const maxReconnectAttempts = 20;
 
     function connectWebSocket(type: string) {
         const ws = new WebSocket(`wss://ws-subscriptions-clob.polymarket.com/ws/${type}`, { agent });
-
-        let subscriptionMessage: subscriptionMessage = {} as subscriptionMessage;
-
-        if (type !== "live-activity") {
-            let creds: ApiKeyCreds | undefined;
-            if (type == "user") {
-                creds = {
-                    key: `${process.env.CLOB_API_KEY}`,
-                    secret: `${process.env.CLOB_SECRET}`,
-                    passphrase: `${process.env.CLOB_PASS_PHRASE}`,
-                };
-            }
-
-            subscriptionMessage = {
-                auth:
-                    type == "user" && creds
-                        ? {
-                            apiKey: creds.key,
-                            secret: creds.secret,
-                            passphrase: creds.passphrase,
-                        }
-                        : undefined,
-                type, // change to market for market, user for user
-                markets: [] as string[],
-                assets_ids: [] as string[],
-            };
-
-            if (type == "user") {
-                subscriptionMessage["markets"] = [CONDITION_ID];
-            } else {
-                subscriptionMessage["assets_ids"] = tokens.map(item => item.token_id);
-            }
-        }
 
         ws.on("error", function (err: Error) {
             console.error("error", err.message || err.name);
@@ -119,16 +79,33 @@ async function main() {
         let timer: NodeJS.Timer;
 
         ws.on("open", function () {
-            console.log("WebSocket connection established.");
+            console.log(type, "WebSocket connection established.");
 
             timer = setInterval(() => {
                 ws.ping();
             }, 10000);
 
             reconnectAttempts = 0;
-            if (type !== "live-activity") {
-                ws.send(JSON.stringify(subscriptionMessage));
-            }
+
+            const subscriptionMessage = {
+                auth: type == "user"
+                    ? {
+                        apiKey: creds.key,
+                        secret: creds.secret,
+                        passphrase: creds.passphrase,
+                    }
+                    : undefined,
+                type,
+                markets: [] as string[],
+                assets_ids: [] as string[]
+            };
+
+            if (type == "user")
+                subscriptionMessage.markets = [CONDITION_ID];
+            else
+                subscriptionMessage.assets_ids = tokens.map(item => item.token_id);
+
+            ws.send(JSON.stringify(subscriptionMessage));
         });
 
         ws.on("close", function (code: number, reason: Buffer) {
@@ -139,7 +116,9 @@ async function main() {
             if (reconnectAttempts < maxReconnectAttempts) {
                 reconnectAttempts++;
                 console.log(`Reconnecting... Attempt ${reconnectAttempts}`);
-                setTimeout(connectWebSocket, reconnectAttempts * 1000);
+                setTimeout(() => {
+                    connectWebSocket(type);
+                }, 3000);
             } else {
                 console.error("Max reconnect attempts reached. Connection failed.");
             }
@@ -171,7 +150,7 @@ async function main() {
                     }
 
                     case 'trade': {
-                        const { taker_order_id, size, match_time, trader_side } = item as TradeData;
+                        const { taker_order_id, size, match_time, trader_side } = item as Trade;
 
                         if (status != "MINED")
                             Utility.sendTextToDingtalk(`
@@ -186,28 +165,35 @@ async function main() {
 `, title);
                         break;
                     }
+
+                    case 'book': {
+                        const { bids, asks } = item as OrderBookSummary;
+                        const maxBidPrice = bids[bids.length - 1];
+                        const minAskPrice = asks[asks.length - 1];
+                        break;
+                    }
                 }
             }
         };
     }
 
     connectWebSocket('user');
+    connectWebSocket('market');
 
 
-
-    await Utility.waitForSeconds(3);
-
+    await Utility.waitForSeconds(5);
 
     // console.log(await clobClient.getEarningsForUserForDay("2024-12-22"));
 
-    console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL }));
+    const balance = Number((await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL })).balance) / 10 ** 6;
+    console.log("余额", balance);
     // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
 
     const order = await clobClient.createOrder({
         tokenID: tokens[0].token_id,
         price: 0.01,//min: 0.01 - max: 0.99
         side: Side.BUY,
-        size: 6
+        size: balance / 0.01
     });
 
     // const order = await clobClient.createOrder({
@@ -226,8 +212,8 @@ async function main() {
 
     console.log(await clobClient.postOrder(order));
 
-    // await Utility.waitForSeconds(3);
-    // await clobClient.cancelAll();
+    await Utility.waitForSeconds(60);
+    await clobClient.cancelAll();
 }
 
 main().catch(console.error);
