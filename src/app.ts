@@ -61,7 +61,7 @@ async function main() {
     // const CONDITION_ID = "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35"; //Will Elon tweet 450-474 times Dec 20-27?
     // const CONDITION_ID = "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de"; //Will Elon tweet 475-499 times Dec 20-27?
 
-    // await clobClient.cancelAll();
+    await clobClient.cancelAll();
 
     const { tokens } = await clobClient.getMarket(CONDITION_ID);
 
@@ -73,105 +73,128 @@ async function main() {
         assets_ids: string[];
     }
 
-    let type = "user";
+    let reconnectAttempts = 0;
+    const maxReconnectAttempts = 5;
 
-    const ws = new WebSocket(`wss://ws-subscriptions-clob.polymarket.com/ws/${type}`, { agent });
+    function connectWebSocket(type: string) {
+        const ws = new WebSocket(`wss://ws-subscriptions-clob.polymarket.com/ws/${type}`, { agent });
 
-    let subscriptionMessage: subscriptionMessage = {} as subscriptionMessage;
+        let subscriptionMessage: subscriptionMessage = {} as subscriptionMessage;
 
-    if (type !== "live-activity") {
-        let creds: ApiKeyCreds | undefined;
-        if (type == "user") {
-            creds = {
-                key: `${process.env.CLOB_API_KEY}`,
-                secret: `${process.env.CLOB_SECRET}`,
-                passphrase: `${process.env.CLOB_PASS_PHRASE}`,
-            };
-        }
-
-        subscriptionMessage = {
-            auth:
-                type == "user" && creds
-                    ? {
-                        apiKey: creds.key,
-                        secret: creds.secret,
-                        passphrase: creds.passphrase,
-                    }
-                    : undefined,
-            type, // change to market for market, user for user
-            markets: [] as string[],
-            assets_ids: [] as string[],
-        };
-
-        if (type == "user") {
-            subscriptionMessage["markets"] = [CONDITION_ID];
-        } else {
-            subscriptionMessage["assets_ids"] = tokens.map(item => item.token_id);
-        }
-    }
-
-    ws.on("error", function (err: Error) {
-        console.log("error SOCKET", "error", err.message || err.name);
-    });
-
-    ws.on("close", function (code: number, reason: Buffer) {
-        console.log("disconnected SOCKET", "code", code, "reason", reason.toString());
-    });
-
-    ws.on("open", function (ev: any) {
         if (type !== "live-activity") {
-            ws.send(JSON.stringify(subscriptionMessage));
+            let creds: ApiKeyCreds | undefined;
+            if (type == "user") {
+                creds = {
+                    key: `${process.env.CLOB_API_KEY}`,
+                    secret: `${process.env.CLOB_SECRET}`,
+                    passphrase: `${process.env.CLOB_PASS_PHRASE}`,
+                };
+            }
+
+            subscriptionMessage = {
+                auth:
+                    type == "user" && creds
+                        ? {
+                            apiKey: creds.key,
+                            secret: creds.secret,
+                            passphrase: creds.passphrase,
+                        }
+                        : undefined,
+                type, // change to market for market, user for user
+                markets: [] as string[],
+                assets_ids: [] as string[],
+            };
+
+            if (type == "user") {
+                subscriptionMessage["markets"] = [CONDITION_ID];
+            } else {
+                subscriptionMessage["assets_ids"] = tokens.map(item => item.token_id);
+            }
         }
-    });
 
-    ws.onmessage = function (msg: any) {
-        const data = JSON.parse(msg.data);
+        ws.on("error", function (err: Error) {
+            console.error("error", err.message || err.name);
+        });
 
-        for (const item of data) {
-            const { event_type, side, market: market_id, outcome, price, status, type, timestamp } = item;
-            const market = markets[market_id];
+        let timer: NodeJS.Timer;
 
-            switch (event_type) {
-                case 'order': {
-                    const { id, original_size, size_matched, created_at } = item as OpenOrder;
-                    const title = `${side} ${outcome} 下单`;
+        ws.on("open", function () {
+            console.log("WebSocket connection established.");
 
-                    Utility.sendTextToDingtalk(`
+            timer = setInterval(() => {
+                ws.ping();
+            }, 10000);
+
+            reconnectAttempts = 0;
+            if (type !== "live-activity") {
+                ws.send(JSON.stringify(subscriptionMessage));
+            }
+        });
+
+        ws.on("close", function (code: number, reason: Buffer) {
+            console.error("close", "code", code, "reason", reason.toString());
+
+            clearInterval(timer);
+
+            if (reconnectAttempts < maxReconnectAttempts) {
+                reconnectAttempts++;
+                console.log(`Reconnecting... Attempt ${reconnectAttempts}`);
+                setTimeout(connectWebSocket, reconnectAttempts * 1000);
+            } else {
+                console.error("Max reconnect attempts reached. Connection failed.");
+            }
+        });
+
+        ws.onmessage = function (msg: any) {
+            const data = JSON.parse(msg.data);
+
+            for (const item of data) {
+                const { event_type, side, market: market_id, outcome, price, status, type, timestamp } = item;
+                const market = markets[market_id];
+
+                switch (event_type) {
+                    case 'order': {
+                        const { id, original_size, size_matched, created_at } = item as OpenOrder;
+                        const title = `${side} ${outcome} 下单`;
+
+                        Utility.sendTextToDingtalk(`
 ## ${title}
 - **问题**: ${market.question}
 - **订单ID**: ${id}
 - **价格**: $${price}
 - **数量**: ${size_matched} / ${original_size}
 - **类型**: ${type}
-- **状态**: $${status}
+- **状态**: ${status}
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `, title);
-                    break;
-                }
+                        break;
+                    }
 
-                case 'trade': {
-                    const { taker_order_id, size, match_time, trader_side } = item as TradeData;
-                    const title = `${side} ${outcome} 成交`;
+                    case 'trade': {
+                        const { taker_order_id, size, match_time, trader_side } = item as TradeData;
+                        const title = `${side} ${outcome} 成交`;
 
-                    if (status != "MINED")
-                        Utility.sendTextToDingtalk(`
+                        if (status != "MINED")
+                            Utility.sendTextToDingtalk(`
 ## ${title}
 - **问题**: ${market.question}
 - **交易ID**: ${taker_order_id}
 - **价格**: $${price}
 - **数量**: ${size}
-- **方向**: $${trader_side}
-- **状态**: $${status}
+- **方向**: ${trader_side}
+- **状态**: ${status}
 - **匹配时间**: ${new Date(Number(match_time) * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `, title);
-                    break;
+                        break;
+                    }
                 }
             }
-        }
-    };
+        };
+    }
 
+    connectWebSocket('user');
 
 
 
