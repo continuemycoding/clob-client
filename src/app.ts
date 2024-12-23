@@ -150,12 +150,12 @@ async function main() {
 
             for (const item of data) {
                 const { event_type, side, market: market_id, outcome, price, status, type, timestamp } = item;
+                const title = `${side} ${outcome} ${status}`;
                 const market = markets[market_id];
 
                 switch (event_type) {
                     case 'order': {
                         const { id, original_size, size_matched, created_at } = item as OpenOrder;
-                        const title = `${side} ${outcome} 下单`;
 
                         Utility.sendTextToDingtalk(`
 ## ${title}
@@ -164,7 +164,6 @@ async function main() {
 - **价格**: $${price}
 - **数量**: ${size_matched} / ${original_size}
 - **类型**: ${type}
-- **状态**: ${status}
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `, title);
@@ -173,7 +172,6 @@ async function main() {
 
                     case 'trade': {
                         const { taker_order_id, size, match_time, trader_side } = item as TradeData;
-                        const title = `${side} ${outcome} 成交`;
 
                         if (status != "MINED")
                             Utility.sendTextToDingtalk(`
@@ -183,7 +181,6 @@ async function main() {
 - **价格**: $${price}
 - **数量**: ${size}
 - **方向**: ${trader_side}
-- **状态**: ${status}
 - **匹配时间**: ${new Date(Number(match_time) * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `, title);
@@ -206,12 +203,12 @@ async function main() {
     console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL }));
     // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
 
-    const order = await clobClient.createOrder({
-        tokenID: tokens[0].token_id,
-        price: 0.01,//min: 0.01 - max: 0.99
-        side: Side.BUY,
-        size: 6
-    });
+    // const order = await clobClient.createOrder({
+    //     tokenID: tokens[0].token_id,
+    //     price: 0.01,//min: 0.01 - max: 0.99
+    //     side: Side.BUY,
+    //     size: 6
+    // });
 
     // const order = await clobClient.createOrder({
     //     tokenID: tokens[1].token_id,
@@ -220,12 +217,12 @@ async function main() {
     //     size: 5
     // });
 
-    // const order = await clobClient.createOrder({
-    //     tokenID: tokens[0].token_id,
-    //     side: Side.SELL,
-    //     price: 0.15,
-    //     size: 6
-    // });
+    const order = await clobClient.createOrder({
+        tokenID: tokens[1].token_id,
+        side: Side.SELL,
+        price: 0.15,
+        size: 6
+    });
 
     console.log(await clobClient.postOrder(order));
 
