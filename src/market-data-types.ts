@@ -47,3 +47,39 @@ interface MarketData {
     tokens: Token[];
     tags: string[];
 }
+
+interface MakerOrder {
+    asset_id: string;
+    fee_rate_bps: string;
+    maker_address: string;
+    matched_amount: string;
+    order_id: string;
+    outcome: string;
+    owner: string;
+    price: string;
+}
+
+interface TradeData {
+    asset_id: string;
+    bucket_index: string;
+    event_type: string;
+    fee_rate_bps: string;
+    id: string;
+    last_update: string;
+    maker_address: string;
+    maker_orders: MakerOrder[];
+    market: string;
+    match_time: string;
+    outcome: string;
+    owner: string;
+    price: string;
+    side: string;
+    size: string;
+    status: string;
+    taker_order_id: string;
+    timestamp: string;
+    trade_owner: string;
+    trader_side: string;
+    transaction_hash: string;
+    type: string;
+}

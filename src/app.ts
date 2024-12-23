@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { WebSocket } from "ws";
 import { ethers } from "ethers";
-import { ApiKeyCreds, AssetType, Chain, ClobClient, Side } from ".";
+import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, Side } from ".";
 // import { ApiKeyCreds, AssetType, Chain, ClobClient } from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
@@ -128,26 +128,46 @@ async function main() {
         const data = JSON.parse(msg.data);
 
         for (const item of data) {
-            const { event_type, side, market: market_id, outcome, price, original_size, size_matched, type, created_at, timestamp } = item;
+            const { event_type, side, market: market_id, outcome, price, status, type, timestamp } = item;
             const market = markets[market_id];
 
             switch (event_type) {
-                case 'order':
-                    const title = `${side == Side.BUY ? '购买' : '出售'} ${outcome}`;
+                case 'order': {
+                    const { id, original_size, size_matched, created_at } = item as OpenOrder;
+                    const title = `${side} ${outcome} 下单`;
 
                     Utility.sendTextToDingtalk(`
 ## ${title}
 - **问题**: ${market.question}
+- **订单ID**: ${id}
 - **价格**: $${price}
-- **数量**: \`${size_matched} / ${original_size}\`
+- **数量**: ${size_matched} / ${original_size}
+- **类型**: ${type}
+- **状态**: $${status}
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `, title);
                     break;
+                }
 
-                case 'trade':
-                    console.log(item);
+                case 'trade': {
+                    const { taker_order_id, size, match_time, trader_side } = item as TradeData;
+                    const title = `${side} ${outcome} 成交`;
+
+                    if (status != "MINED")
+                        Utility.sendTextToDingtalk(`
+## ${title}
+- **问题**: ${market.question}
+- **交易ID**: ${taker_order_id}
+- **价格**: $${price}
+- **数量**: ${size}
+- **方向**: $${trader_side}
+- **状态**: $${status}
+- **匹配时间**: ${new Date(Number(match_time) * 1000)}
+- **当前时间**: ${new Date(timestamp * 1)}
+`, title);
                     break;
+                }
             }
         }
     };
@@ -155,7 +175,7 @@ async function main() {
 
 
 
-    await Utility.waitForSeconds(5);
+    await Utility.waitForSeconds(3);
 
 
     // console.log(await clobClient.getEarningsForUserForDay("2024-12-22"));
@@ -169,6 +189,13 @@ async function main() {
         side: Side.BUY,
         size: 6
     });
+
+    // const order = await clobClient.createOrder({
+    //     tokenID: tokens[1].token_id,
+    //     price: 0.86,//min: 0.01 - max: 0.99
+    //     side: Side.BUY,
+    //     size: 5
+    // });
 
     // const order = await clobClient.createOrder({
     //     tokenID: tokens[0].token_id,
