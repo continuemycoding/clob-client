@@ -7,10 +7,11 @@ import { SignatureType } from "@polymarket/order-utils";
 dotenv.config();
 
 async function main() {
+    const host = "https://clob.polymarket.com";
     const wallet = new ethers.Wallet(process.env.PRIVATE_KEY);
 
     if (!process.env.CLOB_API_KEY) {
-        const clobClient = new ClobClient("https://clob.polymarket.com", Chain.POLYGON, wallet);
+        const clobClient = new ClobClient(host, Chain.POLYGON, wallet);
         const creds = await clobClient.createApiKey(Date.now());
         console.log("API Key:", creds.key);
         console.log("Secret:", creds.secret);
@@ -24,7 +25,7 @@ async function main() {
         passphrase: process.env.CLOB_PASS_PHRASE,
     };
 
-    const clobClient = new ClobClient("https://clob.polymarket.com/", Chain.POLYGON, wallet, creds, SignatureType.POLY_PROXY, process.env.FUNDER_ADDRESS);
+    const clobClient = new ClobClient(host, Chain.POLYGON, wallet, creds, SignatureType.POLY_PROXY, process.env.FUNDER_ADDRESS);
 
     // console.log(await clobClient.getEarningsForUserForDay("2024-12-22"));
 
@@ -37,7 +38,7 @@ async function main() {
 
     const order = await clobClient.createOrder({
         tokenID,
-        price: 0.92,//min: 0.01 - max: 0.99
+        price: 0.9,//min: 0.01 - max: 0.99
         side: Side.BUY,
         size: 6
     });
@@ -49,10 +50,10 @@ async function main() {
     // //     size: 1
     // // });
 
-    // console.log(await clobClient.postOrder(order));
+    console.log(await clobClient.postOrder(order));
 
     // await clobClient.cancelOrders();
-    await clobClient.cancelAll();
+    // await clobClient.cancelAll();
 
     console.log(await clobClient.getOpenOrders());
     // console.log(await clobClient.getOrder());
