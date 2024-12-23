@@ -133,16 +133,16 @@ async function main() {
 
             switch (event_type) {
                 case 'order':
-                    const action = side == Side.BUY ? '购买' : '出售';
+                    const title = `${side == Side.BUY ? '购买' : '出售'} ${outcome}`;
 
                     Utility.sendTextToDingtalk(`
-## ${action}
+## ${title}
 - **问题**: ${market.question}
 - **价格**: $${price}
-- **数量**: \`${size_matched}/${original_size}\`
+- **数量**: \`${size_matched} / ${original_size}\`
 - **创建时间**: ${new Date(created_at * 1000)}
-- **当前时间**: ${new Date(timestamp)}
-`, action);
+- **当前时间**: ${new Date(timestamp * 1)}
+`, title);
                     break;
 
                 case 'trade':
@@ -163,19 +163,19 @@ async function main() {
     console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL }));
     // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
 
-    // const order = await clobClient.createOrder({
-    //     tokenID: tokens[0].token_id,
-    //     price: 0.01,//min: 0.01 - max: 0.99
-    //     side: Side.BUY,
-    //     size: 6
-    // });
-
     const order = await clobClient.createOrder({
         tokenID: tokens[0].token_id,
-        side: Side.SELL,
-        price: 0.15,
+        price: 0.01,//min: 0.01 - max: 0.99
+        side: Side.BUY,
         size: 6
     });
+
+    // const order = await clobClient.createOrder({
+    //     tokenID: tokens[0].token_id,
+    //     side: Side.SELL,
+    //     price: 0.15,
+    //     size: 6
+    // });
 
     console.log(await clobClient.postOrder(order));
 
