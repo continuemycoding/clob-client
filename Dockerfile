@@ -14,6 +14,7 @@ RUN pip install pytz --break-system-packages
 
 COPY ./${APP} .
 COPY .env .
+COPY markets.json .
 
 ENTRYPOINT ["./app"]
 CMD ["default_arg1", "default_arg2", "default_arg3"]
