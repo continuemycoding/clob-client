@@ -43,11 +43,19 @@
     "dependencies": {
         "@polymarket/order-utils": "^2.1.0",
         "axios": "^0.27.2",
+        "body-parser": "^1.20.3",
         "browser-or-node": "^2.1.1",
-        "ethers": "^5.7.1"
+        "cors": "^2.8.5",
+        "ethers": "^5.7.1",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "moment": "^2.30.1"
     },
     "devDependencies": {
         "@types/chai": "^4.3.3",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/jsonwebtoken": "^9.0.7",
         "@types/mocha": "^9.1.1",
         "@types/node": "^18.7.18",
         "@types/ws": "^8.5.3",
