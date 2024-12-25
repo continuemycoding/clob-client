@@ -19,7 +19,7 @@ const Yes = 0;
 const No = 1;
 
 const trades = {
-    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will Biden finish his term?
+    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
     // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
     // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
     // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
@@ -31,7 +31,6 @@ const trades = {
     // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
     // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
 
-    // "0xea2ff9d0ba315a4edc9755f46c00ec16bd916ffac0b0a6b571357d8f773dddaf": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
     "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
     "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
     "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
@@ -117,6 +116,11 @@ async function main() {
     }
 
     hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
+
+    for (const key in trades) {
+        if (!markets[key])
+            delete trades[key];
+    }
 
     const currentRewards: Record<string, { rewards_max_spread: number; rewards_min_size: number; rate_per_day: number; }> = (await clobClient.getCurrentRewards()).reduce((map, item) => {
         map[item.condition_id] = {
@@ -294,15 +298,6 @@ async function main() {
         // });
 
         console.log(await clobClient.postOrder(order));
-
-        console.log(await clobClient.getRewardPercentages());
-        await Utility.waitForSeconds(1);
-        console.log(await clobClient.getRewardPercentages());
-        await Utility.waitForSeconds(1);
-        console.log(await clobClient.getRewardPercentages());
-
-        // await Utility.waitForSeconds(60);
-        // await clobClient.cancelAll();
     });
 
     app.post(CANCEL_ORDER, async (req: Request, res: Response) => {
@@ -424,6 +419,9 @@ async function main() {
                     case 'book': {
                         const { bids, asks, asset_id: token_id } = item as OrderBookSummary;
 
+                        if (bids.length < 3 || asks.length < 3)
+                            break;
+
                         bids.sort((a, b) => Number(b.price) - Number(a.price));
                         asks.sort((a, b) => Number(a.price) - Number(b.price));
 
@@ -444,13 +442,6 @@ async function main() {
                             const orderValue = existingOrder && price == existingOrder.price ? price * existingOrder.size : 0;
 
                             if (sum - orderValue >= 500) {
-                                console.log({ price, size, sum, i });
-
-                                // const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
-                                // const balance = Number(balanceAmount) / 10 ** 6;
-                                // console.log("余额", balance);
-                                // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
-
                                 existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
 
                                 if (Math.abs(price - midpoint) > rewards_max_spread)
@@ -459,20 +450,23 @@ async function main() {
                                 if (midpoint <= 0.1 || midpoint >= 0.8)
                                     break;
 
-                                const balance = rewards_min_size * price;
+                                const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
+                                const balance = Number(balanceAmount) / 10 ** 6;
+
+                                console.log({ balance, price, size, sum, i });
 
                                 const userOrder = {
                                     tokenID: token_id,
                                     price,//min: 0.01 - max: 0.99
                                     side: Side.BUY,
-                                    size: balance / price
+                                    size: Math.min(balance / price, rewards_min_size)
                                 };
 
-                                userOrders[token_id] = userOrder;
-
-                                const order = await clobClient.createOrder(userOrder);
-
-                                clobClient.postOrder(order);
+                                if (balance > price * userOrder.size) {
+                                    userOrders[token_id] = userOrder;
+                                    const order = await clobClient.createOrder(userOrder);
+                                    clobClient.postOrder(order);
+                                }
                                 break;
                             }
                         }
