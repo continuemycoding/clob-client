@@ -20,7 +20,7 @@ const No = 1;
 
 const trades = {
     // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
-    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
+    "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
     // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
     // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
     // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
@@ -31,12 +31,13 @@ const trades = {
     // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
     // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
 
-    "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
-    "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
-    "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
+    // "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
+    // "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
+    // "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
 };
 
 const userOrders: Record<string, UserOrder> = {};// key是token_id
+const orderBooks: Record<string, OrderBookSummary> = {};// key是token_id
 
 interface MarketData {
     question: string;
@@ -370,7 +371,7 @@ async function main() {
             const data = JSON.parse(msg.data);
 
             for (const item of data) {
-                const { event_type, side, market: market_id, outcome, price, status, type, timestamp } = item;
+                const { event_type, side, market: market_id, asset_id: token_id, outcome, price, status, type, timestamp } = item;
                 const title = `${side} ${outcome} ${status}`;
                 const market = markets[market_id];
 
@@ -417,7 +418,8 @@ async function main() {
                     // 首次订阅市场时
                     // 当有交易影响订单簿时
                     case 'book': {
-                        const { bids, asks, asset_id: token_id } = item as OrderBookSummary;
+                        const { bids, asks } = item as OrderBookSummary;
+                        orderBooks[token_id] = item;
 
                         if (bids.length < 3 || asks.length < 3)
                             break;
@@ -476,7 +478,11 @@ async function main() {
                     // 一个新订单被提交
                     // 一个订单被取消
                     case 'price_change': {
-                        // console.log(market.question, item);
+                        const { bids, asks } = orderBooks[token_id];
+                        for (const { price, size, side } of item.changes) {
+                            const sideOrders = side == Side.BUY ? bids : asks;
+                            sideOrders.find(item => item.price == price).size = size;
+                        }
                         break;
                     }
                 }
