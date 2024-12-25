@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+    image: appdeployer/market
+    restart: on-failure
+    environment:
+      TZ: "Asia/Shanghai"
+    ports:
+      - "80:80"
