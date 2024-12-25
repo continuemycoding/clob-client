@@ -20,17 +20,20 @@ const Yes = 0;
 const No = 1;
 
 const trades = {
-    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, //Will Biden finish his term?
-    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, //Will Elon tweet 250-274 times Dec 20-27?
-    // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, //Will Elon tweet 275-299 times Dec 20-27?
-    // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, //Will Elon tweet 300-324 times Dec 20-27?
-    // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, //Will Elon tweet 325-349 times Dec 20-27?
-    // "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": Yes, //Will Elon tweet 350-374 times Dec 20-27?
-    // "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": Yes, //Will Elon tweet 375-399 times Dec 20-27?
-    "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": Yes, //Will Elon tweet 400-424 times Dec 20-27?
-    "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": Yes, //Will Elon tweet 425-449 times Dec 20-27?
-    // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, //Will Elon tweet 450-474 times Dec 20-27?
-    // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, //Will Elon tweet 475-499 times Dec 20-27?
+    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will Biden finish his term?
+    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
+    // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
+    // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
+    // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
+    // "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": Yes, // Will Elon tweet 350-374 times Dec 20-27?
+    // "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": Yes, // Will Elon tweet 375-399 times Dec 20-27?
+    // "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": Yes, // Will Elon tweet 400-424 times Dec 20-27?
+    // "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": Yes, // Will Elon tweet 425-449 times Dec 20-27?
+    // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
+    // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
+
+    // "0xea2ff9d0ba315a4edc9755f46c00ec16bd916ffac0b0a6b571357d8f773dddaf": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
+    "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
 };
 
 const userOrders: Record<string, UserOrder> = {};// key是token_id
@@ -348,28 +351,30 @@ async function main() {
                     case 'book': {
                         const { bids, asks, asset_id: token_id } = item as OrderBookSummary;
 
-                        if (userOrders[token_id])
-                            break;
-
                         bids.sort((a, b) => Number(b.price) - Number(a.price));
                         asks.sort((a, b) => Number(a.price) - Number(b.price));
 
                         console.log(market.question, bids[0], asks[0]);
 
                         let sum = 0;
-                        for (let i = 0; i < 2; i++) {
+                        for (let i = 0; i < 3; i++) {
                             const price = Number(bids[i].price);
                             const size = Number(bids[i].size);
 
                             sum += price * size;
 
-                            if (sum >= 100) {
-                                console.log(price, size, sum, i);
+                            const existingOrder = userOrders[token_id];
+                            const orderValue = existingOrder && price == existingOrder.price ? price * existingOrder.size : 0;
+
+                            if (sum - orderValue >= 500) {
+                                console.log({ price, size, sum, i });
 
                                 // const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
                                 // const balance = Number(balanceAmount) / 10 ** 6;
                                 // console.log("余额", balance);
                                 // console.log(await clobClient.getBalanceAllowance({ asset_type: AssetType.CONDITIONAL, token_id: "61870696561549212427703774084341694590597083144015451858728593820052569648622" }));
+
+                                existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
 
                                 const balance = 10;
 
