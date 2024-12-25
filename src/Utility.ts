@@ -62,16 +62,24 @@ export default class Utility {
             return moment(this).format('YYYY-MM-DD HH:mm:ss.SSS');
         };
 
+        Date.prototype.toDateString = function () {
+            return moment(this).format('YYYY-MM-DD');
+        };
+
+        Date.prototype.toLocaleDateString = function () {
+            return moment(this).format('YYYY-MM-DD');
+        };
+
         const log = console.log;
         console.log = function (...args) {
             log("log:", new Date(), ...args);
-            log(new Error().stack.split('\n')[2]);
+            // log(new Error().stack.split('\n')[2]);
         };
 
         const error = console.error;
         console.error = function (...args) {
             error("error:", new Date(), ...args);
-            error(new Error().stack.split('\n').slice(2).join('\n'));
+            // error(new Error().stack.split('\n').slice(2).join('\n'));
         };
     }
 
