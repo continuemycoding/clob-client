@@ -307,6 +307,64 @@ async function main() {
     });
 
 
+    async function executeTradingStrategy(item: OrderBookSummary) {
+        const { bids, asks, market: market_id, asset_id: token_id } = item;
+
+        if (bids.length < 3 || asks.length < 3)
+            return;
+
+        bids.sort((a, b) => Number(b.price) - Number(a.price));
+        asks.sort((a, b) => Number(a.price) - Number(b.price));
+
+        const market = markets[market_id];
+
+        console.log(market.question, bids[0], asks[0]);
+
+        const midpoint = (Number(bids[0].price) + Number(asks[0].price)) / 2;
+
+        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
+
+        let sum = 0;
+        for (let i = 0; i < 3; i++) {
+            const price = Number(bids[i].price);
+            const size = Number(bids[i].size);
+
+            sum += price * size;
+
+            const existingOrder = userOrders[token_id];
+            const orderValue = existingOrder && price == existingOrder.price ? price * existingOrder.size : 0;
+
+            if (sum - orderValue >= 500) {
+                existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
+
+                if (Math.abs(price - midpoint) > rewards_max_spread)
+                    break;
+
+                if (midpoint <= 0.1 || midpoint >= 0.8)
+                    break;
+
+                const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
+                const balance = Number(balanceAmount) / 10 ** 6;
+
+                console.log({ balance, price, size, sum, i });
+
+                const userOrder = {
+                    tokenID: token_id,
+                    price,//min: 0.01 - max: 0.99
+                    side: Side.BUY,
+                    size: Math.min(balance / price, rewards_min_size)
+                };
+
+                if (balance > price * userOrder.size) {
+                    userOrders[token_id] = userOrder;
+                    const order = await clobClient.createOrder(userOrder);
+                    clobClient.postOrder(order);
+                }
+                break;
+            }
+        }
+    }
+
     let reconnectAttempts = 0;
     const maxReconnectAttempts = 20;
 
@@ -418,71 +476,26 @@ async function main() {
                     // 首次订阅市场时
                     // 当有交易影响订单簿时
                     case 'book': {
-                        const { bids, asks } = item as OrderBookSummary;
                         orderBooks[token_id] = item;
-
-                        if (bids.length < 3 || asks.length < 3)
-                            break;
-
-                        bids.sort((a, b) => Number(b.price) - Number(a.price));
-                        asks.sort((a, b) => Number(a.price) - Number(b.price));
-
-                        console.log(market.question, bids[0], asks[0]);
-
-                        const midpoint = (Number(bids[0].price) + Number(asks[0].price)) / 2;
-
-                        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
-
-                        let sum = 0;
-                        for (let i = 0; i < 3; i++) {
-                            const price = Number(bids[i].price);
-                            const size = Number(bids[i].size);
-
-                            sum += price * size;
-
-                            const existingOrder = userOrders[token_id];
-                            const orderValue = existingOrder && price == existingOrder.price ? price * existingOrder.size : 0;
-
-                            if (sum - orderValue >= 500) {
-                                existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
-
-                                if (Math.abs(price - midpoint) > rewards_max_spread)
-                                    break;
-
-                                if (midpoint <= 0.1 || midpoint >= 0.8)
-                                    break;
-
-                                const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
-                                const balance = Number(balanceAmount) / 10 ** 6;
-
-                                console.log({ balance, price, size, sum, i });
-
-                                const userOrder = {
-                                    tokenID: token_id,
-                                    price,//min: 0.01 - max: 0.99
-                                    side: Side.BUY,
-                                    size: Math.min(balance / price, rewards_min_size)
-                                };
-
-                                if (balance > price * userOrder.size) {
-                                    userOrders[token_id] = userOrder;
-                                    const order = await clobClient.createOrder(userOrder);
-                                    clobClient.postOrder(order);
-                                }
-                                break;
-                            }
-                        }
+                        executeTradingStrategy(item);
                         break;
                     }
 
                     // 一个新订单被提交
                     // 一个订单被取消
                     case 'price_change': {
-                        const { bids, asks } = orderBooks[token_id];
+                        const orderBook = orderBooks[token_id];
+                        const { bids, asks } = orderBook;
                         for (const { price, size, side } of item.changes) {
-                            const sideOrders = side == Side.BUY ? bids : asks;
-                            sideOrders.find(item => item.price == price).size = size;
+                            const bid = bids.find(item => item.price == price);
+                            if (bid)
+                                bid.size = size;
+
+                            const ask = asks.find(item => item.price == price);
+                            if (ask)
+                                ask.size = size;
                         }
+                        executeTradingStrategy(orderBook);
                         break;
                     }
                 }
