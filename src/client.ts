@@ -460,11 +460,11 @@ export class ClobClient {
     }
 
 
-	public async getTradesPaginated(
-		params?: TradeParams, 
-		next_cursor?: string
-	): Promise<{trades: Trade[], next_cursor: string, limit: number, count: number }> {
-		this.canL2Auth();
+    public async getTradesPaginated(
+        params?: TradeParams,
+        next_cursor?: string
+    ): Promise<{ trades: Trade[], next_cursor: string, limit: number, count: number }> {
+        this.canL2Auth();
 
         const endpoint = GET_TRADES;
         const headerArgs = {
@@ -483,18 +483,18 @@ export class ClobClient {
 
         const _params: any = { ...params, next_cursor };
 
-        const {data, ...rest }: {
-			data: Trade[], 
-			next_cursor: string, 
-			limit: number, 
-			count: number
-		} = await this.get(`${this.host}${endpoint}`, {
+        const { data, ...rest }: {
+            data: Trade[],
+            next_cursor: string,
+            limit: number,
+            count: number
+        } = await this.get(`${this.host}${endpoint}`, {
             headers,
             params: _params,
         });
 
-        return { trades: Array.isArray(data) ? [...data] :[], ...rest} 
-	}
+        return { trades: Array.isArray(data) ? [...data] : [], ...rest }
+    }
 
     public async getNotifications(): Promise<Notification[]> {
         this.canL2Auth();
@@ -602,8 +602,7 @@ export class ClobClient {
 
         if (!priceValid(userOrder.price, tickSize)) {
             throw new Error(
-                `invalid price (${userOrder.price}), min: ${parseFloat(tickSize)} - max: ${
-                    1 - parseFloat(tickSize)
+                `invalid price (${userOrder.price}), min: ${parseFloat(tickSize)} - max: ${1 - parseFloat(tickSize)
                 }`,
             );
         }
@@ -636,8 +635,7 @@ export class ClobClient {
 
         if (!priceValid(userMarketOrder.price, tickSize)) {
             throw new Error(
-                `invalid price (${userMarketOrder.price}), min: ${parseFloat(tickSize)} - max: ${
-                    1 - parseFloat(tickSize)
+                `invalid price (${userMarketOrder.price}), min: ${parseFloat(tickSize)} - max: ${1 - parseFloat(tickSize)
                 }`,
             );
         }
@@ -994,11 +992,15 @@ export class ClobClient {
             if (!book.asks) {
                 throw new Error("no match");
             }
+            // 确保 book.asks 按价格从低到高排序
+            book.asks.sort((a, b) => Number(a.price) - Number(b.price));
             return calculateMarketPrice(book.asks, amount);
         } else {
             if (!book.bids) {
                 throw new Error("no match");
             }
+            // 确保 book.bids 按价格从高到低排序
+            book.bids.sort((a, b) => Number(b.price) - Number(a.price));
             return calculateMarketPrice(book.bids, amount);
         }
     }
