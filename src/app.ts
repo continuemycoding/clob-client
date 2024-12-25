@@ -1,18 +1,17 @@
 import dotenv from "dotenv";
 import { WebSocket } from "ws";
 import { ethers } from "ethers";
-import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, OrderBookSummary, Side, Trade, UserOrder } from ".";
-// import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, OrderBookSummary, Side, Trade } from "@polymarket/clob-client";
+import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, OrderBookSummary, Side, Token, Trade, UserOrder } from "."; // from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import Utility from "./Utility";
 import fs from 'fs';
-import { MarketData } from "./market-data-types";
 import express, { Request, Response, NextFunction } from 'express';
 import jwt, { JwtPayload, Secret, VerifyCallback, VerifyErrors } from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { CANCEL_ORDER, GET_EARNINGS_FOR_USER_FOR_DAY, GET_MARKET, GET_OPEN_ORDERS, GET_TRADES, POST_ORDER } from "./endpoints";
+import { CANCEL_ORDER, GET_EARNINGS_FOR_USER_FOR_DAY, GET_MARKET, GET_OPEN_ORDERS, GET_REWARDS_MARKETS_CURRENT, GET_TRADES, POST_ORDER } from "./endpoints";
+import { END_CURSOR, INITIAL_CURSOR } from "./constants";
 
 dotenv.config();
 
@@ -34,9 +33,27 @@ const trades = {
 
     // "0xea2ff9d0ba315a4edc9755f46c00ec16bd916ffac0b0a6b571357d8f773dddaf": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
     "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
+    "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
+    "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
 };
 
 const userOrders: Record<string, UserOrder> = {};// key是token_id
+
+interface MarketData {
+    question: string;
+    // description: string;
+    event_slug: string;
+    market_slug: string;
+    end_date_iso: string;
+    // game_start_time: string | null;
+    // maker_base_fee: number;
+    // taker_base_fee: number;
+
+    icon: string;
+
+    tokens: Token[];
+    tags: string[];
+}
 
 async function main() {
     const agent = process.env.PROXY_URL && new HttpsProxyAgent(process.env.PROXY_URL);
@@ -65,20 +82,62 @@ async function main() {
 
     const markets: Record<string, MarketData> = JSON.parse(fs.readFileSync('markets.json').toString());
 
-    const array = await clobClient.getCurrentRewards();
     let hasChanged = false;
-    for (const { condition_id } of array) {
-        if (markets[condition_id]) continue;
+    let next_cursor = INITIAL_CURSOR;
+    while (next_cursor != END_CURSOR) {
+        const response = await clobClient.getSamplingMarkets(next_cursor);
+        next_cursor = response.next_cursor;
+        console.log({ next_cursor });
 
-        const data = await clobClient.getMarket(condition_id);
-        console.log(condition_id, data.question);
-        markets[condition_id] = data;
-        hasChanged = true;
+        for (const item of response.data) {
+            const { condition_id, question, end_date_iso, icon, tokens, tags } = item;
+
+            if (markets[condition_id])
+                continue;
+
+            hasChanged = true;
+
+            const [{ event_slug, market_slug }] = await clobClient.getRawRewardsForMarket(condition_id);
+
+            console.log(condition_id, `https://polymarket.com/event/${event_slug}/${market_slug}`);
+
+            // "https://polymarket-upload.s3.us-east-2.amazonaws.com/"
+            const baseUrl = icon.match(/^(?:https?:\/\/)?[^\/]+\//);
+
+            markets[condition_id] = {
+                question,
+                event_slug,
+                market_slug,
+                end_date_iso,
+                icon: icon.replace(baseUrl, ""),
+                tokens,
+                tags
+            };
+        }
     }
 
     hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
 
-    await clobClient.cancelAll();
+    const currentRewards: Record<string, { rewards_max_spread: number; rewards_min_size: number; rate_per_day: number; }> = (await clobClient.getCurrentRewards()).reduce((map, item) => {
+        map[item.condition_id] = {
+            rewards_max_spread: item.rewards_max_spread,
+            rewards_min_size: item.rewards_min_size,
+            rate_per_day: item.rewards_config[0].rate_per_day
+        };
+        return map;
+    }, {});
+
+    // await clobClient.cancelAll();
+
+    const openOrders = await clobClient.getOpenOrders();
+    for (const { asset_id, price, side, original_size } of openOrders) {
+        userOrders[asset_id] = {
+            tokenID: asset_id,
+            price: Number(price),
+            side: Side[side as keyof typeof Side],
+            size: Number(original_size)
+        };
+    }
 
     const app = express();
     app.use(cors({
@@ -170,7 +229,21 @@ async function main() {
     // });
 
     app.post(GET_EARNINGS_FOR_USER_FOR_DAY, async (req: Request, res: Response) => {
-        const response = await clobClient.getEarningsForUserForDay("2024-12-24");
+        const rewardPercentages = await clobClient.getRewardPercentages();
+        const response: any = await clobClient.getEarningsForUserForDay(new Date().toDateString());
+
+        for (const item of response) {
+            item.question = markets[item.condition_id].question;
+            item.percentage = rewardPercentages[item.condition_id];
+            delete item.asset_address;
+            delete item.maker_address;
+        }
+
+        res.json(response);
+    });
+
+    app.post(GET_REWARDS_MARKETS_CURRENT, async (req: Request, res: Response) => {
+        const response = await clobClient.getCurrentRewards();
         res.json(response);
     });
 
@@ -333,7 +406,7 @@ async function main() {
                     case 'order': {
                         const { id, original_size, size_matched, created_at } = item as OpenOrder;
 
-                        Utility.sendTextToDingtalk(`
+                        console.log(`
 ## ${title}
 - **问题**: ${market.question}
 - **订单ID**: ${id}
@@ -342,7 +415,7 @@ async function main() {
 - **类型**: ${type}
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
-`, title);
+`);
                         break;
                     }
 
@@ -355,6 +428,10 @@ async function main() {
                         asks.sort((a, b) => Number(a.price) - Number(b.price));
 
                         console.log(market.question, bids[0], asks[0]);
+
+                        const midpoint = (Number(bids[0].price) + Number(asks[0].price)) / 2;
+
+                        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
 
                         let sum = 0;
                         for (let i = 0; i < 3; i++) {
@@ -376,7 +453,13 @@ async function main() {
 
                                 existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
 
-                                const balance = 10;
+                                if (Math.abs(price - midpoint) > rewards_max_spread)
+                                    break;
+
+                                if (midpoint <= 0.1 || midpoint >= 0.8)
+                                    break;
+
+                                const balance = rewards_min_size * price;
 
                                 const userOrder = {
                                     tokenID: token_id,
