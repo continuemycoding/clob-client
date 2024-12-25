@@ -1,5 +1,5 @@
 {
-    "name": "@polymarket/clob-client",
+    "name": "app",
     "description": "Typescript client for Polymarket's CLOB",
     "version": "4.12.0",
     "contributors": [
@@ -38,8 +38,11 @@
         "build": "make build",
         "lint": "make lint",
         "deploy": "yarn build && npm publish",
-        "test": "make test"
+        "test": "make test",
+        "push": "tsc --build && pkg package.json --targets=latest-alpine-x64 --options max_old_space_size=4096 && docker-compose build && docker-compose push",
+        "restart": "docker-compose pull && docker-commpose down && docker-compose up -d && docker-compose logs -f"
     },
+    "bin": "dist/app.js",
     "dependencies": {
         "@polymarket/order-utils": "^2.1.0",
         "axios": "^0.27.2",
