@@ -20,7 +20,7 @@ const No = 1;
 
 const trades = {
     // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
-    "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
+    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
     // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
     // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
     // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
@@ -34,10 +34,12 @@ const trades = {
     // "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
     // "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
     // "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
+    // "0xa5ac4cdcfff44ddfb0d332d33575f766414465786fb7d4350782db40d5e9da11": Yes, // Trump ends Ukraine war by first 90 days?
+    "0x97587c58a3407fcc9a8df6396aaa8b66eff8b0c799fdf81880f258755b7d529c": Yes, // Will Bitcoin hit $100k again in 2024?
 };
 
-const userOrders: Record<string, UserOrder> = {};// key是token_id
-const orderBooks: Record<string, OrderBookSummary> = {};// key是token_id
+const userOrders: Record<string, UserOrder & { previousOrderSize: number }> = {};// previousOrderSize表示跟自己相同挂单价格的其他人挂单数量，没办法准确，因为不知道取消的订单所在位置
+const orderBooks: Record<string, OrderBookSummary> = {};
 
 interface MarketData {
     question: string;
@@ -118,6 +120,16 @@ async function main() {
 
     hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
 
+    const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
+    const balance = Number(balanceAmount) / 10 ** 6;
+
+    await clobClient.cancelAll();
+
+    // const keys = Object.keys(markets).slice(0, 50);
+    // for (const key of keys) {
+    //     trades[key] = Yes;
+    // }
+
     for (const key in trades) {
         if (!markets[key])
             delete trades[key];
@@ -132,15 +144,14 @@ async function main() {
         return map;
     }, {});
 
-    // await clobClient.cancelAll();
-
     const openOrders = await clobClient.getOpenOrders();
     for (const { asset_id, price, side, original_size } of openOrders) {
         userOrders[asset_id] = {
             tokenID: asset_id,
             price: Number(price),
             side: Side[side as keyof typeof Side],
-            size: Number(original_size)
+            size: Number(original_size),
+            previousOrderSize: Number(original_size) // 此处应该获取订单簿来更新
         };
     }
 
@@ -307,47 +318,72 @@ async function main() {
     });
 
 
-    async function executeTradingStrategy(item: OrderBookSummary) {
-        const { bids, asks, market: market_id, asset_id: token_id } = item;
+    async function executeTradingStrategy(orderBook: OrderBookSummary, sorted: boolean) {
+        const { bids, asks, market: market_id, asset_id: token_id } = orderBook;
+        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
 
-        if (bids.length < 3 || asks.length < 3)
+        if (bids.length == 0 || asks.length == 0)
             return;
 
-        bids.sort((a, b) => Number(b.price) - Number(a.price));
-        asks.sort((a, b) => Number(a.price) - Number(b.price));
-
-        const market = markets[market_id];
-
-        console.log(market.question, bids[0], asks[0]);
+        if (!sorted) {
+            bids.sort((a, b) => Number(b.price) - Number(a.price));
+            asks.sort((a, b) => Number(a.price) - Number(b.price));
+        }
 
         const midpoint = (Number(bids[0].price) + Number(asks[0].price)) / 2;
 
-        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
+        const existingOrder = userOrders[token_id];
+
+        if (existingOrder) {
+            if (Math.abs(existingOrder.price - midpoint) > rewards_max_spread) {
+                console.log("没有奖励就取消订单");
+                delete userOrders[token_id];
+                await clobClient.cancelMarketOrders({ asset_id: token_id });
+                return;
+            }
+
+            if (midpoint < 0.1) {
+                console.log("概率太低就取消订单");
+                delete userOrders[token_id];
+                await clobClient.cancelMarketOrders({ asset_id: token_id });
+                return;
+            }
+
+            let totalValue = 0;
+
+            for (const item of bids) {
+                if (Number(item.price) > existingOrder.price)
+                    totalValue += Number(item.price) * Number(item.size);
+            }
+
+            totalValue += existingOrder.price * Math.max(existingOrder.previousOrderSize, 0);
+
+            if (totalValue < 200) {
+                console.log(`挂单不足就取消订单`, totalValue);
+                delete userOrders[token_id];
+                await clobClient.cancelMarketOrders({ asset_id: token_id });
+            }
+
+            return;
+        }
+
+        if (midpoint <= 0.15 || midpoint >= 0.6)
+            return;
+
+        const market = markets[market_id];
+        console.log(market.question, bids[0], asks[0]);
 
         let sum = 0;
-        for (let i = 0; i < 3; i++) {
-            const price = Number(bids[i].price);
-            const size = Number(bids[i].size);
+        for (const bid of bids) {
+            const price = Number(bid.price);
+            const size = Number(bid.size);
+
+            if (Math.abs(price - midpoint) > rewards_max_spread)
+                return;
 
             sum += price * size;
 
-            const existingOrder = userOrders[token_id];
-            const orderValue = existingOrder && price == existingOrder.price ? price * existingOrder.size : 0;
-
-            if (sum - orderValue >= 500) {
-                existingOrder && await clobClient.cancelMarketOrders({ asset_id: token_id });
-
-                if (Math.abs(price - midpoint) > rewards_max_spread)
-                    break;
-
-                if (midpoint <= 0.1 || midpoint >= 0.8)
-                    break;
-
-                const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
-                const balance = Number(balanceAmount) / 10 ** 6;
-
-                console.log({ balance, price, size, sum, i });
-
+            if (sum >= 500) {
                 const userOrder = {
                     tokenID: token_id,
                     price,//min: 0.01 - max: 0.99
@@ -356,11 +392,11 @@ async function main() {
                 };
 
                 if (balance > price * userOrder.size) {
-                    userOrders[token_id] = userOrder;
+                    userOrders[token_id] = { ...userOrder, previousOrderSize: size };
                     const order = await clobClient.createOrder(userOrder);
                     clobClient.postOrder(order);
                 }
-                break;
+                return;
             }
         }
     }
@@ -474,28 +510,63 @@ async function main() {
                     }
 
                     // 首次订阅市场时
-                    // 当有交易影响订单簿时
+                    // 当有交易影响订单簿时（不会先触发price_change）
                     case 'book': {
                         orderBooks[token_id] = item;
-                        executeTradingStrategy(item);
+                        executeTradingStrategy(item, false);
                         break;
                     }
 
                     // 一个新订单被提交
                     // 一个订单被取消
                     case 'price_change': {
+                        const existingOrder = userOrders[token_id];
+
                         const orderBook = orderBooks[token_id];
                         const { bids, asks } = orderBook;
-                        for (const { price, size, side } of item.changes) {
-                            const bid = bids.find(item => item.price == price);
-                            if (bid)
-                                bid.size = size;
 
-                            const ask = asks.find(item => item.price == price);
-                            if (ask)
-                                ask.size = size;
+                        bids.sort((a, b) => Number(b.price) - Number(a.price));
+                        asks.sort((a, b) => Number(a.price) - Number(b.price));
+
+                        for (const { price, size, side } of item.changes) {
+                            let changedSize: number;
+
+                            if (side == Side.BUY) {
+                                if (asks[0] && Number(price) >= Number(asks[0].price))
+                                    continue;
+
+                                const bid = bids.find(item => item.price == price);
+                                if (bid) {
+                                    changedSize = Number(size) - Number(bid.size);
+                                    bid.size = size;
+                                }
+                                else {
+                                    changedSize = Number(size);
+                                    bids.push({ price, size });
+                                    bids.sort((a, b) => Number(b.price) - Number(a.price));
+                                }
+                            }
+                            else {
+                                if (bids[0] && Number(price) <= Number(bids[0].price))
+                                    continue;
+
+                                const ask = asks.find(item => item.price == price);
+                                if (ask) {
+                                    changedSize = Number(size) - Number(ask.size);
+                                    ask.size = size;
+                                }
+                                else {
+                                    changedSize = Number(size);
+                                    asks.push({ price, size });
+                                    asks.sort((a, b) => Number(a.price) - Number(b.price));
+                                }
+                            }
+
+                            if (existingOrder?.price == price && changedSize < 0)
+                                existingOrder.previousOrderSize += changedSize;
                         }
-                        executeTradingStrategy(orderBook);
+
+                        executeTradingStrategy(orderBook, true);
                         break;
                     }
                 }
