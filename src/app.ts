@@ -19,22 +19,22 @@ const Yes = 0;
 const No = 1;
 
 const trades = {
-    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
-    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
-    // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
-    // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
-    // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
-    // "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": Yes, // Will Elon tweet 350-374 times Dec 20-27?
-    // "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": Yes, // Will Elon tweet 375-399 times Dec 20-27?
-    // "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": Yes, // Will Elon tweet 400-424 times Dec 20-27?
-    // "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": Yes, // Will Elon tweet 425-449 times Dec 20-27?
-    // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
-    // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
+    "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
+    "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
+    "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
+    "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
+    "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
+    "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": Yes, // Will Elon tweet 350-374 times Dec 20-27?
+    "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": Yes, // Will Elon tweet 375-399 times Dec 20-27?
+    "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": Yes, // Will Elon tweet 400-424 times Dec 20-27?
+    "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": Yes, // Will Elon tweet 425-449 times Dec 20-27?
+    "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
+    "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
 
-    // "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
-    // "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
-    // "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
-    // "0xa5ac4cdcfff44ddfb0d332d33575f766414465786fb7d4350782db40d5e9da11": Yes, // Trump ends Ukraine war by first 90 days?
+    "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
+    "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
+    "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
+    "0xa5ac4cdcfff44ddfb0d332d33575f766414465786fb7d4350782db40d5e9da11": Yes, // Trump ends Ukraine war by first 90 days?
     "0x97587c58a3407fcc9a8df6396aaa8b66eff8b0c799fdf81880f258755b7d529c": Yes, // Will Bitcoin hit $100k again in 2024?
 };
 
@@ -386,9 +386,9 @@ async function main() {
             if (sum >= 500) {
                 const userOrder = {
                     tokenID: token_id,
-                    price,//min: 0.01 - max: 0.99
+                    price, // min: 0.01 - max: 0.99
                     side: Side.BUY,
-                    size: Math.min(balance / price, rewards_min_size)
+                    size: Math.floor(balance / price) // Math.min(balance / price, rewards_min_size)
                 };
 
                 if (balance > price * userOrder.size) {
