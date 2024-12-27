@@ -256,7 +256,6 @@ interface MarketData {
                 console.log(market.question, "没有奖励就取消订单");
                 existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
-                delete userOrders[token_id];
                 return;
             }
 
@@ -264,7 +263,6 @@ interface MarketData {
                 console.log(market.question, "概率太低就取消订单");
                 existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
-                delete userOrders[token_id];
                 return;
             }
 
@@ -279,7 +277,6 @@ interface MarketData {
                 console.log(market.question, `挂单不足就取消订单`, totalValue);
                 existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
-                delete userOrders[token_id];
             }
 
             return;
@@ -304,7 +301,7 @@ interface MarketData {
                     price, // min: 0.01 - max: 0.99
                     side: Side.BUY,
                     // size: Math.min(balance / price, rewards_min_size),
-                    size: Math.floor(balance / price),
+                    size: Math.max(balance / price, rewards_min_size),
                 };
 
                 if (balance >= price * userOrderParams.size) {
@@ -401,7 +398,7 @@ interface MarketData {
                     case 'trade': {
                         const { taker_order_id, size, match_time, trader_side } = item as Trade;
 
-                        if (status != "MINED")
+                        if (status != "MINED" && status != "CONFIRMED")
                             Utility.sendTextToDingtalk(`
 ## ${title}
 - **问题**: ${market.question}
@@ -431,6 +428,9 @@ interface MarketData {
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `);
+
+                        if (status == "CANCELED")
+                            delete userOrders[token_id];
                         break;
                     }
 
