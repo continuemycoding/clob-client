@@ -406,7 +406,7 @@ async function main() {
                     const userOrder = userOrders[token_id];
 
                     const order = await clobClient.createOrder(userOrderParams);
-                    const { data: error } = await clobClient.postOrder(order);
+                    const { error } = await clobClient.postOrder(order);
 
                     userOrder.status = OrderStatus.Submitted;
 
