@@ -38,7 +38,14 @@ const trades = {
     "0x97587c58a3407fcc9a8df6396aaa8b66eff8b0c799fdf81880f258755b7d529c": Yes, // Will Bitcoin hit $100k again in 2024?
 };
 
-const userOrders: Record<string, UserOrder> = {};
+enum OrderStatus {
+    PendingCancellation = "待取消",
+    // Cancelled = "已取消",
+    PendingSubmission = "待提交",
+    Submitted = "已提交",
+};
+
+const userOrders: Record<string, UserOrder & { status: OrderStatus }> = {};
 const orderBooks: Record<string, OrderBookSummary> = {};
 
 interface MarketData {
@@ -151,6 +158,7 @@ async function main() {
             price: Number(price),
             side: Side[side as keyof typeof Side],
             size: Number(original_size),
+            status: OrderStatus.Submitted
         };
     }
 
@@ -335,17 +343,22 @@ async function main() {
         const existingOrder = userOrders[token_id];
 
         if (existingOrder) {
+            if (existingOrder.status != OrderStatus.Submitted)
+                return;
+
             if (Math.abs(existingOrder.price - midpoint) > rewards_max_spread) {
                 console.log(market.question, "没有奖励就取消订单");
-                delete userOrders[token_id];
+                existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
+                delete userOrders[token_id];
                 return;
             }
 
             if (midpoint < 0.1) {
                 console.log(market.question, "概率太低就取消订单");
-                delete userOrders[token_id];
+                existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
+                delete userOrders[token_id];
                 return;
             }
 
@@ -358,8 +371,9 @@ async function main() {
 
             if (totalValue < 400) {
                 console.log(market.question, `挂单不足就取消订单`, totalValue);
-                delete userOrders[token_id];
+                existingOrder.status = OrderStatus.PendingCancellation;
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
+                delete userOrders[token_id];
             }
 
             return;
@@ -379,7 +393,7 @@ async function main() {
             sum += price * size;
 
             if (sum >= 500 && i != 0) {
-                const userOrder = {
+                const userOrderParams = {
                     tokenID: token_id,
                     price, // min: 0.01 - max: 0.99
                     side: Side.BUY,
@@ -387,10 +401,19 @@ async function main() {
                     size: Math.floor(balance / price),
                 };
 
-                if (balance > price * userOrder.size) {
-                    userOrders[token_id] = userOrder;
-                    const order = await clobClient.createOrder(userOrder);
-                    clobClient.postOrder(order);
+                if (balance > price * userOrderParams.size) {
+                    userOrders[token_id] = { ...userOrderParams, status: OrderStatus.PendingSubmission };
+                    const userOrder = userOrders[token_id];
+
+                    const order = await clobClient.createOrder(userOrderParams);
+                    const { data: error } = await clobClient.postOrder(order);
+
+                    userOrder.status = OrderStatus.Submitted;
+
+                    if (error) {
+                        console.error(userOrderParams, error);
+                        delete userOrders[token_id];
+                    }
                 }
                 return;
             }
