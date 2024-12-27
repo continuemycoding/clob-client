@@ -38,7 +38,7 @@ const trades = {
     "0x97587c58a3407fcc9a8df6396aaa8b66eff8b0c799fdf81880f258755b7d529c": Yes, // Will Bitcoin hit $100k again in 2024?
 };
 
-const userOrders: Record<string, UserOrder & { previousOrderSize: number }> = {};// previousOrderSize表示跟自己相同挂单价格的其他人挂单数量，没办法准确，因为不知道取消的订单所在位置
+const userOrders: Record<string, UserOrder> = {};
 const orderBooks: Record<string, OrderBookSummary> = {};
 
 interface MarketData {
@@ -151,7 +151,6 @@ async function main() {
             price: Number(price),
             side: Side[side as keyof typeof Side],
             size: Number(original_size),
-            previousOrderSize: Number(original_size) // 此处应该获取订单簿来更新
         };
     }
 
@@ -250,7 +249,7 @@ async function main() {
 
         for (const item of response) {
             item.question = markets[item.condition_id].question;
-            item.percentage = rewardPercentages[item.condition_id];
+            item.percentage = rewardPercentages[item.condition_id] + '%';
             delete item.asset_address;
             delete item.maker_address;
         }
@@ -356,8 +355,6 @@ async function main() {
                     totalValue += Number(item.price) * Number(item.size);
             }
 
-            totalValue += existingOrder.price * Math.max(existingOrder.previousOrderSize, 0);
-
             if (totalValue < 200) {
                 console.log(`挂单不足就取消订单`, totalValue);
                 delete userOrders[token_id];
@@ -374,25 +371,26 @@ async function main() {
         console.log(market.question, bids[0], asks[0]);
 
         let sum = 0;
-        for (const bid of bids) {
-            const price = Number(bid.price);
-            const size = Number(bid.size);
+        for (let i = 0; i < bids.length; i++) {
+            const price = Number(bids[i].price);
+            const size = Number(bids[i].size);
 
             if (Math.abs(price - midpoint) > rewards_max_spread)
                 return;
 
             sum += price * size;
 
-            if (sum >= 500) {
+            if (sum >= 500 && i != 0) {
                 const userOrder = {
                     tokenID: token_id,
                     price, // min: 0.01 - max: 0.99
                     side: Side.BUY,
-                    size: Math.floor(balance / price) // Math.min(balance / price, rewards_min_size)
+                    size: Math.min(balance / price, rewards_min_size),
+                    // size: Math.floor(balance / price),
                 };
 
                 if (balance > price * userOrder.size) {
-                    userOrders[token_id] = { ...userOrder, previousOrderSize: size };
+                    userOrders[token_id] = userOrder;
                     const order = await clobClient.createOrder(userOrder);
                     clobClient.postOrder(order);
                 }
@@ -520,8 +518,6 @@ async function main() {
                     // 一个新订单被提交
                     // 一个订单被取消
                     case 'price_change': {
-                        const existingOrder = userOrders[token_id];
-
                         const orderBook = orderBooks[token_id];
                         const { bids, asks } = orderBook;
 
@@ -529,19 +525,15 @@ async function main() {
                         asks.sort((a, b) => Number(a.price) - Number(b.price));
 
                         for (const { price, size, side } of item.changes) {
-                            let changedSize: number;
-
                             if (side == Side.BUY) {
                                 if (asks[0] && Number(price) >= Number(asks[0].price))
                                     continue;
 
                                 const bid = bids.find(item => item.price == price);
                                 if (bid) {
-                                    changedSize = Number(size) - Number(bid.size);
                                     bid.size = size;
                                 }
                                 else {
-                                    changedSize = Number(size);
                                     bids.push({ price, size });
                                     bids.sort((a, b) => Number(b.price) - Number(a.price));
                                 }
@@ -552,18 +544,13 @@ async function main() {
 
                                 const ask = asks.find(item => item.price == price);
                                 if (ask) {
-                                    changedSize = Number(size) - Number(ask.size);
                                     ask.size = size;
                                 }
                                 else {
-                                    changedSize = Number(size);
                                     asks.push({ price, size });
                                     asks.sort((a, b) => Number(a.price) - Number(b.price));
                                 }
                             }
-
-                            if (existingOrder?.price == price && changedSize < 0)
-                                existingOrder.previousOrderSize += changedSize;
                         }
 
                         executeTradingStrategy(orderBook, true);
