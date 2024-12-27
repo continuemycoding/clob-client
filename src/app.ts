@@ -320,6 +320,7 @@ async function main() {
     async function executeTradingStrategy(orderBook: OrderBookSummary, sorted: boolean) {
         const { bids, asks, market: market_id, asset_id: token_id } = orderBook;
         const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
+        const market = markets[market_id];
 
         if (bids.length == 0 || asks.length == 0)
             return;
@@ -335,14 +336,14 @@ async function main() {
 
         if (existingOrder) {
             if (Math.abs(existingOrder.price - midpoint) > rewards_max_spread) {
-                console.log("没有奖励就取消订单");
+                console.log(market.question, "没有奖励就取消订单");
                 delete userOrders[token_id];
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
                 return;
             }
 
             if (midpoint < 0.1) {
-                console.log("概率太低就取消订单");
+                console.log(market.question, "概率太低就取消订单");
                 delete userOrders[token_id];
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
                 return;
@@ -355,8 +356,8 @@ async function main() {
                     totalValue += Number(item.price) * Number(item.size);
             }
 
-            if (totalValue < 200) {
-                console.log(`挂单不足就取消订单`, totalValue);
+            if (totalValue < 400) {
+                console.log(market.question, `挂单不足就取消订单`, totalValue);
                 delete userOrders[token_id];
                 await clobClient.cancelMarketOrders({ asset_id: token_id });
             }
@@ -366,9 +367,6 @@ async function main() {
 
         if (midpoint <= 0.15 || midpoint >= 0.6)
             return;
-
-        const market = markets[market_id];
-        console.log(market.question, bids[0], asks[0]);
 
         let sum = 0;
         for (let i = 0; i < bids.length; i++) {
@@ -385,8 +383,8 @@ async function main() {
                     tokenID: token_id,
                     price, // min: 0.01 - max: 0.99
                     side: Side.BUY,
-                    size: Math.min(balance / price, rewards_min_size),
-                    // size: Math.floor(balance / price),
+                    // size: Math.min(balance / price, rewards_min_size),
+                    size: Math.floor(balance / price),
                 };
 
                 if (balance > price * userOrder.size) {
