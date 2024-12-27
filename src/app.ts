@@ -64,7 +64,7 @@ interface MarketData {
     tags: string[];
 }
 
-async function main() {
+(async () => {
     const agent = process.env.PROXY_URL && new HttpsProxyAgent(process.env.PROXY_URL);
     await Utility.setupRuntimeEnvironment(agent);
 
@@ -411,7 +411,7 @@ async function main() {
                     userOrder.status = OrderStatus.Submitted;
 
                     if (error) {
-                        console.error(userOrderParams, error);
+                        console.error(market.question, userOrderParams, error);
                         delete userOrders[token_id];
                     }
                 }
@@ -584,6 +584,4 @@ async function main() {
 
     connectWebSocket('user');
     connectWebSocket('market');
-}
-
-main().catch(console.error);
+})();
