@@ -83,6 +83,40 @@ export default class Utility {
         };
     }
 
+    /**
+     * 对输入的对象进行深度排序
+     * @param obj 任意对象
+     * @returns 排序后的对象
+     */
+    static deepSort(obj: any): any {
+        if (Array.isArray(obj)) {
+            // 如果是数组，对数组中的每个元素递归排序
+            return obj.map(Utility.deepSort);
+        } else if (typeof obj === "object" && obj !== null) {
+            // 如果是对象，对键按字母序排序并递归处理值
+            const sortedObj: Record<string, any> = {};
+            Object.keys(obj)
+                .sort()
+                .forEach(key => {
+                    sortedObj[key] = Utility.deepSort(obj[key]);
+                });
+            return sortedObj;
+        }
+        // 如果是基本类型，直接返回
+        return obj;
+    }
+
+    /**
+     * 对象序列化为按键排序的 JSON 字符串
+     * @param obj 任意对象
+     * @returns 排序后的 JSON 字符串
+     */
+    static stringify(obj: any): string {
+        // 深度排序对象后调用 JSON.stringify
+        const sortedObj = this.deepSort(obj);
+        return JSON.stringify(sortedObj, null, 4);
+    }
+
     static formatDuration(seconds: number): string {
         const days = Math.floor(seconds / 86400);
         seconds %= 86400;
