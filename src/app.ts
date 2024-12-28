@@ -130,7 +130,7 @@ interface MarketData {
         if (Date.now() > new Date(market.end_date_iso).getTime() - 3600_000) {
             console.log(market.question, "即将过期");
             delete markets[key];
-            hasChanged = true;
+            // hasChanged = true;
         }
     }
 
