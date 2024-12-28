@@ -125,7 +125,7 @@ interface MarketData {
         }
     }
 
-    for (const key in Object.keys(markets)) {
+    for (const key of Object.keys(markets)) {
         if (Date.now() > new Date(markets[key].end_date_iso).getTime() - 3600_000) {
             delete markets[key];
             hasChanged = true;
@@ -144,7 +144,7 @@ interface MarketData {
     //     trades[key] = Yes;
     // }
 
-    for (const key in Object.keys(trades)) {
+    for (const key of Object.keys(trades)) {
         if (!markets[key])
             delete trades[key];
     }
