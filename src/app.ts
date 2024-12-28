@@ -45,7 +45,7 @@ enum OrderStatus {
     Submitted = "已提交",
 };
 
-const userOrders: Record<string, UserOrder & { status: OrderStatus }> = {};
+const userOrders: Record<string, UserOrder & { status: OrderStatus, timestamp: number }> = {};
 const orderBooks: Record<string, OrderBookSummary> = {};
 
 interface MarketData {
@@ -152,13 +152,14 @@ interface MarketData {
     }, {});
 
     const openOrders = await clobClient.getOpenOrders();
-    for (const { asset_id, price, side, size_matched, original_size } of openOrders) {
+    for (const { asset_id, price, side, size_matched, original_size, created_at } of openOrders) {
         userOrders[asset_id] = {
             tokenID: asset_id,
             price: Number(price),
             side: Side[side as keyof typeof Side],
             size: Number(original_size) - Number(size_matched),
-            status: OrderStatus.Submitted
+            status: OrderStatus.Submitted,
+            timestamp: created_at
         };
     }
 
@@ -252,17 +253,29 @@ interface MarketData {
                 return;
             }
 
-            if (Math.abs(existingOrder.price - midpoint) > rewards_max_spread) {
-                console.log(market.question, "没有奖励就取消订单");
+            async function cancelMarketOrders(reason: string) {
+                console.log(market.question, reason);
+                const userOrder = userOrders[token_id];
+                if (userOrder.timestamp < Date.now() + 1000) {
+                    console.error("创建超过1秒后才能取消");
+                    return;
+                }
+
                 existingOrder.status = OrderStatus.PendingCancellation;
-                await clobClient.cancelMarketOrders({ asset_id: token_id });
+                const response = await clobClient.cancelMarketOrders({ asset_id: token_id });
+                if (response.canceled.length == 0) {
+                    console.error(market.question, "取消订单错误", response);
+                    delete userOrders[token_id];
+                }
+            }
+
+            if (Math.abs(existingOrder.price - midpoint) * 100 > rewards_max_spread) {
+                cancelMarketOrders("没有奖励就取消订单");
                 return;
             }
 
             if (midpoint < 0.1) {
-                console.log(market.question, "概率太低就取消订单");
-                existingOrder.status = OrderStatus.PendingCancellation;
-                await clobClient.cancelMarketOrders({ asset_id: token_id });
+                cancelMarketOrders("概率太低就取消订单");
                 return;
             }
 
@@ -273,11 +286,7 @@ interface MarketData {
                     totalValue += Number(item.price) * Number(item.size);
             }
 
-            if (totalValue < 400) {
-                console.log(market.question, `挂单不足就取消订单`, totalValue);
-                existingOrder.status = OrderStatus.PendingCancellation;
-                await clobClient.cancelMarketOrders({ asset_id: token_id });
-            }
+            totalValue < 400 && cancelMarketOrders(`挂单不足就取消订单 totalValue:${totalValue}`);
 
             return;
         }
@@ -305,16 +314,17 @@ interface MarketData {
                 };
 
                 if (balance >= price * userOrderParams.size) {
-                    userOrders[token_id] = { ...userOrderParams, status: OrderStatus.PendingSubmission };
+                    userOrders[token_id] = { ...userOrderParams, status: OrderStatus.PendingSubmission, timestamp: Date.now() };
                     const userOrder = userOrders[token_id];
 
                     const order = await clobClient.createOrder(userOrderParams);
                     const { error } = await clobClient.postOrder(order);
 
                     userOrder.status = OrderStatus.Submitted;
+                    userOrder.timestamp = Date.now();
 
                     if (error) {
-                        console.error(market.question, userOrderParams, error);
+                        console.error(market.question, "提交订单错误", userOrderParams, error);
                         delete userOrders[token_id];
                     }
                 }
