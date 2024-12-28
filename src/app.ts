@@ -302,12 +302,10 @@ interface MarketData {
             const price = Number(bids[i].price);
             const size = Number(bids[i].size);
 
-            if (Math.abs(price - midpoint) > rewards_max_spread)
+            if (Math.abs(price - midpoint) * 100 > rewards_max_spread)
                 return;
 
-            sum += price * size;
-
-            if (sum >= 1000 && i != 0) {
+            if (sum >= 1000) {
                 const userOrderParams = {
                     tokenID: token_id,
                     price, // min: 0.01 - max: 0.99
@@ -333,6 +331,8 @@ interface MarketData {
                 }
                 return;
             }
+
+            sum += price * size;
         }
     }
 
