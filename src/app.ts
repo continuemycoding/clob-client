@@ -19,17 +19,11 @@ const Yes = 0;
 const No = 1;
 
 const trades = {
-    // "0x87d67272f0ce1bb0d80ba12a1ab79287b2a235a5f361f5bcbc06ea0ce34e61c5": Yes, // Will there be a US Government shutdown?
-    // "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": Yes, // Will Elon tweet 250-274 times Dec 20-27?
-    // "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": Yes, // Will Elon tweet 275-299 times Dec 20-27?
-    // "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": Yes, // Will Elon tweet 300-324 times Dec 20-27?
-    // "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": Yes, // Will Elon tweet 325-349 times Dec 20-27?
-    // "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": Yes, // Will Elon tweet 350-374 times Dec 20-27?
-    // "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": Yes, // Will Elon tweet 375-399 times Dec 20-27?
-    // "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": Yes, // Will Elon tweet 400-424 times Dec 20-27?
-    // "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": Yes, // Will Elon tweet 425-449 times Dec 20-27?
-    // "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": Yes, // Will Elon tweet 450-474 times Dec 20-27?
-    // "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": Yes, // Will Elon tweet 475-499 times Dec 20-27?
+    "0x37d6fdb304d3b1ba850a0618afa7ee344ef2fd62672fdfcc7b61782e7e66a3a6": Yes, // Dogecoin above $0.31 on January 3?
+    "0x97480fb1ea30619d6682bedb183289eccf60da180311c8ba45985dcba13a05d6": Yes, // Solana above $185 on January 3?
+    "0x131ec938bb5f143a0d345349ae02624d82207e960ca0a6caa40ccd5b3b5a7a26": Yes, // Ripple above $2.15 on January 3?
+    "0x5f7842f5d3be987a52470265bd1909421cae8c318d6487fb38b902b0c5055d4d": Yes, // Ethereum above $3,300 on January 3?
+    "0xc201255ac4fd4ca73d38eb331681dd9c4597fc85ed52a89ef664fa399a2f185a": Yes, // Bitcoin above $94,000 on January 3?
 
     // "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
     // "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
@@ -295,7 +289,7 @@ interface MarketData {
                     totalValue += Number(item.price) * Number(item.size);
             }
 
-            totalValue < 400 && cancelMarketOrders(`挂单不足就取消订单 totalValue:${totalValue}`);
+            totalValue < 800 && cancelMarketOrders(`挂单不足就取消订单 totalValue:${totalValue}`);
 
             return;
         }
@@ -313,7 +307,7 @@ interface MarketData {
 
             sum += price * size;
 
-            if (sum >= 500 && i != 0) {
+            if (sum >= 1000 && i != 0) {
                 const userOrderParams = {
                     tokenID: token_id,
                     price, // min: 0.01 - max: 0.99
