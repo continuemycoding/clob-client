@@ -130,7 +130,7 @@ interface MarketData {
     const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
     const balance = Number(balanceAmount) / 10 ** 6;
 
-    await clobClient.cancelAll();
+    // await clobClient.cancelAll();
 
     // const keys = Object.keys(markets).slice(0, 50);
     // for (const key of keys) {
@@ -159,7 +159,7 @@ interface MarketData {
             side: Side[side as keyof typeof Side],
             size: Number(original_size) - Number(size_matched),
             status: OrderStatus.Submitted,
-            timestamp: created_at
+            timestamp: created_at * 1000,
         };
     }
 
@@ -256,8 +256,8 @@ interface MarketData {
             async function cancelMarketOrders(reason: string) {
                 console.log(market.question, reason);
                 const userOrder = userOrders[token_id];
-                if (userOrder.timestamp < Date.now() + 1000) {
-                    console.error("创建超过1秒后才能取消");
+                if (Date.now() < userOrder.timestamp + 1000) {
+                    console.error("创建超过1秒才能取消");
                     return;
                 }
 
