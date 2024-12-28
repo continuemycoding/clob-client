@@ -461,32 +461,6 @@
             "NBA"
         ]
     },
-    "0xbedd9da344aed563332b07cb5c535ad3cea26265295d0e99d0a78514c9e5211b": {
-        "question": "Will Atletico Madrid win La Liga?",
-        "event_slug": "la-liga-winner",
-        "market_slug": "will-atletico-madrid-win-la-liga",
-        "end_date_iso": null,
-        "icon": "will-atletico-madrid-win-la-liga-PM75sYOA0-F9.png",
-        "tokens": [
-            {
-                "token_id": "47697052142288616780143504301522782133745321701070001907434869088645969181123",
-                "outcome": "Yes",
-                "price": 0.204,
-                "winner": false
-            },
-            {
-                "token_id": "100319426602804568203684960901299477090915766587553731208493304957621705605362",
-                "outcome": "No",
-                "price": 0.796,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "La Liga",
-            "Soccer"
-        ]
-    },
     "0xd7c733237a4b3526149b88fd91044fbec5a3a7c7e4995f18172e677b49ee4a7d": {
         "question": "Will the Brooklyn Nets win the Eastern Conference?",
         "event_slug": "nba-eastern-conference-champion",
@@ -568,32 +542,6 @@
             "NBA"
         ]
     },
-    "0x921e34141afd24816bd0ab761487ece71b8aa15157f1500e272aed6a90ee1c3e": {
-        "question": "Will Red Bull Salzburg win the UEFA Champions League?",
-        "event_slug": "champions-league-winner-2025",
-        "market_slug": "will-red-bull-salzburg-win-the-uefa-champions-league",
-        "end_date_iso": null,
-        "icon": "will-red-bull-salzburg-win-the-uefa-champions-league-8wAhU5abcfAW.png",
-        "tokens": [
-            {
-                "token_id": "97778723840960365789832465053556885490706700387581982927892974660188880100272",
-                "outcome": "Yes",
-                "price": 0.0055,
-                "winner": false
-            },
-            {
-                "token_id": "15569236600796961170271518760950049773445539237034819986047477047812984744487",
-                "outcome": "No",
-                "price": 0.9945,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Champions League",
-            "Soccer"
-        ]
-    },
     "0x0aee45b3f8defa4c0e45589ae9b5aab330a259734c77a2a6955c643cfbc939c7": {
         "question": "Will the Vikings win the NFC North?",
         "event_slug": "nfc-north-winner-1",
@@ -669,32 +617,6 @@
             "Sports",
             "Basketball",
             "NBA"
-        ]
-    },
-    "0x2225d3fd97fb2b164d60984af11e887fb3e6e9652e608832a3597368a00add22": {
-        "question": "Will Barcelona win the UEFA Champions League?",
-        "event_slug": "champions-league-winner-2025",
-        "market_slug": "will-barcelona-win-the-uefa-champions-league",
-        "end_date_iso": null,
-        "icon": "will-barcelona-win-the-uefa-champions-league-Krl4_iYrHb5t.png",
-        "tokens": [
-            {
-                "token_id": "65495901320205705759936558828379630200280477222105194934948746302263744793368",
-                "outcome": "Yes",
-                "price": 0.095,
-                "winner": false
-            },
-            {
-                "token_id": "22283046560490355014053709936722061121956281940158283348844103842018373483437",
-                "outcome": "No",
-                "price": 0.905,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Champions League",
-            "Soccer"
         ]
     },
     "0x0346db74f1c1c7e8a05ef281df7992dccbb2df8a6a3b614d932ee93510a8600d": {
@@ -1356,32 +1278,6 @@
             "Memecoins"
         ]
     },
-    "0xd3ba7529a09565c7b00390e2f0f8440e30e48bb7216e7e6fa5d65e545db1862e": {
-        "question": "Will Feyenoord win the UEFA Champions League?",
-        "event_slug": "champions-league-winner-2025",
-        "market_slug": "will-feyenoord-win-the-uefa-champions-league",
-        "end_date_iso": null,
-        "icon": "will-feyenoord-win-the-uefa-champions-league-GASM5cLXgW6B.png",
-        "tokens": [
-            {
-                "token_id": "65117701119709531412392677232866966551452961351670853332940015806554443564853",
-                "outcome": "Yes",
-                "price": 0.0045,
-                "winner": false
-            },
-            {
-                "token_id": "94438162838420376399613194892459057106520405049239490011889344405040186301215",
-                "outcome": "No",
-                "price": 0.9955,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Champions League",
-            "Soccer"
-        ]
-    },
     "0x0f1a5b86948292aa2e6195e00d036d0e1a13038c0b5337e00d0714b7ea9667dc": {
         "question": "Will Tua Tagovailoa win NFL MVP for the 2024-25 season?",
         "event_slug": "nfl-mvp-1",
@@ -2032,32 +1928,6 @@
             "future predictions",
             "opensea",
             "All"
-        ]
-    },
-    "0x4549ef05bb9b63f2934e36a4ea57942d8be4d45aeae3add4bf510b3edf9cb712": {
-        "question": "Will Liverpool win the UEFA Champions League?",
-        "event_slug": "champions-league-winner-2025",
-        "market_slug": "will-liverpool-win-the-uefa-champions-league",
-        "end_date_iso": null,
-        "icon": "will-liverpool-win-the-uefa-champions-league-bPXNbB-wofE8.png",
-        "tokens": [
-            {
-                "token_id": "61148139675733590941615208409944305735610401070779932464992188555810569591410",
-                "outcome": "Yes",
-                "price": 0.1715,
-                "winner": false
-            },
-            {
-                "token_id": "19253221080785545389109746535202201653725028813499330184741392724846514494228",
-                "outcome": "No",
-                "price": 0.8285,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Champions League",
-            "Soccer"
         ]
     },
     "0x996589e16b968a560860def78785a4a415ac8e43d9b56e651e230fef73bd565a": {
@@ -3433,32 +3303,6 @@
             "who",
             "diseases",
             "Bird flu"
-        ]
-    },
-    "0x2cffd0db6c8b38b66534d8681858ea2acedc3ff90bc565d42a000ee2e3d04016": {
-        "question": "Will Marvin Harrison Jr. be the top Fantasy Wide Receiver?",
-        "event_slug": "fantasy-football-top-wr-2024",
-        "market_slug": "will-marvin-harrison-jr-be-the-top-fantasy-wide-receiver",
-        "end_date_iso": null,
-        "icon": "will-marvin-harrison-jr-be-the-top-fantasy-wide-receiver-0wtGJhW0UhRk.png",
-        "tokens": [
-            {
-                "token_id": "108834162458520698814040510759088225034898413731961968575339134947787384352011",
-                "outcome": "Yes",
-                "price": 0.0045,
-                "winner": false
-            },
-            {
-                "token_id": "81755145644709565879414045327337767964739599661721497225580479355849097314441",
-                "outcome": "No",
-                "price": 0.9955,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "NFL",
-            "Fantasy Football"
         ]
     },
     "0x99ae9728395d39a2e5e8a23ca6e6a5155c8f58c9c20fec7ca7756724191d42eb": {
@@ -6318,37 +6162,6 @@
             "Europa League"
         ]
     },
-    "0xd987b38ecf3bdf4cb69734004c51238875411e0924dd0e9b30e3b31e623c4f00": {
-        "question": "Will Trump appeal his hush money conviction?",
-        "event_slug": "will-trump-appeal-his-hush-money-conviction",
-        "market_slug": "will-trump-appeal-his-hush-money-conviction",
-        "end_date_iso": "2024-11-04T00:00:00Z",
-        "icon": "will-trump-appeal-his-hush-money-conviction-BbLCnGlQL2XJ.png",
-        "tokens": [
-            {
-                "token_id": "54774190602932495681624596813895280541057113822779394733336244613748178149294",
-                "outcome": "Yes",
-                "price": 0.3875,
-                "winner": false
-            },
-            {
-                "token_id": "46226686344811071373865769241015888474371014887184710566323582300308375002290",
-                "outcome": "No",
-                "price": 0.6125,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Trump",
-            "u.s. politics",
-            "court cases",
-            "donald trump",
-            "american politics",
-            "courts",
-            "Trump Trials"
-        ]
-    },
     "0x296c9bdd15f0d09806f025b146dd14fe27f6ef624b83c5302f47a980669633c0": {
         "question": "Will Biden pardon Ross Ulbricht?",
         "event_slug": "who-will-biden-pardon",
@@ -6830,32 +6643,6 @@
         "tags": [
             "Sports",
             "NFL"
-        ]
-    },
-    "0x2a7764f7e0845d6aef7971f7b584fe0fdaf231f2fa72a89c37cc3ae85f8c1632": {
-        "question": "Will Everton be relegated?",
-        "event_slug": "premier-league-which-teams-will-be-relegated",
-        "market_slug": "will-everton-be-relegated",
-        "end_date_iso": null,
-        "icon": "will-everton-be-relegated-hSs8ESOYVnnL.png",
-        "tokens": [
-            {
-                "token_id": "60514127274629162792315691076236629800626206639742351048282542195735250371391",
-                "outcome": "Yes",
-                "price": 0.185,
-                "winner": false
-            },
-            {
-                "token_id": "54968427024231559598004951098457244397507311463375536703343640196048629653184",
-                "outcome": "No",
-                "price": 0.815,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "EPL",
-            "Soccer"
         ]
     },
     "0x0e73cc6c999f4fc1e3692905fc99fe7eb98beb16a284c4be762e3e64c42d1544": {
@@ -9355,34 +9142,6 @@
             "NFL"
         ]
     },
-    "0x8a05f4cc458c938152f6d2d9152cd3358a81f7dea570cbe4a46ad39603f5d34b": {
-        "question": "Will Trump say \"mog\" in 2024?",
-        "event_slug": "will-trump-say-mog-in-2024",
-        "market_slug": "will-trump-say-mog-in-2024",
-        "end_date_iso": "2024-06-30T00:00:00Z",
-        "icon": "trump+mog.jpeg",
-        "tokens": [
-            {
-                "token_id": "20726638092063466236740849359320935735208380751346051924997373433993435834728",
-                "outcome": "Yes",
-                "price": 0.004,
-                "winner": false
-            },
-            {
-                "token_id": "69232614155721619842252460372054107557110481054005668326296151153707140287003",
-                "outcome": "No",
-                "price": 0.996,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Trump",
-            "donald trump",
-            "Pop Culture",
-            "internet culture",
-            "Memes"
-        ]
-    },
     "0xd30592065c203fb93edc2d9e7cd0c4da5093f4ce7d57e85e55761c8ae27e3ce1": {
         "question": "Will Patrick Mahomes be the top Fantasy Quarterback?",
         "event_slug": "fantasy-football-top-qb-2024",
@@ -10306,32 +10065,6 @@
             "Sports",
             "EPL",
             "Soccer"
-        ]
-    },
-    "0x4cb28ad472d1ed9a271e808aa7687b3dcf651ce27ffd1aeef9567aee805f7878": {
-        "question": "Will Joe Burrow be the top Fantasy Quarterback?",
-        "event_slug": "fantasy-football-top-qb-2024",
-        "market_slug": "will-joe-burrow-be-the-top-fantasy-quarterback",
-        "end_date_iso": null,
-        "icon": "will-joe-burrow-be-the-top-fantasy-quarterback-PmnK6ztlSY_5.png",
-        "tokens": [
-            {
-                "token_id": "90060932834022004751028315935652078647959248999088923922858006720318407715714",
-                "outcome": "Yes",
-                "price": 0.004,
-                "winner": false
-            },
-            {
-                "token_id": "90229855088111426633359279209309088992095880280749802693606069228118586957630",
-                "outcome": "No",
-                "price": 0.996,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "NFL",
-            "Fantasy Football"
         ]
     },
     "0xc8f2b2277aa63627071a3f0db8dd70e7fc490219b28f9486bf0bc0c0434f7b77": {
@@ -12077,32 +11810,6 @@
             "All"
         ]
     },
-    "0xc33cf8d8c619cca053833b2bd9428d7c0f77c57f47eafc8c6649e6ac5efd3ba8": {
-        "question": "Will Trey McBride be the top Fantasy Tight End?",
-        "event_slug": "fantasy-football-top-tight-end-2024",
-        "market_slug": "will-trey-mcbride-be-the-top-fantasy-tight-end",
-        "end_date_iso": null,
-        "icon": "will-trey-mcbride-be-the-top-fantasy-tight-end--nEOOitOv3_-.png",
-        "tokens": [
-            {
-                "token_id": "47258371074960552361659516818224817736688350624389451894090568298775314193128",
-                "outcome": "Yes",
-                "price": 0.0235,
-                "winner": false
-            },
-            {
-                "token_id": "90150964079317252810508681550195095681087224117259417790295630403340545644797",
-                "outcome": "No",
-                "price": 0.9765,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "NFL",
-            "Fantasy Football"
-        ]
-    },
     "0xd846bd0f66e44e4b2f7e343d1690f5d7b8f868ac5a1977c0629df5eb72b2628b": {
         "question": "Will Travis Kelce be the top Fantasy Tight End?",
         "event_slug": "fantasy-football-top-tight-end-2024",
@@ -13319,35 +13026,6 @@
             "Soccer"
         ]
     },
-    "0x84c0ffe3f56cb357ff5ff8bc5d2182ae90be4dd6718e8403a6af472b452dbfa8": {
-        "question": "Will Elena Lasconi win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-elena-lasconi-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-elena-lasconi-win-the-2024-romanian-presidential-election-8J88OW_n_Rjn.png",
-        "tokens": [
-            {
-                "token_id": "72936048731589292555781174533757608024096898681344338816447372274344589246891",
-                "outcome": "Yes",
-                "price": 0.0675,
-                "winner": false
-            },
-            {
-                "token_id": "90448145503744292923322937490860582627027606079305280921446237717141752599444",
-                "outcome": "No",
-                "price": 0.9325,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
-        ]
-    },
     "0xe3d5f95bb9ad590e29efa804325b5b4be472f31d000f9d5bb116a49154b125bf": {
         "question": "Will Steve Bannon be a member of the Trump administration?",
         "event_slug": "trump-administration",
@@ -13594,35 +13272,6 @@
             "World Elections"
         ]
     },
-    "0x75a2069d3e28f00038593fe783c22ffa703a24da723e04cd10228fe37cff83f4": {
-        "question": "Will Jim O'Callaghan be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-jim-ocallaghan-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-jim-ocallaghan-be-the-next-prime-minister-of-ireland-JptSgoTD7Ax6.jpg",
-        "tokens": [
-            {
-                "token_id": "44220915773513519009813730080431317668371848551405084130268758263932767737016",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "51107192837028493818157965873852180636998117566467357598354893709435851908138",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
-        ]
-    },
     "0x39ea2c78a19e57d5c1de6e5180c039038a6a1a9c483f10e370f242b3da207b4e": {
         "question": "Will Byron Donalds be the first elected Speaker of the House for the 119th congress?",
         "event_slug": "speaker-of-the-house-for-the-119th-congress",
@@ -13811,64 +13460,6 @@
             "Trump",
             "US Election",
             "Trump Presidency"
-        ]
-    },
-    "0x88f26c6c4ceb821a38206eaa354e7a33dc1350cd08a5495625314877917bb80d": {
-        "question": "Will Roderic O'Gorman be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-roderic-ogorman-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-roderic-ogorman-be-the-next-prime-minister-of-ireland-X8MFpMq4HmLo.jpg",
-        "tokens": [
-            {
-                "token_id": "45579018991518815539312839374059751721246728408198315097015796170949929788250",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "81550361697625623542974805601175075185885274870295591219793906725005346584297",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
-        ]
-    },
-    "0x143061f44569917d4b52e2966925f6fa507737d09ec9c9c7d40db612c1c1a4fc": {
-        "question": "Will Jack Chambers be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-jack-chambers-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-jack-chambers-be-the-next-prime-minister-of-ireland-7MLD-A35BVDO.jpg",
-        "tokens": [
-            {
-                "token_id": "32230335878332827354494320896050794938217690596635140933441421624018039131655",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "8410915937402502405594319646301213455354180055165464986309102806719046646569",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0x78c1ab2ecc23e5b271174f8ca2a20d78c13f2d461592219bd103880224d6cdc1": {
@@ -15588,35 +15179,6 @@
             "HHS"
         ]
     },
-    "0x9872fe47fbf6284e5399c0f41d6d2c8fb310d2f4d2d50635ab3b36f6a0a7f5b0": {
-        "question": "Will Nicolae Ciucă win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-nicolae-ciuca-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-nicolae-ciuc-win-the-2024-romanian-presidential-election-yv6n_3sVTnYI.jpg",
-        "tokens": [
-            {
-                "token_id": "53033438245279373213426094525005043480366615306824323472317521871682514379120",
-                "outcome": "Yes",
-                "price": 0.002,
-                "winner": false
-            },
-            {
-                "token_id": "59618000103872045883924272587382664437569966578424869104128564655378953160740",
-                "outcome": "No",
-                "price": 0.998,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
-        ]
-    },
     "0xdeee297083dfaaffa9f6b746316ef95bcb3dd82b90c74b252b89b4e584021c0a": {
         "question": "Will Paul Mango be Trump's HHS Secretary?",
         "event_slug": "who-will-be-trumps-hhs-secretary",
@@ -16047,35 +15609,6 @@
             "Trump Presidency"
         ]
     },
-    "0x00595863287c7c30148d0714255073d0ae0cf338f5287195b720b4ad1c5cbab7": {
-        "question": "Will another candidate win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-another-candidate-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "romania-legislative-election-aCNxFO0eCIS9.jpg",
-        "tokens": [
-            {
-                "token_id": "77954885101917694680997876546123468446797411305104780556694518332567138933230",
-                "outcome": "Yes",
-                "price": 0.7115,
-                "winner": false
-            },
-            {
-                "token_id": "88627813557332605845257549903596285926978404287527273059355798909309731923250",
-                "outcome": "No",
-                "price": 0.2885,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
-        ]
-    },
     "0xda4a3949758a6b478f94e46ca2b53792e04832634cf5b14103bdfe7238a5860e": {
         "question": "Will another team win the Bundesliga?",
         "event_slug": "bundesliga-winner",
@@ -16235,33 +15768,6 @@
             "Soccer"
         ]
     },
-    "0x29266088146905957344237230b444bd6a0795f8cd048e3df65f37d8175c578b": {
-        "question": "Will Manchester City lead the EPL in points at midway point?",
-        "event_slug": "epl-midpoint-leader",
-        "market_slug": "will-manchester-city-lead-the-epl-in-points-at-midway-point",
-        "end_date_iso": "2024-11-02T00:00:00Z",
-        "icon": "will-manchester-city-lead-the-epl-in-points-at-midway-point-RbLzbRpTUVXb.png",
-        "tokens": [
-            {
-                "token_id": "8719632621867563956020201343300159388731655469509846380266276805721588447466",
-                "outcome": "Yes",
-                "price": 0.0025,
-                "winner": false
-            },
-            {
-                "token_id": "84984926454285096542291624376502310217632872006197299812981944556849503741913",
-                "outcome": "No",
-                "price": 0.9975,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "EPL",
-            "futures",
-            "Soccer"
-        ]
-    },
     "0xc022fc3b994509037e6f70adbc3e40b497a6cdc11b6f308a12b3040ba9df9a28": {
         "question": "Will the Vegas Golden Knights win the 2025 Stanley Cup?",
         "event_slug": "stanley-cup-winner",
@@ -16394,35 +15900,6 @@
             "US Election",
             "House Races",
             "Gov Shutdown"
-        ]
-    },
-    "0xc085dd46fe5d6fd20c1a2ef6d7ad43b11fda38bbbe16396bd6900385212ca27e": {
-        "question": "Will Holly Cairns be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-holly-cairns-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-holly-cairns-be-the-next-prime-minister-of-ireland-okBo-bttDPAs.jpg",
-        "tokens": [
-            {
-                "token_id": "43822489715212205239313747282317275742851619159134000150634489795496626718512",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "64094799652279985600868862389668860869139279143929908230523771680775451833353",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0x3d1121c423b3a5b2b961d131dddd00169ef0619487e8afd78a89e0c55855a7e7": {
@@ -16923,35 +16400,6 @@
             "palestine"
         ]
     },
-    "0x6a697a68bc06abf48bdd3116d8b6263d59afa2952ed6900824f42b109a4adcde": {
-        "question": "Will Mircea Geoană win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-mircea-geoana-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-mircea-geoan-win-the-2024-romanian-presidential-election-d7MzxDaK4pmI.jpg",
-        "tokens": [
-            {
-                "token_id": "88761004125801121170646830098793737944899672743449695591428365330803191629513",
-                "outcome": "Yes",
-                "price": 0.003,
-                "winner": false
-            },
-            {
-                "token_id": "31841501356406363357248311485973323507088331580851078508835563887196938396484",
-                "outcome": "No",
-                "price": 0.997,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
-        ]
-    },
     "0x9d6906fd8564bb5ae879247071678f40cd70f3309748f425d4fbbafcbc9d24a0": {
         "question": "Will Trump say \"drill baby drill\" during his inauguration speech?",
         "event_slug": "what-will-trump-say-during-inauguration-speech",
@@ -17247,35 +16695,6 @@
             "Senate",
             "Trump Presidency",
             "Dewine"
-        ]
-    },
-    "0xa2f0eb0b70c25a2f4c5c0493b593a36c35d3fe964e51f306ec0ad1f76be2da85": {
-        "question": "Will Marcel Ciolacu win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-marcel-ciolacu-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-marcel-ciolacu-win-the-2024-romanian-presidential-election-dVXY2pm7Glc2.jpg",
-        "tokens": [
-            {
-                "token_id": "101243577543146361469715980639478898839570365093058773290885218727522893652216",
-                "outcome": "Yes",
-                "price": 0.0165,
-                "winner": false
-            },
-            {
-                "token_id": "4678999283928149996457868949943201647591094778808332620831957083270291221105",
-                "outcome": "No",
-                "price": 0.9835,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
         ]
     },
     "0x47b0881c11b37af378557282e5c8ee8338c0e872e80c1abd8639623b13d612a5": {
@@ -18251,35 +17670,6 @@
             "Campaign Promises"
         ]
     },
-    "0x2b997a36c06deb7112ee75acb316d7d7c3b08de99549c883e38a3442daeda39b": {
-        "question": "Will Gold close over $3,000 at the end of 2024?",
-        "event_slug": "will-gold-close-over-3000-at-the-end-of-2024",
-        "market_slug": "will-gold-close-over-3000-at-the-end-of-2024",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "will-gold-close-over-3000-at-the-of-2024-FVDgpzWm4JaE.jpg",
-        "tokens": [
-            {
-                "token_id": "62850336588387191532124214682700004738355477197339988958750716753816644028404",
-                "outcome": "Yes",
-                "price": 0.004,
-                "winner": false
-            },
-            {
-                "token_id": "112018759332264700267219494860053039599655423294984138359573745136141893020405",
-                "outcome": "No",
-                "price": 0.996,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Business",
-            "futures",
-            "commodity",
-            "Commodities",
-            "Creators",
-            "zerohedge"
-        ]
-    },
     "0x2a6af3b2b2cc73fa7cf62986800827f93f98b7a2fe018737fe0cbea4ad391880": {
         "question": "Will Ken Martin be the next DNC chair?",
         "event_slug": "who-will-be-the-next-dnc-chair",
@@ -18634,33 +18024,6 @@
             "Trump",
             "Trump Presidency",
             "Campaign Promises"
-        ]
-    },
-    "0xba890f1611bfee5b8137bdae02cb60c7c76d81ccc8da7b556dc19e1d191b7427": {
-        "question": "Will Liverpool lead the EPL in points at midway point?",
-        "event_slug": "epl-midpoint-leader",
-        "market_slug": "will-liverpool-lead-the-epl-in-points-at-midway-point",
-        "end_date_iso": "2024-12-18T00:00:00Z",
-        "icon": "will-liverpool-lead-the-epl-in-points-at-midway-point-fYeYSvcAgL9S.png",
-        "tokens": [
-            {
-                "token_id": "48446919036738631861905102149535384652931173675981121074307611758821337094321",
-                "outcome": "Yes",
-                "price": 0.9755,
-                "winner": false
-            },
-            {
-                "token_id": "105035372351678668985819758493393610959092908383293807010770784278642294619006",
-                "outcome": "No",
-                "price": 0.0245,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "EPL",
-            "futures",
-            "Soccer"
         ]
     },
     "0x6ce5169421293d1214a12b14e88760b1b67e40191a76625c8103bb815ddcd2ce": {
@@ -19342,35 +18705,6 @@
             "Basketball",
             "NBA",
             "luka"
-        ]
-    },
-    "0x7e58abd89b04a34b4a066d94c0bcf53cf0c7ccd9f568c6c1a339d996bce6356a": {
-        "question": "Will Micheal Martin be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-micheal-martin-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-micheal-martin-be-the-next-prime-minister-of-ireland-fCytZDy8CScM.jpg",
-        "tokens": [
-            {
-                "token_id": "69551138672200365435590470682397225832022061915759569108229590190738782171644",
-                "outcome": "Yes",
-                "price": 0.98,
-                "winner": false
-            },
-            {
-                "token_id": "106538630483627304868197887585168369951920815339393933749500603941575428627764",
-                "outcome": "No",
-                "price": 0.02,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0xd964541735abd3bc6ba80de60dbef71f404a061d34e3e271b3bef1e21192c0ea": {
@@ -21089,33 +20423,6 @@
             "Trump Presidency"
         ]
     },
-    "0x4ce4703ed3e70c97b55ba891dcc61009b099c5517a7dc2a75dd4cd5725e9397a": {
-        "question": "Will Tyrese Maxey lead the NBA in scoring?",
-        "event_slug": "nba-scoring-leader",
-        "market_slug": "will-tyrese-maxey-lead-the-nba-in-scoring",
-        "end_date_iso": null,
-        "icon": "will-tyrese-maxey-lead-the-nba-in-scoring-tayv5DhZwMRH.png",
-        "tokens": [
-            {
-                "token_id": "53382005392342278620696936836278814408772836449261771139233622048497746073297",
-                "outcome": "Yes",
-                "price": 0.0025,
-                "winner": false
-            },
-            {
-                "token_id": "56634507588947607301196290551136199645032635353335143118011804778617361556022",
-                "outcome": "No",
-                "price": 0.9975,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Basketball",
-            "mavericks",
-            "NBA"
-        ]
-    },
     "0x38b5e1b74c0ee2617b9ad20aab72d54525a613c311d07deb90c654444192b7a8": {
         "question": "Four Trump Cabinet confirmations in January?",
         "event_slug": "how-many-trump-cabinet-confirmations-in-january",
@@ -21490,35 +20797,6 @@
             "US Election",
             "House Races",
             "Gov Shutdown"
-        ]
-    },
-    "0x3376277f95016b046ccc398942605382ebce0673ca2934c0732f61ace19ccd06": {
-        "question": "Will Conor McGregor be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-conor-mcgregor-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-conor-mcgregor-be-the-next-prime-minister-of-ireland-8HP3ukS3UPyD.jpg",
-        "tokens": [
-            {
-                "token_id": "52966854583050241841563802597287557063172002042089904151014136057699421138603",
-                "outcome": "Yes",
-                "price": 0.0025,
-                "winner": false
-            },
-            {
-                "token_id": "80487506051978830273534028280198340409062839451472713477847845676674018177268",
-                "outcome": "No",
-                "price": 0.9975,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0x7716068dbaff8bf09bfcf73376063fe0ec974cc19dc4751a650426989a56d6cb": {
@@ -22470,35 +21748,6 @@
             "NBA"
         ]
     },
-    "0x062b8e11f9c1d54268dc61a754e130d04d596076f2dfc288cc102e8c38d06020": {
-        "question": "Will George Simion win the 2024 Romanian Presidential election?",
-        "event_slug": "romania-presidential-election",
-        "market_slug": "will-george-simion-win-the-2024-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-george-simion-win-the-2024-romanian-presidential-election-_dcnVscilnC7.jpg",
-        "tokens": [
-            {
-                "token_id": "60444392092655129237263026428228168821961471997366291838560699758906532749170",
-                "outcome": "Yes",
-                "price": 0.129,
-                "winner": false
-            },
-            {
-                "token_id": "23054659640583661565877928622526567892564216265669487719856303400798354917292",
-                "outcome": "No",
-                "price": 0.871,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "eu",
-            "Global Elections",
-            "Europe",
-            "World Elections",
-            "Romania"
-        ]
-    },
     "0xe4016bf863c65c94cddfb219e48f556dd38fbf3badd8273dd933be4852e3f528": {
         "question": "US congress stock trading ban in Trump's first 100 days?",
         "event_slug": "us-congress-stock-trading-ban-in-first-100-days",
@@ -23091,34 +22340,6 @@
             "Dewine"
         ]
     },
-    "0x5aa4e1489f09f28b707beab8cb179d8912b81dd9a3bf288e3711af2aee1e6b44": {
-        "question": "Will Torino win the Serie A?",
-        "event_slug": "serie-a-winner",
-        "market_slug": "will-torino-win-the-serie-a",
-        "end_date_iso": "2024-10-25T00:00:00Z",
-        "icon": "will-torino-win-the-serie-a-gkCNCwYtVUWj.png",
-        "tokens": [
-            {
-                "token_id": "9492615943655807032758139296411686904384423595399056740596255816519120785575",
-                "outcome": "Yes",
-                "price": 0.0045,
-                "winner": false
-            },
-            {
-                "token_id": "9643448528327244414131480752076111811257628952625437367360230244412501893290",
-                "outcome": "No",
-                "price": 0.9955,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "italy",
-            "Soccer",
-            "Europe",
-            "Serie A"
-        ]
-    },
     "0x426ed0832cdf69783a463d39111d70841ad808bd8696e77098f8e3f41ff24e5b": {
         "question": "Scott Bessent confirmed as Treasury Secretary?",
         "event_slug": "which-trump-picks-will-be-confirmed",
@@ -23363,35 +22584,6 @@
             "Soccer",
             "Europe",
             "Serie A"
-        ]
-    },
-    "0x230b390604e9dabb86bae6350e621b8a5fffdd8e23487a4e2a761defb1c4ef65": {
-        "question": "Will Helen McEntee be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-helen-mcentee-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-helen-mcentee-be-the-next-prime-minister-of-ireland-dhLxvTHtvOFc.jpg",
-        "tokens": [
-            {
-                "token_id": "86421749051968859873601794131942747302694587165815025324681840099792730519438",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "105868379608761016124508774221748501486700084708424883561551659896314600127335",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0x701f1cb91ebe5eac68667edcb5237720093fef69dff7886f2f5c6b3ec073397a": {
@@ -24135,32 +23327,6 @@
             "Basketball",
             "mavericks",
             "NBA"
-        ]
-    },
-    "0xc5a29d7da91c765c5b8b45dc5f86147558ad0d16bb18e7ca14a74e3b5e3ebf9a": {
-        "question": "Will Kamala Harris be inaugurated?",
-        "event_slug": "who-will-be-inaugurated-as-president",
-        "market_slug": "will-kamala-harris-be-inaugurated",
-        "end_date_iso": "2024-12-20T00:00:00Z",
-        "icon": "will-kamala-harris-be-inaugurated-cqJudvUN6N7G.jpg",
-        "tokens": [
-            {
-                "token_id": "70948999046678954944326787736190690890568173143213485913437360277446343508580",
-                "outcome": "Yes",
-                "price": 0.0105,
-                "winner": false
-            },
-            {
-                "token_id": "12281160367645562427655326652447690861620454304704683288492828384648426658299",
-                "outcome": "No",
-                "price": 0.9895,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "january 6",
-            "jan 6"
         ]
     },
     "0x39bdb149c17d848c0ce90e452822878287bcd576bac2c552aa33f5d96b9c501d": {
@@ -25414,35 +24580,6 @@
             "Pete Hegseth"
         ]
     },
-    "0x52a0257f184535f7a4d47e90fce0e968aaca9699fa7aeb1e3bb3a46e6f85bd73": {
-        "question": "Will Mary Lou McDonald be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-mary-lou-mcdonald-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-mary-lou-mcdonald-be-the-next-prime-minister-of-ireland-F9pYe5Fg36e4.jpg",
-        "tokens": [
-            {
-                "token_id": "91911458312418486923421729051504645865269301053664610837537756546391027888213",
-                "outcome": "Yes",
-                "price": 0.002,
-                "winner": false
-            },
-            {
-                "token_id": "115406494589442621301130848484611784200170621258643265599918067445826113701112",
-                "outcome": "No",
-                "price": 0.998,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
-        ]
-    },
     "0x0cf6ce50e462f29dd313f366f6b79dbdc3ec0212cdb1dc6bfeeabd4ac2f323f3": {
         "question": "Will Tyrese Haliburton lead the NBA in Assists?",
         "event_slug": "nba-assists-leader",
@@ -25713,33 +24850,6 @@
             "Basketball",
             "mavericks",
             "NBA"
-        ]
-    },
-    "0x4df9bf8bcf344fc24d4b6661f888d2c6dd6c8315038280f1df18fea6b8a22844": {
-        "question": "Will Nikola Jokic lead the NBA in Assists?",
-        "event_slug": "nba-assists-leader",
-        "market_slug": "will-nikola-jokic-lead-the-nba-in-assists",
-        "end_date_iso": null,
-        "icon": "will-nikola-jokic-lead-the-nba-in-assists-H69KEpNoh2Vl.png",
-        "tokens": [
-            {
-                "token_id": "8718193839107311714006326412753619096513340094885922570783685258982789976807",
-                "outcome": "Yes",
-                "price": 0.0385,
-                "winner": false
-            },
-            {
-                "token_id": "22739442500385606284481778305880693346684823686713888127025930540092514033908",
-                "outcome": "No",
-                "price": 0.9615,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Basketball",
-            "NBA",
-            "luka"
         ]
     },
     "0x37f276686440c2309681c212d6764c50a646eb42ec632c4f9e005d0ac560ad2f": {
@@ -26315,64 +25425,6 @@
             "Fed Rates",
             "Economy",
             "Macro Fed"
-        ]
-    },
-    "0xf0fd3618354964f3eef092fa6a9c72b6e97e81435ace6829fb4c8275c0906246": {
-        "question": "Will Simon Harris be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-simon-harris-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-simon-harris-be-the-next-prime-minister-of-ireland-2Cb5HpKYQB-2.jpg",
-        "tokens": [
-            {
-                "token_id": "28170276909549585361261823905537739959974907031313936439667962334796389945906",
-                "outcome": "Yes",
-                "price": 0.014,
-                "winner": false
-            },
-            {
-                "token_id": "34548690177954654371072710395501453499971858450175602760140705658603306541924",
-                "outcome": "No",
-                "price": 0.986,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
-        ]
-    },
-    "0xa9d61261170a97143ecbedd03d579157458a0dea6c525e38236b394e09a99809": {
-        "question": "Will Pearse Doherty be the next Prime Minister of Ireland?",
-        "event_slug": "next-prime-minster-of-ireland",
-        "market_slug": "will-pearse-doherty-be-the-next-prime-minister-of-ireland",
-        "end_date_iso": "2024-11-29T00:00:00Z",
-        "icon": "will-pearse-doherty-be-the-next-prime-minister-of-ireland-iO3VA-e_jbgl.png",
-        "tokens": [
-            {
-                "token_id": "1598467563205717591379760268553358565652938436932669918143119562655295686736",
-                "outcome": "Yes",
-                "price": 0.002,
-                "winner": false
-            },
-            {
-                "token_id": "115293805579302454747382935676245117032748083274808937484362267813827058915040",
-                "outcome": "No",
-                "price": 0.998,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Europe",
-            "Irish",
-            "clover",
-            "Taoiseach"
         ]
     },
     "0xc76b77eee1852196a0cf1c68a97c0a0be4bfcc2ac3732a6838828840f35b6216": {
@@ -27301,32 +26353,6 @@
             "Global Temp"
         ]
     },
-    "0xb81a7ae361cc653ad224fbae36012c37210748168e6b290393d77011f62482a5": {
-        "question": "Will Călin Georgescu win the Romanian Presidential election by 10% or more?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-clin-georgescu-win-the-romanian-presidential-election-by-10-or-more-si26",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-another-candidate-win-the-2024-romanian-presidential-election-pJR_iuKssfCn.jpg",
-        "tokens": [
-            {
-                "token_id": "21558504445911356928607841612776695775669791722221231770770600599666381012988",
-                "outcome": "Yes",
-                "price": 0.1035,
-                "winner": false
-            },
-            {
-                "token_id": "97336380497450263102061856531053171802552094591021598784019394293993372938738",
-                "outcome": "No",
-                "price": 0.8965,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
-        ]
-    },
     "0x1497390efc40c84f6cada58ca637b6bd0e501e7f2cfffb97d5ff5371b2e56f11": {
         "question": "Will the Left be part of the next German government?",
         "event_slug": "which-parties-will-be-part-of-next-german-government",
@@ -27488,32 +26514,6 @@
             "Sports",
             "football",
             "NFL"
-        ]
-    },
-    "0xfc0feefc275cd9588dbbe54cced3e9f25ae2b0687efeee4b09c47268171da6e8": {
-        "question": "Will Călin Georgescu win the Romanian Presidential election by  5-10%?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-clin-georgescu-win-the-romanian-presidential-election-by-7pt5-10",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-another-candidate-win-the-2024-romanian-presidential-election-pJR_iuKssfCn.jpg",
-        "tokens": [
-            {
-                "token_id": "105118249694539367576380303331003297631029025982662547898483878038186001993696",
-                "outcome": "Yes",
-                "price": 0.0765,
-                "winner": false
-            },
-            {
-                "token_id": "36321774489258912053911616851688322454884281071401197588427536235321300710832",
-                "outcome": "No",
-                "price": 0.9235,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
         ]
     },
     "0xac479c4b29a2895750e6bd3bc57cf637f94ce7448b3f015af0d40d8f59d9e481": {
@@ -27816,59 +26816,6 @@
             "awards",
             "futures",
             "NFL"
-        ]
-    },
-    "0xe1df6447543434edb3728660e7152b9933e2f8ede6236dd7185f41614155e4a1": {
-        "question": "Will Elena Lasconi win the Romanian Presidential election by 5-10%?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-elena-lasconi-win-the-romanian-presidential-election-by-5-10",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-elena-lasconi-win-the-2024-romanian-presidential-election-8J88OW_n_Rjn.png",
-        "tokens": [
-            {
-                "token_id": "60860140791929092374594761684657967318923659781467986413317784844616250541021",
-                "outcome": "Yes",
-                "price": 0.018,
-                "winner": false
-            },
-            {
-                "token_id": "98544114933244736389882373420597595079831807714601282000985159667346977185255",
-                "outcome": "No",
-                "price": 0.982,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
-        ]
-    },
-    "0xe73e0191121a04fcdafe8f4b881a01a90ed5f423c2e03c5084acd5e464627d19": {
-        "question": "Will Luke Humphries win the 2024-25 PDC World Championship?",
-        "event_slug": "world-dart-championship",
-        "market_slug": "will-luke-humphries-win-the-2024-25-pdc-world-championship",
-        "end_date_iso": "2024-12-15T00:00:00Z",
-        "icon": "world-dart-championship-D8fgmXXrYsFV.png",
-        "tokens": [
-            {
-                "token_id": "1739204976525938129594528353479777006519614174841598162016349083569102518176",
-                "outcome": "Yes",
-                "price": 0.23,
-                "winner": false
-            },
-            {
-                "token_id": "113271418732268779673197884520045804668578143048236935189796894891783769371054",
-                "outcome": "No",
-                "price": 0.77,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "futures",
-            "Tournaments",
-            "Darts"
         ]
     },
     "0x5d8907ced4577fdb8bee2265c0caeba932002795afde5e4cc03a41597e9ee3d5": {
@@ -29448,32 +28395,6 @@
             "Tech"
         ]
     },
-    "0x6a54300b453fe71af46779214da06ad42af6be4e0de6ba4ac0b691b10aac138d": {
-        "question": "Will another individual win the Romanian Presidential election?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-another-individual-win-the-romanian-presidential-election",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "romania-presidential-election-margin-of-victory-aBJ0nab3dcXx.png",
-        "tokens": [
-            {
-                "token_id": "74698427108923237499458549676000737240785662121993878175571054886869016294884",
-                "outcome": "Yes",
-                "price": 0.705,
-                "winner": false
-            },
-            {
-                "token_id": "30990761196067245788285457780019236253231146442551872041383282333179265229800",
-                "outcome": "No",
-                "price": 0.295,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
-        ]
-    },
     "0xed3f699d49c03b25f3138d1ffb580e7640be4a032b18073652b36f9db2b25860": {
         "question": "Will US annual inflation be 2.6% or less in December?",
         "event_slug": "december-inflation",
@@ -30132,32 +29053,6 @@
             "joulani"
         ]
     },
-    "0x08c386f45a1ea13f17c4440e9d906b3acfdee63ffacb505f5cfb7adcf1f5cfae": {
-        "question": "Will Elena Lasconi win the Romanian Presidential election by 0-5%?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-elena-lasconi-win-the-romanian-presidential-election-by-0-5",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-elena-lasconi-win-the-2024-romanian-presidential-election-8J88OW_n_Rjn.png",
-        "tokens": [
-            {
-                "token_id": "28026710690988750290088528445550851648325557682456681053767260353801358361356",
-                "outcome": "Yes",
-                "price": 0.0215,
-                "winner": false
-            },
-            {
-                "token_id": "45297756501821243552385246975478444359927395859922507889270805170493239329031",
-                "outcome": "No",
-                "price": 0.9785,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
-        ]
-    },
     "0xc4580a189fbfa3c70907f21ff4343b64c63913c3a10c033ba1dcca2f1bd35606": {
         "question": "Will GPT-5 be released by March 31?",
         "event_slug": "when-will-gpt-5-be-released",
@@ -30374,35 +29269,6 @@
             "Tournaments",
             "FIDE",
             "Magnus"
-        ]
-    },
-    "0x5c389ecffb3862919bda4fb88ffb9b33d7e24179049a3e2a104a988bb0d54c52": {
-        "question": "Will XRP flip ETH in 2024?",
-        "event_slug": "will-xrp-flip-eth-in-2024",
-        "market_slug": "will-xrp-flip-eth-in-2024",
-        "end_date_iso": null,
-        "icon": "will-xrp-flip-eth-in-2024-Uf0X-ey_733z.jpg",
-        "tokens": [
-            {
-                "token_id": "11307692978161853674617390257288987107936391052195494656875149054308838861561",
-                "outcome": "Yes",
-                "price": 0.0035,
-                "winner": false
-            },
-            {
-                "token_id": "4868373400486329885302010376836743097128536325970830430293523686981542719034",
-                "outcome": "No",
-                "price": 0.9965,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Ethereum",
-            "eth",
-            "Crypto Prices",
-            "XRP",
-            "ripple"
         ]
     },
     "0xa6aa2586cf605ea29de0620316ec6eb6b86ee47def2da4fbd14a15680ffb2c85": {
@@ -30760,32 +29626,6 @@
             "Syria",
             "Middle East",
             "Geopolitics"
-        ]
-    },
-    "0x191ba3c7f7b8c0f34338396a16d9101873346efae7c3570155ffd82231583e17": {
-        "question": "Will the New York Jets finish with the worst record in the NFL?",
-        "event_slug": "nfl-worst-record",
-        "market_slug": "will-the-new-york-jets-finish-with-the-worst-record-in-the-nfl",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-the-jets-win-super-bowl-2025-wZqGxoxfHKIt.png",
-        "tokens": [
-            {
-                "token_id": "52222774700954020933001196994038292379611160679858473597234297241159570891545",
-                "outcome": "Yes",
-                "price": 0.003,
-                "winner": false
-            },
-            {
-                "token_id": "23656911097732133649106160157223377448714468611457551093865072070694612780261",
-                "outcome": "No",
-                "price": 0.997,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "futures",
-            "NFL"
         ]
     },
     "0xfccd9ea23539a914ca3d39c5448b1708d6d9679ce1b33a909bc9018cc293517d": {
@@ -32348,38 +31188,6 @@
             "belarus"
         ]
     },
-    "0x504353b8835ffd992cc63995b4610a7ebd9d2e4e5cc82efbab120d8f363bccd9": {
-        "question": "Will Jimmy Butler get traded to the Houston Rockets?",
-        "event_slug": "jimmy-butler-trade",
-        "market_slug": "will-jimmy-butler-get-traded-to-the-houston-rockets",
-        "end_date_iso": null,
-        "icon": "jimmy-butler-trade-RsDhn1Wwc0aK.png",
-        "tokens": [
-            {
-                "token_id": "76898480704105143095465769305982247031446925320469545960474839460614259556424",
-                "outcome": "Yes",
-                "price": 0.0135,
-                "winner": false
-            },
-            {
-                "token_id": "50268969727669119359143367471808201633099303758811058986606628645944147450892",
-                "outcome": "No",
-                "price": 0.9865,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "warriors",
-            "mavericks",
-            "NBA",
-            "Miami",
-            "Houston",
-            "Buckets",
-            "Butler",
-            "Jimmy"
-        ]
-    },
     "0x4421ddf25598700841a09acfc93a847e721d4b5ee5dfc064781ae32dd3d30be3": {
         "question": "Will US unemployment be 4.1% or lower in December 2024?",
         "event_slug": "december-unemployment-rate",
@@ -33497,36 +32305,6 @@
             "Trump",
             "US Election",
             "Trump Presidency"
-        ]
-    },
-    "0x7b95fdf56982eb03e57d14ecbfbd0e21f0abdcc857bc3b809a1336d5cd94d4e0": {
-        "question": "Will Sam Darnold win NFL Comeback Player of the Year?",
-        "event_slug": "nfl-comeback-player-of-the-year",
-        "market_slug": "will-sam-darnold-win-nfl-comeback-player-of-the-year",
-        "end_date_iso": null,
-        "icon": "will-sam-darnold-win-nfl-comeback-player-of-the-year-2zEeK0YegGsz.png",
-        "tokens": [
-            {
-                "token_id": "88741832508016951313489924413670302550962856400862721407091882712939913514230",
-                "outcome": "Yes",
-                "price": 0.13,
-                "winner": false
-            },
-            {
-                "token_id": "29754452645455149956987531088392723434813749366504084926351275691027754645621",
-                "outcome": "No",
-                "price": 0.87,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "football",
-            "NFL",
-            "Comeback Player",
-            "damar",
-            "Damar Hamlin",
-            "Joe Burrow",
-            "Roger Goodell"
         ]
     },
     "0xb9b57eff8e0a14b212185554587d9bab1cc80a5c7a43300d4835d02a4005d22a": {
@@ -36060,32 +34838,6 @@
             "porn"
         ]
     },
-    "0x4c6168cf1f6696bd4d70eb112e547780cce3f3b716b3b85acb0be0c2cd65f3e2": {
-        "question": "Will Călin Georgescu win the Romanian Presidential election by 0-5%?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-clin-georgescu-win-the-romanian-presidential-election-by-0-5",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-another-candidate-win-the-2024-romanian-presidential-election-pJR_iuKssfCn.jpg",
-        "tokens": [
-            {
-                "token_id": "115422320054906715730077903825324770938781356379456140117146720285962496343683",
-                "outcome": "Yes",
-                "price": 0.0765,
-                "winner": false
-            },
-            {
-                "token_id": "71998940354418761036325424245364844990161458036813330557994648872829879096375",
-                "outcome": "No",
-                "price": 0.9235,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
-        ]
-    },
     "0x82aa6dbbbe6f0d557b0d60991a3a92c97f39cf66929a4051734f79399bf8d3fa": {
         "question": "Hailey Welch jail in 2024?",
         "event_slug": "hailey-welch-jail-in-2024",
@@ -36964,33 +35716,6 @@
             "Mystery Drones"
         ]
     },
-    "0x7d65c2360ae87c27b252cfb41356914e80187659be5685fb65da8e17ccfd215d": {
-        "question": "Will Elon tweet 275-299 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-275-299-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "29354146174152221411543341038252109271770743214863688536360266406582579624815",
-                "outcome": "Yes",
-                "price": 0.1195,
-                "winner": false
-            },
-            {
-                "token_id": "109952979020342073486013460370842901796128020354595888133749018153642948952608",
-                "outcome": "No",
-                "price": 0.8805,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0xee4253b96d6b04be3b17eb36b9abc5faa261214bf5b8d83bcf71ce9a78efdfb4": {
         "question": "Will Tari Eason win 2024-25 NBA 6th Man of the Year?",
         "event_slug": "nba-6th-man-of-the-year",
@@ -37458,32 +36183,6 @@
             "Crypto Prices",
             "XRP",
             "ripple"
-        ]
-    },
-    "0xbe0a40e904b1cd679f8965b4f899aa8a803c48f698e8451a27fb5fd3ab1804cb": {
-        "question": "Will Elena Lasconi win the Romanian Presidential election by 10% or more?",
-        "event_slug": "romania-presidential-election-margin-of-victory",
-        "market_slug": "will-elena-lasconi-win-the-romanian-presidential-election-by-10-or-more",
-        "end_date_iso": "2024-12-08T00:00:00Z",
-        "icon": "will-elena-lasconi-win-the-2024-romanian-presidential-election-8J88OW_n_Rjn.png",
-        "tokens": [
-            {
-                "token_id": "89282351179046868485930436696243102837387847386538241667337058813316892593584",
-                "outcome": "Yes",
-                "price": 0.0225,
-                "winner": false
-            },
-            {
-                "token_id": "96691341625681596133024778586505922180374705551942492309725640396226193196384",
-                "outcome": "No",
-                "price": 0.9775,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Global Elections",
-            "Romania"
         ]
     },
     "0x0c08a84d6cc0837d6f7d21d776808fb38b032ab6c651047a51daa832903dd9df": {
@@ -37999,58 +36698,6 @@
             "finance",
             "Fed Rates",
             "Economy"
-        ]
-    },
-    "0x979978268fd6693e4c7856ac93f1d6d6f23f8747109f6586160aa0022f85d480": {
-        "question": "Bitcoin above $97,000 on December 27?",
-        "event_slug": "bitcoin-above-97000-on-december-27",
-        "market_slug": "bitcoin-above-97000-on-december-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "bitcoin+neon+red+green.png",
-        "tokens": [
-            {
-                "token_id": "56338886685007420821018355669613200135199758478419061555726058906518966956681",
-                "outcome": "Yes",
-                "price": 0.65,
-                "winner": false
-            },
-            {
-                "token_id": "56609293279064164478594205468930911934853829671288746147725659618399736204414",
-                "outcome": "No",
-                "price": 0.35,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Bitcoin",
-            "Crypto Prices"
-        ]
-    },
-    "0xe8c2b93ac2887b255cc0021631f5ee72e7045bfd22e9331c940c48ad2f6a3f6b": {
-        "question": "Solana above $190 on December 27?",
-        "event_slug": "solana-above-190-on-december-27",
-        "market_slug": "solana-above-190-on-december-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "solana+purp.png",
-        "tokens": [
-            {
-                "token_id": "28665901831093528482395815267592847545011524898892145058621821176927747746123",
-                "outcome": "Yes",
-                "price": 0.685,
-                "winner": false
-            },
-            {
-                "token_id": "47307036305588033431522485216953721291114808793272967884031952155842840820149",
-                "outcome": "No",
-                "price": 0.315,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Solana",
-            "Crypto Prices"
         ]
     },
     "0xd4b11814de6b0ca7dd4039828dd70c741e04b7e6317cc4c0897235df19986368": {
@@ -38616,32 +37263,6 @@
             "Valve"
         ]
     },
-    "0x94ce768de3b55e3411015b90737a7daf54f8e3614b929b380bead622195e5ec7": {
-        "question": "Ethereum above $3,400 on December 27?",
-        "event_slug": "ethereum-above-3400-on-december-27",
-        "market_slug": "ethereum-above-3400-on-december-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "ethereum+logo+confetti.png",
-        "tokens": [
-            {
-                "token_id": "92221923877886701794409145532809229617506030059715358913896783030277693336392",
-                "outcome": "Yes",
-                "price": 0.725,
-                "winner": false
-            },
-            {
-                "token_id": "73210424800972219924610696684009407263949634184271569954884249707371164768522",
-                "outcome": "No",
-                "price": 0.275,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Ethereum",
-            "Crypto Prices"
-        ]
-    },
     "0x3eca1798b9cff1867ec876a014e181c8b2d725d3616e04c2f846e659e467b02c": {
         "question": "Will 'September 5' be nominated for Oscar for Best Picture?",
         "event_slug": "oscar-best-picture-nominees",
@@ -38666,33 +37287,6 @@
             "awards",
             "Movies",
             "Pop Culture"
-        ]
-    },
-    "0x1ba85a54b6ff5db0d5f345bb07c2466850e476a8a735a6b82d407222a19b8a07": {
-        "question": "Will Elon tweet 250-274 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-250-274-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "14652245671885936541980286846979138257452825952162101743441700041894218878601",
-                "outcome": "Yes",
-                "price": 0.0575,
-                "winner": false
-            },
-            {
-                "token_id": "53584069971065197345371168536113594596788605221259016654314596543369569425840",
-                "outcome": "No",
-                "price": 0.9425,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
         ]
     },
     "0x4234768b3ad78225ec4cacf078a98044a880d1f0abf51997f22da9670b4a95e4": {
@@ -39131,33 +37725,6 @@
             "Darts"
         ]
     },
-    "0x5edfb7499c1b5f6a5a7b0588270592a4474c1a0416894ad618dccbbbb3187a39": {
-        "question": "Will Elon tweet less than 250 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-less-than-250-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "34705897585731680150440007810080584438832174780594408428903504226093507407240",
-                "outcome": "Yes",
-                "price": 0.0005,
-                "winner": false
-            },
-            {
-                "token_id": "98819838666152531791118107899911175074438911155765995312277367994191130015583",
-                "outcome": "No",
-                "price": 0.9995,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0xa638577415195ac2ca0e8ab8befd45e3991612be6d2cf64e661abc6350c7900a": {
         "question": "Yoon out as president of South Korea before April?",
         "event_slug": "yoon-out-as-president-of-south-korea-before-april",
@@ -39260,33 +37827,6 @@
             "Politics",
             "Global Elections",
             "Romania"
-        ]
-    },
-    "0x26b9b2d6f67733081eed07bdd20c04a533c03fdfdf8184832fe0ea6dadbccb26": {
-        "question": "Will the Los Angeles Rams make the 2024-25 NFL Playoffs?",
-        "event_slug": "which-nfl-teams-will-make-the-playoffs",
-        "market_slug": "will-the-los-angeles-rams-make-the-2024-25-nfl-playoffs",
-        "end_date_iso": null,
-        "icon": "will-the-rams-win-super-bowl-2025-_57C3qJsYo4W.png",
-        "tokens": [
-            {
-                "token_id": "74207817695592304391867499413264287770740122473498340597939190686521110512614",
-                "outcome": "Yes",
-                "price": 0.895,
-                "winner": false
-            },
-            {
-                "token_id": "1135039598084551012412570958279628141970696328671040594527766153127189046761",
-                "outcome": "No",
-                "price": 0.105,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "futures",
-            "NFL",
-            "playoffs"
         ]
     },
     "0x554cd51e958fdb564245c40a42e058929cbd5ed130483ddb3a97f7753b726dad": {
@@ -40843,33 +39383,6 @@
             "Tech"
         ]
     },
-    "0x8dea7119588d217a183b0d31bb5d3acc220986a1bb95976b2d02858d8b37eb35": {
-        "question": "Will Elon tweet 450-474 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-450-474-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "104695904387777461031147109906783701858862167559004287065399508917226135062563",
-                "outcome": "Yes",
-                "price": 0.045,
-                "winner": false
-            },
-            {
-                "token_id": "103291230866658736530444126194334884043410944404458552691123711463088739051715",
-                "outcome": "No",
-                "price": 0.955,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0x8fdeb9628b0adad7727533f82e001a7e7d267f521ea9c0e73267fc0537b8809e": {
         "question": "Will Carmelo Anthony make the 2025 Class of the Naismith Basketball Hall of Fame?",
         "event_slug": "who-will-make-the-basketball-hall-of-fame",
@@ -40976,33 +39489,6 @@
             "MH370"
         ]
     },
-    "0xf56b00519c0841f123302402a247d0241acd93a22e1a1cc8a7a557abe6e34dc7": {
-        "question": "Will Elon tweet 400-424 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-400-424-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "106262124199450078637091718118316857820882756778766276732147073322521378787995",
-                "outcome": "Yes",
-                "price": 0.125,
-                "winner": false
-            },
-            {
-                "token_id": "8756115333417052380208049946309050447830651813180335775298558040145847705768",
-                "outcome": "No",
-                "price": 0.875,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0xb8f9e575ef8a4cb1b3e8fb0aef8e98cb74cbaac2ba207a4b952eee31e63c6af1": {
         "question": "Will Billy Donovan make the 2025 Class of the Naismith Basketball Hall of Fame?",
         "event_slug": "who-will-make-the-basketball-hall-of-fame",
@@ -41107,60 +39593,6 @@
             "Crypto Prices"
         ]
     },
-    "0x643a489de21c4c07d50065a90cb44f3b3e746a54660b940eaf21a1d9e4dc4a87": {
-        "question": "Will Elon tweet 350-374 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-350-374-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "36837951708614589941114389997571599612747093391253400886190511779002275191371",
-                "outcome": "Yes",
-                "price": 0.145,
-                "winner": false
-            },
-            {
-                "token_id": "22098176940822926356091829673189454232234357176529919032339869272152051637201",
-                "outcome": "No",
-                "price": 0.855,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
-    "0x3e388cdb2df676ec02935cf75a535d764cb8dc7cd997dab18b3779df02a263de": {
-        "question": "Will Elon tweet 475-499 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-475-499-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "10052597735837114890120421188442680759552243370081793550223436869575310577216",
-                "outcome": "Yes",
-                "price": 0.0235,
-                "winner": false
-            },
-            {
-                "token_id": "71541864295174663250040679666507608386317251325322146167313417143312660532694",
-                "outcome": "No",
-                "price": 0.9765,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0x951d1e1a855f7080663f156458765e025649fab21932e2e69a08ebe5a4aa9771": {
         "question": "Will Netanyahu visit Egypt in 2024?",
         "event_slug": "will-netanyahu-visit-egypt-in-2024",
@@ -41187,33 +39619,6 @@
             "netanyahu",
             "Geopolitics",
             "Open Source Intel"
-        ]
-    },
-    "0x055f0838ccbaafce2a0d694d20ffb815cb0b5bb85667fee55cce958a7fe89c5a": {
-        "question": "Will Elon tweet 300-324 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-300-324-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "91147357299683446958505620020461238652083626162712767914698885266630100316812",
-                "outcome": "Yes",
-                "price": 0.1495,
-                "winner": false
-            },
-            {
-                "token_id": "114927126225026277152883598894556662556925480333596547946442303586670349132752",
-                "outcome": "No",
-                "price": 0.8505,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
         ]
     },
     "0x0493c645800983c5ff2a6005680e3efb0a9c27b562716c8d58927c44fd14c52f": {
@@ -41409,60 +39814,6 @@
             "Geopolitics",
             "Creators",
             "Open Source Intel"
-        ]
-    },
-    "0xe18a5a9d08e3f89798244959c20d198d13ab5d8230ee48c1b8201f73ae969ffb": {
-        "question": "Will Elon tweet 425-449 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-425-449-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "92863710494574441198792430333505419119918396661900339838870592283609980461196",
-                "outcome": "Yes",
-                "price": 0.075,
-                "winner": false
-            },
-            {
-                "token_id": "35477959849316970349575033842544721316649055482462778261883814061473294863052",
-                "outcome": "No",
-                "price": 0.925,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
-    "0x67500eddcbf5fe7d5e5ec16b67c212eb58e462845a0bb10bf4401c48088bbd07": {
-        "question": "Will Elon tweet 375-399 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-375-399-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "33045414490836748129315892903481850573333827552968251854845545520167739278697",
-                "outcome": "Yes",
-                "price": 0.115,
-                "winner": false
-            },
-            {
-                "token_id": "55562284801144175289207741468581661378424205492419854170715765106967865695041",
-                "outcome": "No",
-                "price": 0.885,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
         ]
     },
     "0x5a07b04930bd4345e50c808a28bf8fb021eee851d8802d16dd7125d7fb67d3d8": {
@@ -41761,60 +40112,6 @@
             "Lonzo Ball"
         ]
     },
-    "0x829aaebcfc364e80d3616d260f2936816f8b184793f419fdb17e414e5b53c830": {
-        "question": "Dogecoin above $0.30 on December 27?",
-        "event_slug": "dogecoin-above-0pt30-on-december-27",
-        "market_slug": "dogecoin-above-0pt30-on-december-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "dogecoin-above-0pt37-on-november-15-INLYt3qOJRJN.jpg",
-        "tokens": [
-            {
-                "token_id": "25233546981671802993808421006812182975712264311313957205064948424467028546376",
-                "outcome": "Yes",
-                "price": 0.87,
-                "winner": false
-            },
-            {
-                "token_id": "76161423195461511280267340199331278008898760415528118926289062756717202802227",
-                "outcome": "No",
-                "price": 0.13,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Crypto Prices",
-            "Memecoins",
-            "Dogecoin"
-        ]
-    },
-    "0x2ae8f1bb3cb5f75296999eccf7d7e2e351641128a2c571f4be96f24bc33c5038": {
-        "question": "Will Elon tweet 500 or more times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-500-or-more-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "50021896691291869333852109641050559629505628152431722996583643666587154163254",
-                "outcome": "Yes",
-                "price": 0.0125,
-                "winner": false
-            },
-            {
-                "token_id": "54275176459503470072917465285449904430448621849312308934927280117438578401728",
-                "outcome": "No",
-                "price": 0.9875,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0x4b1470a1d83fe0e9e5e7edfd68ca0517fdd1386e412d2203d27a5c2832ed60c1": {
         "question": "Will Putin remain President of Russia through June?",
         "event_slug": "will-putin-remain-president-of-russia-through-june-2025",
@@ -41950,33 +40247,6 @@
             "Open Source Intel"
         ]
     },
-    "0xe180b9bb27e2c212890ba8444bc6956f8f681c89fbe0e420b24593ced304b25e": {
-        "question": "Ripple above $2.20 on December 27?",
-        "event_slug": "ripple-above-2pt20-on-december-27",
-        "market_slug": "ripple-above-2pt20-on-december-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "ripple-above-0pt87-on-november-15-R5vLBTwE35CR.jpg",
-        "tokens": [
-            {
-                "token_id": "61996156893658432291614181280818373554556117467134542253332940658857290382036",
-                "outcome": "Yes",
-                "price": 0.685,
-                "winner": false
-            },
-            {
-                "token_id": "75114247440770469319933778267460831560088427443164176649855010986919955953278",
-                "outcome": "No",
-                "price": 0.315,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Crypto",
-            "Crypto Prices",
-            "XRP",
-            "ripple"
-        ]
-    },
     "0xfe625d62f9d8140502e45ede37f7566b19e1ab32b33dc071c8aa538ca24110c3": {
         "question": "Will Lonzo Ball stay with the Chicago Bulls?",
         "event_slug": "where-will-jimmy-butler-get-traded",
@@ -42057,33 +40327,6 @@
             "uap"
         ]
     },
-    "0xdc7d3eba0d5c91f58cc90626065c95243fc2d9b47ce9dfe1ab4341e230b6dc84": {
-        "question": "Will Elon tweet 325-349 times Dec 20-27?",
-        "event_slug": "elon-musk-of-tweets-december-20-27",
-        "market_slug": "will-elon-tweet-325-349-times-dec-20-27",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
-        "tokens": [
-            {
-                "token_id": "12436468946181021620705344189719695630138921246092074400887748241404724672433",
-                "outcome": "Yes",
-                "price": 0.1585,
-                "winner": false
-            },
-            {
-                "token_id": "68962864775847668593213832833566906570532316049525279698351836981537311198737",
-                "outcome": "No",
-                "price": 0.8415,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Twitter",
-            "Elon Musk",
-            "Pop Culture",
-            "Tweet Markets"
-        ]
-    },
     "0xe680c026722fe79503d08ebd80e5a57fa75f71bffb2385c93485d82b9e64b721": {
         "question": "Will Lonzo Ball get traded to the Phoenix Suns?",
         "event_slug": "where-will-jimmy-butler-get-traded",
@@ -42136,222 +40379,6 @@
             "OpenAI",
             "llm",
             "Tech"
-        ]
-    },
-    "0xb1d8edd5495415396b5cbfdf3f577be73475a0a3a54374e4e85f27365ccf5362": {
-        "question": "Will Wesley So win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-wesley-so-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "52859889160836018805329928020238895134650693645886007032807082034000705243313",
-                "outcome": "Yes",
-                "price": 0.004,
-                "winner": false
-            },
-            {
-                "token_id": "42427243828163435061894163775615132369030074875545933233689243255794687857900",
-                "outcome": "No",
-                "price": 0.996,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0x16069c08c3f7022390ecc169dd2aee77bfda70121df6415932a38ddffba72a67": {
-        "question": "Will Maxime Vachier-Lagrave win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-maxime-vachier-lagrave-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "79380920345474886786657335731412201621143955876396135079492499902603611725698",
-                "outcome": "Yes",
-                "price": 0.0005,
-                "winner": false
-            },
-            {
-                "token_id": "1648134162788448068063137225472262913213690717487330857961573178186194203072",
-                "outcome": "No",
-                "price": 0.9995,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0x8df7982f92e256b11748d86d5df1d58caa36869164ea28d0e88afb1f4f3cdc2c": {
-        "question": "Will Ian Nepomniachtchi win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-ian-nepomniachtchi-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "33146405872927247829113382808295141372159643857415484951966232876952848519767",
-                "outcome": "Yes",
-                "price": 0.068,
-                "winner": false
-            },
-            {
-                "token_id": "92405387617823105687793955078013099375671378971888055938555184470033853390789",
-                "outcome": "No",
-                "price": 0.932,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0xce81bf7d6eb86fe2ed3a791021a843001d14e2fb3a06edeaaafc611e86680ec4": {
-        "question": "Will Hikaru Nakamura win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-hikaru-nakamura-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "75210876783332954637096903425063261343118764295613404683364805469654264352044",
-                "outcome": "Yes",
-                "price": 0.027,
-                "winner": false
-            },
-            {
-                "token_id": "95135851094143491688342200397182257228593403916119710625247650816508293637929",
-                "outcome": "No",
-                "price": 0.973,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0x48c2491dcf829d6d6541cc88c0f47f65e37f1919ce4f4d244bf63edafc2a4fb4": {
-        "question": "Will Fabiano Caruana win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-fabiano-caruana-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "37597110917129893621739907162243473212794925556652082516180155137475893799071",
-                "outcome": "Yes",
-                "price": 0.0115,
-                "winner": false
-            },
-            {
-                "token_id": "54537886665192033994793273591812242481296074901387230657624075756683554041221",
-                "outcome": "No",
-                "price": 0.9885,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0xcf21f12a26a797fe5157ed198eafe06d207bde986f2e15a13d3ead3f0b2a9162": {
-        "question": "Will Arjun Erigaisi win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-arjun-erigaisi-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "47557163726905049264396776292119890205382076926495513521241059848927326565248",
-                "outcome": "Yes",
-                "price": 0.185,
-                "winner": false
-            },
-            {
-                "token_id": "67635933688170284291141516199401218884778106602609267962296556384695188641500",
-                "outcome": "No",
-                "price": 0.815,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0xd4ec09d92e35950a6f9b99a278cecf3ec817815362938e90c641e3e2da90acef": {
-        "question": "Will Alireza Firouzja win the 2024 World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-alireza-firouzja-win-the-2024-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "77780871901690231579273445029619222074799563086908766573072241014126795531359",
-                "outcome": "Yes",
-                "price": 0.02,
-                "winner": false
-            },
-            {
-                "token_id": "91197737271035803213074722015660892162601439713417632759031344816950481518502",
-                "outcome": "No",
-                "price": 0.98,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0xc908e26576854a5959929655f133899fc425f57ac89ab741a103c9e1b554812c": {
-        "question": "Will Magnus Carlsen win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-magnus-carlson-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "111079212695894145766341996830952704515045345131757164342191452406005031180405",
-                "outcome": "Yes",
-                "price": 0.0005,
-                "winner": false
-            },
-            {
-                "token_id": "83636555553386407709985378345033768254571331995464578290821256603975794244871",
-                "outcome": "No",
-                "price": 0.9995,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
         ]
     },
     "0x3b2de650b3e7dac92b00f555471227dae4b1bc73ee29b89cbfe9d4412692c8be": {
@@ -42433,59 +40460,6 @@
             "Geopolitics"
         ]
     },
-    "0x27c5a06d6ae3a6a0f51e2f1118fbfac8a7d2afcd804c123fd6266315482a0487": {
-        "question": "Will Nodirbek Abdusattorov win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-nodirbek-abdusattorov-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "71385635026159779394161018418846346940847843162797533369476240881720030548570",
-                "outcome": "Yes",
-                "price": 0.0685,
-                "winner": false
-            },
-            {
-                "token_id": "48060747094042451553291406466599082099385770860956489029945867786818197072227",
-                "outcome": "No",
-                "price": 0.9315,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0x67ffb80f7264dee48a6abe7ba8601b5cc9dbe6a1f28d122a2c6fb4a808dc5b0e": {
-        "question": "Will Shane Gillis win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-shane-gillis-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-shane-gillis-win-cracker-of-the-year-6TSVMi-sLM4R.png",
-        "tokens": [
-            {
-                "token_id": "4239119949690146211424093413833604532130754678885343519820559982600657453098",
-                "outcome": "Yes",
-                "price": 0.0365,
-                "winner": false
-            },
-            {
-                "token_id": "92276764473235566760773006062972617416543406902199006181904485880463761634391",
-                "outcome": "No",
-                "price": 0.9635,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
     "0x8cbf31ae2dff3bf262ba8b7e847cfc49d6f9e88ddb3330a051a5787177749874": {
         "question": "Another state declare a state of emergency over bird flu before February?",
         "event_slug": "another-state-declare-a-state-of-emergency-over-bird-flu-before-february",
@@ -42512,59 +40486,6 @@
             "Pandemics",
             "H5N1",
             "Bird flu"
-        ]
-    },
-    "0x45e67fd03897849c892229784738e3389a4eaaa0f0627aec649e392ef94e912b": {
-        "question": "Will Jan-Krzysztof Duda win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-jan-krzysztof-duda-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "55320655729431381675106752881870267984079647382448877898718538463043037168700",
-                "outcome": "Yes",
-                "price": 0.162,
-                "winner": false
-            },
-            {
-                "token_id": "9242699964443603999623844742418538868125857572800660744753543980849302638924",
-                "outcome": "No",
-                "price": 0.838,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
-    "0x613fad43c73b5f2469b971c4c7e6be2050a6a51d619363107ee0673bb1420696": {
-        "question": "Will Kai and Speed win Fortnite in 50-74 tries?",
-        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
-        "market_slug": "will-kai-and-speed-win-fortnite-in-50-74-tries",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
-        "tokens": [
-            {
-                "token_id": "58487255999823696184025111076966083861048229505659358387626408831540535881564",
-                "outcome": "Yes",
-                "price": 0.23,
-                "winner": false
-            },
-            {
-                "token_id": "22117769247629101741833688365570173792608874947178331104152588709039223356121",
-                "outcome": "No",
-                "price": 0.77,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Esports",
-            "Pop Culture"
         ]
     },
     "0x131ec938bb5f143a0d345349ae02624d82207e960ca0a6caa40ccd5b3b5a7a26": {
@@ -42647,113 +40568,6 @@
             "Memecoins"
         ]
     },
-    "0x43e111b043c95b3915926de819e27cfaf7f7de18cc2c33c9250607eeb03e7c63": {
-        "question": "Will Mike Mayock win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-mike-mayock-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-mike-mayock-win-cracker-of-the-year-QHdYMN_Jf01z.png",
-        "tokens": [
-            {
-                "token_id": "7670210529146459096560803823864981512106806151056456340610784933841162524388",
-                "outcome": "Yes",
-                "price": 0.013,
-                "winner": false
-            },
-            {
-                "token_id": "90798999461887925506338368819437662324547346758382900351699937484860631339358",
-                "outcome": "No",
-                "price": 0.987,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
-    "0xa473d8fbceb9230cab45c8062b300ef2a0572dc21fd97749ef99b087b2d38016": {
-        "question": "Will another person win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-another-person-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-another-person-win-cracker-of-the-year-NTM-2jmZ75wF.png",
-        "tokens": [
-            {
-                "token_id": "105954863981488413377991251971558752896960895958213549914200331991494021804165",
-                "outcome": "Yes",
-                "price": 0.08,
-                "winner": false
-            },
-            {
-                "token_id": "70069239709822829125945190986401072654432485381267068538828689666426606950769",
-                "outcome": "No",
-                "price": 0.92,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
-    "0x7b8cb4ea2da27da2217a766d857e25f25398fc8e0be75750c83931099055122d": {
-        "question": "Will Trump comment on immigration debate today?",
-        "event_slug": "will-trump-comment-on-immigration-debate-by-tomorrow",
-        "market_slug": "will-trump-comment-on-immigration-debate-by-tomorrow",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-trump-comment-on-h-1b-debate-by-tomorrow-wRxytPoNS9pp.jpg",
-        "tokens": [
-            {
-                "token_id": "36640419601095543849578458656462433217281671873973574713330577406975260806330",
-                "outcome": "Yes",
-                "price": 0.015,
-                "winner": false
-            },
-            {
-                "token_id": "5305524589204024140158025017553896951034147105125959907807061358905569701873",
-                "outcome": "No",
-                "price": 0.985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Politics",
-            "Trump",
-            "Breaking News",
-            "India",
-            "Immigration",
-            "H1b"
-        ]
-    },
-    "0xf6d53b1ce8906c7c8969cbe96e4dcf980db7723c0cfc730d67b0c2ded92791c7": {
-        "question": "Will Zach Bryan win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-zach-bryan-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-zach-bryan-win-cracker-of-the-year-BmEEbRQvU9Uu.png",
-        "tokens": [
-            {
-                "token_id": "54712578546542159855381354801455279024236819553266067731221457239787215694717",
-                "outcome": "Yes",
-                "price": 0.0105,
-                "winner": false
-            },
-            {
-                "token_id": "60381396671190954402529322561707841313060693363977950675938633954558172519456",
-                "outcome": "No",
-                "price": 0.9895,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
     "0xae8638f7c3050ae02ba440971123df24f1af8e0aad5d056ea538f769cbcbfab4": {
         "question": "Will Elon tweet 450 or more times Dec 27-Jan 3?",
         "event_slug": "elon-musk-of-tweets-december-27-january-3",
@@ -42779,58 +40593,6 @@
             "Elon Musk",
             "Pop Culture",
             "Tweet Markets"
-        ]
-    },
-    "0xc0d35b5eb721300f8cc66152ca0807e973d11fe5b18bf6ebdfe4ade541b013b6": {
-        "question": "Will Kai and Speed win Fortnite in 21-49 tries?",
-        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
-        "market_slug": "will-kai-and-speed-win-fortnite-in-21-49-tries",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
-        "tokens": [
-            {
-                "token_id": "17263232464992782323318860470616863339585685730448161617137385945558413476710",
-                "outcome": "Yes",
-                "price": 0.1345,
-                "winner": false
-            },
-            {
-                "token_id": "102989823852695490789766674709810354249048261002126471192088062020852694227720",
-                "outcome": "No",
-                "price": 0.8655,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Esports",
-            "Pop Culture"
-        ]
-    },
-    "0x01f4e1d5f64c5e43a71ca8aebbb80a4caebacdd0483c29e43ec9b64e86c4feb8": {
-        "question": "Will Kai and Speed win Fortnite in 100+ tries?",
-        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
-        "market_slug": "will-kai-and-speed-win-fortnite-in-100-tries",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
-        "tokens": [
-            {
-                "token_id": "96045627439130206651758400524182423369217529337492927245524524975263101344963",
-                "outcome": "Yes",
-                "price": 0.45,
-                "winner": false
-            },
-            {
-                "token_id": "56710004789631740970796319867446818876095870671551767818092034727964199265166",
-                "outcome": "No",
-                "price": 0.55,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Esports",
-            "Pop Culture"
         ]
     },
     "0x34def74e6060c565a8f6472f29995c6b336f81ccbe8eced1476022275b4b618e": {
@@ -42860,86 +40622,6 @@
             "Elon Musk",
             "Pop Culture",
             "Immigration"
-        ]
-    },
-    "0x7a1cbe743df1a3c5db80ac29bc4ed66faaeb5da5badda69bdb9bc2a2bab3862d": {
-        "question": "Kai and Speed win Fortnite before midnight?",
-        "event_slug": "ishowspeed-kai-cenat-win-fortnite-before-midnight",
-        "market_slug": "ishowspeed-kai-cenat-win-fortnite-before-midnight",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "ishowspeed-kai-cenat-win-fortnite-by-midnight-lBCvXYnXSoCR.jpg",
-        "tokens": [
-            {
-                "token_id": "54890078050331195045378517713620747458938888047944873196891395831696019729018",
-                "outcome": "Yes",
-                "price": 0.165,
-                "winner": false
-            },
-            {
-                "token_id": "102148194069621940555374455442769597323786118394071944009950696680255595655358",
-                "outcome": "No",
-                "price": 0.835,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Pop Culture",
-            "internet"
-        ]
-    },
-    "0x91ff4f4286d207dc3d42a55e3aa92c9b366cb7b4a7a03643851b816b1282c9f2": {
-        "question": "Kai and Speed win Fortnite before Sunday?",
-        "event_slug": "kai-and-speed-win-fortnite-before-sunday",
-        "market_slug": "kai-and-speed-win-fortnite-before-sunday",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "kai-and-speed-win-fortnite-before-sunday-9ubLusnoQ4sV.jpg",
-        "tokens": [
-            {
-                "token_id": "87871449814482131954651410453780494879368744159342839108586902382788360399393",
-                "outcome": "Yes",
-                "price": 0.695,
-                "winner": false
-            },
-            {
-                "token_id": "104679258301412110149401250632271075826462751997423623640944654037005377132677",
-                "outcome": "No",
-                "price": 0.305,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Esports",
-            "Pop Culture",
-            "internet"
-        ]
-    },
-    "0x56fc8f22df08e6195fc3a5ea8994c30f231228d1f65979b3d2e9fd132e4d098b": {
-        "question": "Will Jeffery Xiong win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-jeffery-xiong-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "34324686380610898517324677789156365602589774571668632992641261876081832538001",
-                "outcome": "Yes",
-                "price": 0.0015,
-                "winner": false
-            },
-            {
-                "token_id": "3271505011289755879970159420198908119646509381180775609432068599330991206942",
-                "outcome": "No",
-                "price": 0.9985,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
         ]
     },
     "0x5a2019aaae7ed0261215e370458d9fcdecd99793111a0c9e92674bff518e4462": {
@@ -43247,110 +40929,6 @@
             "Travel Ban"
         ]
     },
-    "0x922ceac7d38769eba1635b45a83c07dde20a8ba678c21367e9eb2184e544077f": {
-        "question": "Will Elon Musk win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-elon-musk-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-elon-musk-win-cracker-of-the-year-LF2L3hBRytJU.png",
-        "tokens": [
-            {
-                "token_id": "98773465419400897196341370863916404786123602198047706106453338380300954190178",
-                "outcome": "Yes",
-                "price": 0.325,
-                "winner": false
-            },
-            {
-                "token_id": "33762972397467470757953241354771839311919736458734372633043773371513431540095",
-                "outcome": "No",
-                "price": 0.675,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
-    "0x8b009b84e05bf3f5c328cf767968470327f569e7453b26339b707b5bddc6f562": {
-        "question": "Will Donald Trump win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-donald-trump-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-donald-trump-win-cracker-of-the-year-bekRv8gzEwDE.png",
-        "tokens": [
-            {
-                "token_id": "62300913305823473280685346764499019914122099689983634340798900787286821194084",
-                "outcome": "Yes",
-                "price": 0.605,
-                "winner": false
-            },
-            {
-                "token_id": "30188730094524680259417515873378055398370336835920992205851805965482680256071",
-                "outcome": "No",
-                "price": 0.395,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
-    "0x91ee09b537f5966ca14175132146281c8ea59edef0fe0d0f9be953b0f1f4951b": {
-        "question": "Will Dave Portnoy win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-dave-portnoy-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-dave-portnoy-win-cracker-of-the-year-cen59lGWoBY-.png",
-        "tokens": [
-            {
-                "token_id": "43908385833418159615018990323018218374764719081905278005120523702587692739699",
-                "outcome": "Yes",
-                "price": 0.23,
-                "winner": false
-            },
-            {
-                "token_id": "105306101594348143635834455195912103758600884066453988765956636277956673599149",
-                "outcome": "No",
-                "price": 0.77,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
-    "0x0dbe05418689fc21a79d3206f312f1569db791bb21b8c8bf9e21bda2adb4b127": {
-        "question": "Will Joe Biden win Cracker of the Year?",
-        "event_slug": "cracker-of-the-year",
-        "market_slug": "will-joe-biden-win-cracker-of-the-year",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "will-joe-biden-win-cracker-of-the-year--5zMqMSZZg4Y.png",
-        "tokens": [
-            {
-                "token_id": "46720419668784927241034201588905972217044642403652944030894685961793972693650",
-                "outcome": "Yes",
-                "price": 0.0035,
-                "winner": false
-            },
-            {
-                "token_id": "41935268059894871879927687801393579978683769028648169332456891576314200551565",
-                "outcome": "No",
-                "price": 0.9965,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Pop Culture",
-            "Antonio Brown"
-        ]
-    },
     "0x75c202bbfb112166b9efb215dfa6ca06852de29bb41b699cac705554f0e4a54c": {
         "question": "Will 'Nosferatu' gross between $25-30m on 5-day opening weekend?",
         "event_slug": "nosferatu-5-day-opening-weekend-box-office",
@@ -43457,33 +41035,6 @@
             "box office",
             "Movies",
             "Pop Culture"
-        ]
-    },
-    "0x4ce544849038017c6c7ac0cdfe3d3bf21a00f520540d745c4ffe975240775b15": {
-        "question": "Will Wei Yi win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-wei-yi-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "77067989269073123485893823343764895646920919367097900718728056620024377434435",
-                "outcome": "Yes",
-                "price": 0.0025,
-                "winner": false
-            },
-            {
-                "token_id": "110503545849519125196822175188651848851720176289661140600608933681400504701887",
-                "outcome": "No",
-                "price": 0.9975,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
         ]
     },
     "0x33ee9c635a5535bb5a0c0160342c5e1cae6ed70d46c671e2fe6f1b19848264bb": {
@@ -43595,33 +41146,6 @@
             "Tweet Markets"
         ]
     },
-    "0x7acbdf7087ae0aed604b6b0dc2a112c2b22987a206d491d9638d596eeb3ecd48": {
-        "question": "Will Levon Aronian win the World Rapid Championship?",
-        "event_slug": "fide-world-rapid-chess-champion",
-        "market_slug": "will-levon-aronian-win-the-world-rapid-championship",
-        "end_date_iso": "2024-12-28T00:00:00Z",
-        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
-        "tokens": [
-            {
-                "token_id": "16392656330573683994352287024320922562613567504016477840863841097824672478830",
-                "outcome": "Yes",
-                "price": 0.006,
-                "winner": false
-            },
-            {
-                "token_id": "28928505667027212943399075325818379717091946367865635934948737759893558299142",
-                "outcome": "No",
-                "price": 0.994,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "Sports",
-            "Esports",
-            "Chess",
-            "Tournaments"
-        ]
-    },
     "0x6b3d85dbc4ccbff370c2e1c7b02336860dce4eebe4a22aee07feb432afe635d7": {
         "question": "Vivek out as Head of DOGE before July?",
         "event_slug": "vivek-out-as-doge-head-before-july",
@@ -43705,32 +41229,6 @@
             "Elon Musk",
             "Pop Culture",
             "Tweet Markets"
-        ]
-    },
-    "0x83be3a3bcb90828fc62d7ccc483aeb19eb48f82b00a2805f30e5676fb172b868": {
-        "question": "Will Kai and Speed win Fortnite in 75-99 tries?",
-        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
-        "market_slug": "will-kai-and-speed-win-fortnite-in-75-99-tries",
-        "end_date_iso": "2024-12-27T00:00:00Z",
-        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
-        "tokens": [
-            {
-                "token_id": "2587021221884038372406048856303432331104975821208896081336675695240513011823",
-                "outcome": "Yes",
-                "price": 0.095,
-                "winner": false
-            },
-            {
-                "token_id": "28953053719042836710909984395764010629444490796209709016069287388131531632828",
-                "outcome": "No",
-                "price": 0.905,
-                "winner": false
-            }
-        ],
-        "tags": [
-            "video games",
-            "Esports",
-            "Pop Culture"
         ]
     }
 }
