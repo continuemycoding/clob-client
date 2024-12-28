@@ -125,6 +125,13 @@ interface MarketData {
         }
     }
 
+    for (const key in Object.keys(markets)) {
+        if (Date.now() > new Date(markets[key].end_date_iso).getTime() - 3600_000) {
+            delete markets[key];
+            hasChanged = true;
+        }
+    }
+
     hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
 
     const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
@@ -137,7 +144,7 @@ interface MarketData {
     //     trades[key] = Yes;
     // }
 
-    for (const key in trades) {
+    for (const key in Object.keys(trades)) {
         if (!markets[key])
             delete trades[key];
     }
@@ -263,10 +270,10 @@ interface MarketData {
 
                 existingOrder.status = OrderStatus.PendingCancellation;
                 const response = await clobClient.cancelMarketOrders({ asset_id: token_id });
-                if (response.canceled.length == 0) {
-                    console.error(market.question, "取消订单错误", response);
+                if (response.canceled.length > 0)
                     delete userOrders[token_id];
-                }
+                else
+                    console.error(market.question, "取消订单错误", response);
             }
 
             if (Math.abs(existingOrder.price - midpoint) * 100 > rewards_max_spread) {
@@ -438,9 +445,6 @@ interface MarketData {
 - **创建时间**: ${new Date(created_at * 1000)}
 - **当前时间**: ${new Date(timestamp * 1)}
 `);
-
-                        if (status == "CANCELED")
-                            delete userOrders[token_id];
                         break;
                     }
 
