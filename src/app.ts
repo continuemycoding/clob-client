@@ -247,20 +247,20 @@ interface MarketData {
 
         if (existingOrder) {
             if (existingOrder.status === OrderStatus.PendingCancellation) {
-                console.log(market.question, '等待订单取消完成');
+                console.debug(market.question, '等待订单取消完成');
                 return;
             }
 
             if (existingOrder.status === OrderStatus.PendingSubmission) {
-                console.log(market.question, '等待订单提交完成');
+                console.debug(market.question, '等待订单提交完成');
                 return;
             }
 
             async function cancelMarketOrders(reason: string) {
-                console.log(market.question, reason);
+                console.debug(market.question, reason);
                 const userOrder = userOrders[token_id];
                 if (Date.now() < userOrder.timestamp + 1000) {
-                    console.error("创建超过1秒才能取消");
+                    // console.error("创建超过1秒才能取消");
                     return;
                 }
 
@@ -269,7 +269,7 @@ interface MarketData {
                 if (response.canceled.length > 0)
                     delete userOrders[token_id];
                 else
-                    console.error(market.question, "取消订单错误", response);
+                    console.error(market.question, reason, "取消订单错误", response);
             }
 
             if (Math.abs(existingOrder.price - midpoint) * 100 > rewards_max_spread) {
