@@ -42137,5 +42137,1600 @@
             "llm",
             "Tech"
         ]
+    },
+    "0xb1d8edd5495415396b5cbfdf3f577be73475a0a3a54374e4e85f27365ccf5362": {
+        "question": "Will Wesley So win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-wesley-so-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "52859889160836018805329928020238895134650693645886007032807082034000705243313",
+                "outcome": "Yes",
+                "price": 0.004,
+                "winner": false
+            },
+            {
+                "token_id": "42427243828163435061894163775615132369030074875545933233689243255794687857900",
+                "outcome": "No",
+                "price": 0.996,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x16069c08c3f7022390ecc169dd2aee77bfda70121df6415932a38ddffba72a67": {
+        "question": "Will Maxime Vachier-Lagrave win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-maxime-vachier-lagrave-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "79380920345474886786657335731412201621143955876396135079492499902603611725698",
+                "outcome": "Yes",
+                "price": 0.0005,
+                "winner": false
+            },
+            {
+                "token_id": "1648134162788448068063137225472262913213690717487330857961573178186194203072",
+                "outcome": "No",
+                "price": 0.9995,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x8df7982f92e256b11748d86d5df1d58caa36869164ea28d0e88afb1f4f3cdc2c": {
+        "question": "Will Ian Nepomniachtchi win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-ian-nepomniachtchi-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "33146405872927247829113382808295141372159643857415484951966232876952848519767",
+                "outcome": "Yes",
+                "price": 0.068,
+                "winner": false
+            },
+            {
+                "token_id": "92405387617823105687793955078013099375671378971888055938555184470033853390789",
+                "outcome": "No",
+                "price": 0.932,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0xce81bf7d6eb86fe2ed3a791021a843001d14e2fb3a06edeaaafc611e86680ec4": {
+        "question": "Will Hikaru Nakamura win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-hikaru-nakamura-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "75210876783332954637096903425063261343118764295613404683364805469654264352044",
+                "outcome": "Yes",
+                "price": 0.027,
+                "winner": false
+            },
+            {
+                "token_id": "95135851094143491688342200397182257228593403916119710625247650816508293637929",
+                "outcome": "No",
+                "price": 0.973,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x48c2491dcf829d6d6541cc88c0f47f65e37f1919ce4f4d244bf63edafc2a4fb4": {
+        "question": "Will Fabiano Caruana win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-fabiano-caruana-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "37597110917129893621739907162243473212794925556652082516180155137475893799071",
+                "outcome": "Yes",
+                "price": 0.0115,
+                "winner": false
+            },
+            {
+                "token_id": "54537886665192033994793273591812242481296074901387230657624075756683554041221",
+                "outcome": "No",
+                "price": 0.9885,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0xcf21f12a26a797fe5157ed198eafe06d207bde986f2e15a13d3ead3f0b2a9162": {
+        "question": "Will Arjun Erigaisi win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-arjun-erigaisi-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "47557163726905049264396776292119890205382076926495513521241059848927326565248",
+                "outcome": "Yes",
+                "price": 0.185,
+                "winner": false
+            },
+            {
+                "token_id": "67635933688170284291141516199401218884778106602609267962296556384695188641500",
+                "outcome": "No",
+                "price": 0.815,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0xd4ec09d92e35950a6f9b99a278cecf3ec817815362938e90c641e3e2da90acef": {
+        "question": "Will Alireza Firouzja win the 2024 World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-alireza-firouzja-win-the-2024-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "77780871901690231579273445029619222074799563086908766573072241014126795531359",
+                "outcome": "Yes",
+                "price": 0.02,
+                "winner": false
+            },
+            {
+                "token_id": "91197737271035803213074722015660892162601439713417632759031344816950481518502",
+                "outcome": "No",
+                "price": 0.98,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0xc908e26576854a5959929655f133899fc425f57ac89ab741a103c9e1b554812c": {
+        "question": "Will Magnus Carlsen win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-magnus-carlson-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "111079212695894145766341996830952704515045345131757164342191452406005031180405",
+                "outcome": "Yes",
+                "price": 0.0005,
+                "winner": false
+            },
+            {
+                "token_id": "83636555553386407709985378345033768254571331995464578290821256603975794244871",
+                "outcome": "No",
+                "price": 0.9995,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x3b2de650b3e7dac92b00f555471227dae4b1bc73ee29b89cbfe9d4412692c8be": {
+        "question": "Will 'Nosferatu' gross under $20m on 5-day opening weekend?",
+        "event_slug": "nosferatu-5-day-opening-weekend-box-office",
+        "market_slug": "will-nosferatu-gross-under-20m-on-5-day-opening-weekend",
+        "end_date_iso": "2024-12-30T00:00:00Z",
+        "icon": "will-nosferatu-gross-over-200m-on-5-day-opening-_YtINhmbF2X_.jpg",
+        "tokens": [
+            {
+                "token_id": "79456793326282330713584229001791687374561326481646140690584952293997646884678",
+                "outcome": "Yes",
+                "price": 0.0005,
+                "winner": false
+            },
+            {
+                "token_id": "67019009394540927866381817536019798858615748732011315253626945337496723913980",
+                "outcome": "No",
+                "price": 0.9995,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "box office",
+            "Movies",
+            "Pop Culture"
+        ]
+    },
+    "0x2a4447f833d06b50a65a557d6b6b7e6d005e159e489e3bc77ef30b8dd99e09b9": {
+        "question": "Will Elon tweet 300-324 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-300-324-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "43817806959743495711509672196209003784866378981460577662545292916533232081697",
+                "outcome": "Yes",
+                "price": 0.135,
+                "winner": false
+            },
+            {
+                "token_id": "108973584300857946555232867354765110505482486578383357612332155930173164186895",
+                "outcome": "No",
+                "price": 0.865,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0xa7ecbda690618f8db2bd77cfd434a4844fd7d65d3f94a7b11248bd4fd00a10c9": {
+        "question": "Russia claims responsibility for downing Azerbaijan plane?",
+        "event_slug": "russia-claims-responsibility-for-downing-azerbaijan-plane",
+        "market_slug": "russia-claims-responsibility-for-downing-azerbaijan-plane",
+        "end_date_iso": "2024-12-31T00:00:00Z",
+        "icon": "russia-claims-responsibility-for-downing-azerbaijan-plane--jdRl5zc83-H.jpg",
+        "tokens": [
+            {
+                "token_id": "41121288438580948879955651194700311702219090255180862230119174510972297047514",
+                "outcome": "Yes",
+                "price": 0.045,
+                "winner": false
+            },
+            {
+                "token_id": "61834524187155059881812128869161037413453096657301009611202788405751442410642",
+                "outcome": "No",
+                "price": 0.955,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Breaking News",
+            "Geopolitics"
+        ]
+    },
+    "0x27c5a06d6ae3a6a0f51e2f1118fbfac8a7d2afcd804c123fd6266315482a0487": {
+        "question": "Will Nodirbek Abdusattorov win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-nodirbek-abdusattorov-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "71385635026159779394161018418846346940847843162797533369476240881720030548570",
+                "outcome": "Yes",
+                "price": 0.0685,
+                "winner": false
+            },
+            {
+                "token_id": "48060747094042451553291406466599082099385770860956489029945867786818197072227",
+                "outcome": "No",
+                "price": 0.9315,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x67ffb80f7264dee48a6abe7ba8601b5cc9dbe6a1f28d122a2c6fb4a808dc5b0e": {
+        "question": "Will Shane Gillis win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-shane-gillis-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-shane-gillis-win-cracker-of-the-year-6TSVMi-sLM4R.png",
+        "tokens": [
+            {
+                "token_id": "4239119949690146211424093413833604532130754678885343519820559982600657453098",
+                "outcome": "Yes",
+                "price": 0.0365,
+                "winner": false
+            },
+            {
+                "token_id": "92276764473235566760773006062972617416543406902199006181904485880463761634391",
+                "outcome": "No",
+                "price": 0.9635,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x8cbf31ae2dff3bf262ba8b7e847cfc49d6f9e88ddb3330a051a5787177749874": {
+        "question": "Another state declare a state of emergency over bird flu before February?",
+        "event_slug": "another-state-declare-a-state-of-emergency-over-bird-flu-before-february",
+        "market_slug": "another-state-declare-a-state-of-emergency-over-bird-flu-before-february",
+        "end_date_iso": "2025-01-31T00:00:00Z",
+        "icon": "another-state-declare-a-state-of-emergency-over-bird-flu-in-2024-PVF_UPWU-9X8.jpg",
+        "tokens": [
+            {
+                "token_id": "106312791964557364184052642373426857106392360847438469940517961069035123954706",
+                "outcome": "Yes",
+                "price": 0.285,
+                "winner": false
+            },
+            {
+                "token_id": "102962810042814384989272150691336437847931513539356148805377736932497655720705",
+                "outcome": "No",
+                "price": 0.715,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Science",
+            "health",
+            "Pandemics",
+            "H5N1",
+            "Bird flu"
+        ]
+    },
+    "0x45e67fd03897849c892229784738e3389a4eaaa0f0627aec649e392ef94e912b": {
+        "question": "Will Jan-Krzysztof Duda win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-jan-krzysztof-duda-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "55320655729431381675106752881870267984079647382448877898718538463043037168700",
+                "outcome": "Yes",
+                "price": 0.162,
+                "winner": false
+            },
+            {
+                "token_id": "9242699964443603999623844742418538868125857572800660744753543980849302638924",
+                "outcome": "No",
+                "price": 0.838,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x613fad43c73b5f2469b971c4c7e6be2050a6a51d619363107ee0673bb1420696": {
+        "question": "Will Kai and Speed win Fortnite in 50-74 tries?",
+        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
+        "market_slug": "will-kai-and-speed-win-fortnite-in-50-74-tries",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
+        "tokens": [
+            {
+                "token_id": "58487255999823696184025111076966083861048229505659358387626408831540535881564",
+                "outcome": "Yes",
+                "price": 0.23,
+                "winner": false
+            },
+            {
+                "token_id": "22117769247629101741833688365570173792608874947178331104152588709039223356121",
+                "outcome": "No",
+                "price": 0.77,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Esports",
+            "Pop Culture"
+        ]
+    },
+    "0x131ec938bb5f143a0d345349ae02624d82207e960ca0a6caa40ccd5b3b5a7a26": {
+        "question": "Ripple above $2.15 on January 3?",
+        "event_slug": "ripple-above-2pt15-on-january-3",
+        "market_slug": "ripple-above-2pt15-on-january-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "ripple-above-0pt87-on-november-15-R5vLBTwE35CR.jpg",
+        "tokens": [
+            {
+                "token_id": "41766743397837977264953031948083333975547066995973490444370964017549679948051",
+                "outcome": "Yes",
+                "price": 0.5,
+                "winner": false
+            },
+            {
+                "token_id": "51041064249803195058487362732415566204111389616575529497003589802223616518215",
+                "outcome": "No",
+                "price": 0.5,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Crypto",
+            "Crypto Prices",
+            "XRP",
+            "ripple"
+        ]
+    },
+    "0x97480fb1ea30619d6682bedb183289eccf60da180311c8ba45985dcba13a05d6": {
+        "question": "Solana above $185 on January 3?",
+        "event_slug": "solana-above-185-on-january-3",
+        "market_slug": "solana-above-185-on-january-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "solana+purp.png",
+        "tokens": [
+            {
+                "token_id": "10761499657878501346024199756898066366470249812327240743868960849870694414679",
+                "outcome": "Yes",
+                "price": 0.5,
+                "winner": false
+            },
+            {
+                "token_id": "1336415653384613418928467331428572534446743088458615513975203346579217943837",
+                "outcome": "No",
+                "price": 0.5,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Crypto",
+            "Solana",
+            "Crypto Prices"
+        ]
+    },
+    "0x37d6fdb304d3b1ba850a0618afa7ee344ef2fd62672fdfcc7b61782e7e66a3a6": {
+        "question": "Dogecoin above $0.31 on January 3?",
+        "event_slug": "dogecoin-above-0pt31-on-january-3",
+        "market_slug": "dogecoin-above-0pt31-on-january-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "dogecoin-above-0pt37-on-november-15-INLYt3qOJRJN.jpg",
+        "tokens": [
+            {
+                "token_id": "50977687114299613463359452788464618556781911604289140246501241359810548866011",
+                "outcome": "Yes",
+                "price": 0.525,
+                "winner": false
+            },
+            {
+                "token_id": "5215340393181001793065287837652627833570107764212663817232133284057077330011",
+                "outcome": "No",
+                "price": 0.475,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Crypto",
+            "Crypto Prices",
+            "doge",
+            "Memecoins"
+        ]
+    },
+    "0x43e111b043c95b3915926de819e27cfaf7f7de18cc2c33c9250607eeb03e7c63": {
+        "question": "Will Mike Mayock win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-mike-mayock-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-mike-mayock-win-cracker-of-the-year-QHdYMN_Jf01z.png",
+        "tokens": [
+            {
+                "token_id": "7670210529146459096560803823864981512106806151056456340610784933841162524388",
+                "outcome": "Yes",
+                "price": 0.013,
+                "winner": false
+            },
+            {
+                "token_id": "90798999461887925506338368819437662324547346758382900351699937484860631339358",
+                "outcome": "No",
+                "price": 0.987,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0xa473d8fbceb9230cab45c8062b300ef2a0572dc21fd97749ef99b087b2d38016": {
+        "question": "Will another person win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-another-person-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-another-person-win-cracker-of-the-year-NTM-2jmZ75wF.png",
+        "tokens": [
+            {
+                "token_id": "105954863981488413377991251971558752896960895958213549914200331991494021804165",
+                "outcome": "Yes",
+                "price": 0.08,
+                "winner": false
+            },
+            {
+                "token_id": "70069239709822829125945190986401072654432485381267068538828689666426606950769",
+                "outcome": "No",
+                "price": 0.92,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x7b8cb4ea2da27da2217a766d857e25f25398fc8e0be75750c83931099055122d": {
+        "question": "Will Trump comment on immigration debate today?",
+        "event_slug": "will-trump-comment-on-immigration-debate-by-tomorrow",
+        "market_slug": "will-trump-comment-on-immigration-debate-by-tomorrow",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-trump-comment-on-h-1b-debate-by-tomorrow-wRxytPoNS9pp.jpg",
+        "tokens": [
+            {
+                "token_id": "36640419601095543849578458656462433217281671873973574713330577406975260806330",
+                "outcome": "Yes",
+                "price": 0.015,
+                "winner": false
+            },
+            {
+                "token_id": "5305524589204024140158025017553896951034147105125959907807061358905569701873",
+                "outcome": "No",
+                "price": 0.985,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "Breaking News",
+            "India",
+            "Immigration",
+            "H1b"
+        ]
+    },
+    "0xf6d53b1ce8906c7c8969cbe96e4dcf980db7723c0cfc730d67b0c2ded92791c7": {
+        "question": "Will Zach Bryan win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-zach-bryan-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-zach-bryan-win-cracker-of-the-year-BmEEbRQvU9Uu.png",
+        "tokens": [
+            {
+                "token_id": "54712578546542159855381354801455279024236819553266067731221457239787215694717",
+                "outcome": "Yes",
+                "price": 0.0105,
+                "winner": false
+            },
+            {
+                "token_id": "60381396671190954402529322561707841313060693363977950675938633954558172519456",
+                "outcome": "No",
+                "price": 0.9895,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0xae8638f7c3050ae02ba440971123df24f1af8e0aad5d056ea538f769cbcbfab4": {
+        "question": "Will Elon tweet 450 or more times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-450-or-more-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "58378831514232065298833195613557085538810548602395121177220890780598247168733",
+                "outcome": "Yes",
+                "price": 0.065,
+                "winner": false
+            },
+            {
+                "token_id": "88066376340193505717057975777416263129345921225953560505152443325472020227890",
+                "outcome": "No",
+                "price": 0.935,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0xc0d35b5eb721300f8cc66152ca0807e973d11fe5b18bf6ebdfe4ade541b013b6": {
+        "question": "Will Kai and Speed win Fortnite in 21-49 tries?",
+        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
+        "market_slug": "will-kai-and-speed-win-fortnite-in-21-49-tries",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
+        "tokens": [
+            {
+                "token_id": "17263232464992782323318860470616863339585685730448161617137385945558413476710",
+                "outcome": "Yes",
+                "price": 0.1345,
+                "winner": false
+            },
+            {
+                "token_id": "102989823852695490789766674709810354249048261002126471192088062020852694227720",
+                "outcome": "No",
+                "price": 0.8655,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Esports",
+            "Pop Culture"
+        ]
+    },
+    "0x01f4e1d5f64c5e43a71ca8aebbb80a4caebacdd0483c29e43ec9b64e86c4feb8": {
+        "question": "Will Kai and Speed win Fortnite in 100+ tries?",
+        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
+        "market_slug": "will-kai-and-speed-win-fortnite-in-100-tries",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
+        "tokens": [
+            {
+                "token_id": "96045627439130206651758400524182423369217529337492927245524524975263101344963",
+                "outcome": "Yes",
+                "price": 0.45,
+                "winner": false
+            },
+            {
+                "token_id": "56710004789631740970796319867446818876095870671551767818092034727964199265166",
+                "outcome": "No",
+                "price": 0.55,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Esports",
+            "Pop Culture"
+        ]
+    },
+    "0x34def74e6060c565a8f6472f29995c6b336f81ccbe8eced1476022275b4b618e": {
+        "question": "Will Laura Loomer get her bluecheck back by next Friday?",
+        "event_slug": "will-laura-loomer-get-her-bluecheck-back-before-inauguration",
+        "market_slug": "will-laura-loomer-get-her-bluecheck-back-before-inauguration",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "will-laura-loomer-get-her-bluecheck-back-before-inauguration-Yi8qfPqntNTT.jpg",
+        "tokens": [
+            {
+                "token_id": "97211544259773116597644801987915156293803613439523733225613370011431235736931",
+                "outcome": "Yes",
+                "price": 0.565,
+                "winner": false
+            },
+            {
+                "token_id": "105009860304087490677321777297832412032604372189529368026344618310969031997405",
+                "outcome": "No",
+                "price": 0.435,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Immigration"
+        ]
+    },
+    "0x7a1cbe743df1a3c5db80ac29bc4ed66faaeb5da5badda69bdb9bc2a2bab3862d": {
+        "question": "Kai and Speed win Fortnite before midnight?",
+        "event_slug": "ishowspeed-kai-cenat-win-fortnite-before-midnight",
+        "market_slug": "ishowspeed-kai-cenat-win-fortnite-before-midnight",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "ishowspeed-kai-cenat-win-fortnite-by-midnight-lBCvXYnXSoCR.jpg",
+        "tokens": [
+            {
+                "token_id": "54890078050331195045378517713620747458938888047944873196891395831696019729018",
+                "outcome": "Yes",
+                "price": 0.165,
+                "winner": false
+            },
+            {
+                "token_id": "102148194069621940555374455442769597323786118394071944009950696680255595655358",
+                "outcome": "No",
+                "price": 0.835,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Pop Culture",
+            "internet"
+        ]
+    },
+    "0x91ff4f4286d207dc3d42a55e3aa92c9b366cb7b4a7a03643851b816b1282c9f2": {
+        "question": "Kai and Speed win Fortnite before Sunday?",
+        "event_slug": "kai-and-speed-win-fortnite-before-sunday",
+        "market_slug": "kai-and-speed-win-fortnite-before-sunday",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "kai-and-speed-win-fortnite-before-sunday-9ubLusnoQ4sV.jpg",
+        "tokens": [
+            {
+                "token_id": "87871449814482131954651410453780494879368744159342839108586902382788360399393",
+                "outcome": "Yes",
+                "price": 0.695,
+                "winner": false
+            },
+            {
+                "token_id": "104679258301412110149401250632271075826462751997423623640944654037005377132677",
+                "outcome": "No",
+                "price": 0.305,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Esports",
+            "Pop Culture",
+            "internet"
+        ]
+    },
+    "0x56fc8f22df08e6195fc3a5ea8994c30f231228d1f65979b3d2e9fd132e4d098b": {
+        "question": "Will Jeffery Xiong win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-jeffery-xiong-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "34324686380610898517324677789156365602589774571668632992641261876081832538001",
+                "outcome": "Yes",
+                "price": 0.0015,
+                "winner": false
+            },
+            {
+                "token_id": "3271505011289755879970159420198908119646509381180775609432068599330991206942",
+                "outcome": "No",
+                "price": 0.9985,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x5a2019aaae7ed0261215e370458d9fcdecd99793111a0c9e92674bff518e4462": {
+        "question": "Will Elon tweet 275-299 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-275-299-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "89259486419943891776496776714632925474564392421925573348299204336213716206969",
+                "outcome": "Yes",
+                "price": 0.135,
+                "winner": false
+            },
+            {
+                "token_id": "33102981851238140003454956661418149083284865951501778328874078594591024380393",
+                "outcome": "No",
+                "price": 0.865,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x7bfbe6b9c3bdc9381b4ad749aec8f092c784b8fcd138916f8b9690f904de562b": {
+        "question": "Will Elon tweet 375-399 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-375-399-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "30210002943709728519606162481256894391560312209867331140951098608678557563169",
+                "outcome": "Yes",
+                "price": 0.105,
+                "winner": false
+            },
+            {
+                "token_id": "54748734416539027351689177435926054105131309905567589023939525530937890100888",
+                "outcome": "No",
+                "price": 0.895,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x75ce364b7af68f9bafdeef0c10344b5f0fca5403e1c98614b5fdf5e3d7d03e90": {
+        "question": "Trump takes Panama Canal in first 100 days?",
+        "event_slug": "us-takes-panama-canal-in-trumps-first-100-days",
+        "market_slug": "us-takes-panama-canal-in-trumps-first-100-days",
+        "end_date_iso": "2025-04-29T00:00:00Z",
+        "icon": "us-takes-panama-canal-in-trumps-first-100-days-0Zu1RzI1deqk.jpg",
+        "tokens": [
+            {
+                "token_id": "80475325472226591276880230497580464205260599900595227257931811964818208272817",
+                "outcome": "Yes",
+                "price": 0.0485,
+                "winner": false
+            },
+            {
+                "token_id": "104576536487134619277546251562307390910097950238165886699923826581927196234100",
+                "outcome": "No",
+                "price": 0.9515,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Geopolitics"
+        ]
+    },
+    "0xd9bf9cb51690f2cab1f47a1e4bae5fe7826eadb205ab7bad6cd8089e759418cf": {
+        "question": "100+ Bird Flu cases in U.S. before February?",
+        "event_slug": "100-bird-flu-cases-in-us-before-february",
+        "market_slug": "100-bird-flu-cases-in-us-before-february",
+        "end_date_iso": "2025-01-31T00:00:00Z",
+        "icon": "100-bird-flu-cases-in-us-before-april-_od28JG2gybG.jpg",
+        "tokens": [
+            {
+                "token_id": "70465349877685189282009556037013663734668798219652697577134779839070528297250",
+                "outcome": "Yes",
+                "price": 0.385,
+                "winner": false
+            },
+            {
+                "token_id": "64028061077282412021672203338585145778337339969881762052552830062658347202773",
+                "outcome": "No",
+                "price": 0.615,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Science",
+            "Pandemics",
+            "H5N1",
+            "Bird flu"
+        ]
+    },
+    "0xc201255ac4fd4ca73d38eb331681dd9c4597fc85ed52a89ef664fa399a2f185a": {
+        "question": "Bitcoin above $94,000 on January 3?",
+        "event_slug": "bitcoin-above-94000-on-january-3",
+        "market_slug": "bitcoin-above-94000-on-january-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "bitcoin+neon+red+green.png",
+        "tokens": [
+            {
+                "token_id": "88458672007514219171605090869548159546185169218791748266793909997093690233909",
+                "outcome": "Yes",
+                "price": 0.555,
+                "winner": false
+            },
+            {
+                "token_id": "6923631216705603224951354298877779165510028272364667413602219029200417868719",
+                "outcome": "No",
+                "price": 0.445,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Crypto",
+            "Bitcoin",
+            "Crypto Prices"
+        ]
+    },
+    "0x60a6042337283bf2a1441be185d25fd46ab26bd29ff17d498125dcf3fd7e1f75": {
+        "question": "Will Elon tweet 325-349 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-325-349-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "79645062373685491889370239142642466510638500356965036640844946698629310818328",
+                "outcome": "Yes",
+                "price": 0.125,
+                "winner": false
+            },
+            {
+                "token_id": "48939212806909738189218840533021723711401078853497300014113022194872773621112",
+                "outcome": "No",
+                "price": 0.875,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x41b645817c8221ebd5c502d7589ceb34e3938c91e1ee09442eb5a52afa3e28d1": {
+        "question": "Will Elon tweet 350-374 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-350-374-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "39893673135562134149603689505921878042274895507104269528392697705563465136671",
+                "outcome": "Yes",
+                "price": 0.115,
+                "winner": false
+            },
+            {
+                "token_id": "82677815558243559973742616558505351570347584089301883776467796767034175872456",
+                "outcome": "No",
+                "price": 0.885,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x5f7842f5d3be987a52470265bd1909421cae8c318d6487fb38b902b0c5055d4d": {
+        "question": "Ethereum above $3,300 on January 3?",
+        "event_slug": "ethereum-above-3300-on-january-3",
+        "market_slug": "ethereum-above-3300-on-january-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "ethereum+logo+confetti.png",
+        "tokens": [
+            {
+                "token_id": "73862165345180073527829040923807892332434459885925039464155974080847696979486",
+                "outcome": "Yes",
+                "price": 0.545,
+                "winner": false
+            },
+            {
+                "token_id": "76953111738160165490137717180953849928236239277276601725824182569689477297127",
+                "outcome": "No",
+                "price": 0.455,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Crypto",
+            "Ethereum",
+            "Crypto Prices"
+        ]
+    },
+    "0x3f375f13f0124ebbacfede6a9f32e7b37e1b33580b3628cc8970ed55e3a19ee9": {
+        "question": "Will Trump remove Sriram before inauguration?",
+        "event_slug": "sriram-krishnan-out-as-trump-ai-policy-advisor-before-inauguration",
+        "market_slug": "sriram-krishnan-out-as-trump-ai-policy-advisor-before-inauguration",
+        "end_date_iso": "2025-01-20T00:00:00Z",
+        "icon": "sriram-krishnan-out-as-trump-ai-policy-advisor-before-inauguration-TNjU5ETEWLeU.jpg",
+        "tokens": [
+            {
+                "token_id": "75178207607830129502487965047061981257473185174505310156106642617096201414873",
+                "outcome": "Yes",
+                "price": 0.105,
+                "winner": false
+            },
+            {
+                "token_id": "90941682405457104550883289825118133468391925864084318705243490345966793559715",
+                "outcome": "No",
+                "price": 0.895,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Breaking News",
+            "AI",
+            "India",
+            "Immigration",
+            "maga",
+            "Trump Presidency",
+            "groyper",
+            "H1b"
+        ]
+    },
+    "0xa6f269b913e720ff1a566509a9a6f42152b67ab3a8884692ffa573afc56673ad": {
+        "question": "Will Trump eliminate H-1B visa in first 100 days?",
+        "event_slug": "will-trump-eliminate-h-1b-visa-in-first-100-days",
+        "market_slug": "will-trump-eliminate-h-1b-visa-in-first-100-days",
+        "end_date_iso": "2025-04-29T00:00:00Z",
+        "icon": "will-trump-eliminate-h-1b-visa-in-first-100-days-Cq9te027pN9b.jpg",
+        "tokens": [
+            {
+                "token_id": "9123811821742026514314074292073040245759153589875401302349677358205516045734",
+                "outcome": "Yes",
+                "price": 0.085,
+                "winner": false
+            },
+            {
+                "token_id": "76218370224059592908917316764697477438442074005979503902102018653251664650292",
+                "outcome": "No",
+                "price": 0.915,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "Breaking News",
+            "us government",
+            "India",
+            "Immigration",
+            "Trump Presidency",
+            "H1b"
+        ]
+    },
+    "0x1992c7166e2fe5c4f6596df532f87704b5a7e4b34b62e01589708cc7543066c8": {
+        "question": "Will Trump enact India travel ban in first 100 days?",
+        "event_slug": "will-trump-enact-india-travel-ban-in-first-100-days",
+        "market_slug": "will-trump-enact-india-travel-ban-in-first-100-days",
+        "end_date_iso": "2025-04-29T00:00:00Z",
+        "icon": "will-trump-enact-india-travel-ban-in-first-100-days-8Xj3Qu_sGoxr.jpg",
+        "tokens": [
+            {
+                "token_id": "79341337892874219701425175041537740973262675256474903054771813732218539050067",
+                "outcome": "Yes",
+                "price": 0.065,
+                "winner": false
+            },
+            {
+                "token_id": "96127927921946668901874626277396879044637785380033621975651148589751229553224",
+                "outcome": "No",
+                "price": 0.935,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "India",
+            "Immigration",
+            "Trump Presidency",
+            "H1b",
+            "Travel Ban"
+        ]
+    },
+    "0x922ceac7d38769eba1635b45a83c07dde20a8ba678c21367e9eb2184e544077f": {
+        "question": "Will Elon Musk win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-elon-musk-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-elon-musk-win-cracker-of-the-year-LF2L3hBRytJU.png",
+        "tokens": [
+            {
+                "token_id": "98773465419400897196341370863916404786123602198047706106453338380300954190178",
+                "outcome": "Yes",
+                "price": 0.325,
+                "winner": false
+            },
+            {
+                "token_id": "33762972397467470757953241354771839311919736458734372633043773371513431540095",
+                "outcome": "No",
+                "price": 0.675,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x8b009b84e05bf3f5c328cf767968470327f569e7453b26339b707b5bddc6f562": {
+        "question": "Will Donald Trump win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-donald-trump-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-donald-trump-win-cracker-of-the-year-bekRv8gzEwDE.png",
+        "tokens": [
+            {
+                "token_id": "62300913305823473280685346764499019914122099689983634340798900787286821194084",
+                "outcome": "Yes",
+                "price": 0.605,
+                "winner": false
+            },
+            {
+                "token_id": "30188730094524680259417515873378055398370336835920992205851805965482680256071",
+                "outcome": "No",
+                "price": 0.395,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x91ee09b537f5966ca14175132146281c8ea59edef0fe0d0f9be953b0f1f4951b": {
+        "question": "Will Dave Portnoy win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-dave-portnoy-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-dave-portnoy-win-cracker-of-the-year-cen59lGWoBY-.png",
+        "tokens": [
+            {
+                "token_id": "43908385833418159615018990323018218374764719081905278005120523702587692739699",
+                "outcome": "Yes",
+                "price": 0.23,
+                "winner": false
+            },
+            {
+                "token_id": "105306101594348143635834455195912103758600884066453988765956636277956673599149",
+                "outcome": "No",
+                "price": 0.77,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x0dbe05418689fc21a79d3206f312f1569db791bb21b8c8bf9e21bda2adb4b127": {
+        "question": "Will Joe Biden win Cracker of the Year?",
+        "event_slug": "cracker-of-the-year",
+        "market_slug": "will-joe-biden-win-cracker-of-the-year",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "will-joe-biden-win-cracker-of-the-year--5zMqMSZZg4Y.png",
+        "tokens": [
+            {
+                "token_id": "46720419668784927241034201588905972217044642403652944030894685961793972693650",
+                "outcome": "Yes",
+                "price": 0.0035,
+                "winner": false
+            },
+            {
+                "token_id": "41935268059894871879927687801393579978683769028648169332456891576314200551565",
+                "outcome": "No",
+                "price": 0.9965,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Pop Culture",
+            "Antonio Brown"
+        ]
+    },
+    "0x75c202bbfb112166b9efb215dfa6ca06852de29bb41b699cac705554f0e4a54c": {
+        "question": "Will 'Nosferatu' gross between $25-30m on 5-day opening weekend?",
+        "event_slug": "nosferatu-5-day-opening-weekend-box-office",
+        "market_slug": "will-nosferatu-gross-between-25-30m-on-5-day-opening-weekend",
+        "end_date_iso": "2024-12-30T00:00:00Z",
+        "icon": "will-nosferatu-gross-over-200m-on-5-day-opening-_YtINhmbF2X_.jpg",
+        "tokens": [
+            {
+                "token_id": "59575709968839823474359158169158092052972845496370343752780937175738773597575",
+                "outcome": "Yes",
+                "price": 0.0045,
+                "winner": false
+            },
+            {
+                "token_id": "51244563345524111665311727563127266956598665407481201983685088108570230994575",
+                "outcome": "No",
+                "price": 0.9955,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "box office",
+            "Movies",
+            "Pop Culture"
+        ]
+    },
+    "0x8a8d14636fb261b71ccc50e58b7a3a18d068ff25190842491f4ddf93a1553b0d": {
+        "question": "Will 'Nosferatu' gross over $30m on 5-day opening weekend?",
+        "event_slug": "nosferatu-5-day-opening-weekend-box-office",
+        "market_slug": "will-nosferatu-gross-over-30m-on-5-day-opening-weekend",
+        "end_date_iso": "2024-12-30T00:00:00Z",
+        "icon": "will-nosferatu-gross-over-200m-on-5-day-opening-_YtINhmbF2X_.jpg",
+        "tokens": [
+            {
+                "token_id": "52630231600562057884135490507362785457474144923906822302624180436705195902278",
+                "outcome": "Yes",
+                "price": 0.9955,
+                "winner": false
+            },
+            {
+                "token_id": "58354637895239270803423108124362086755388985515828499204716766376925648311911",
+                "outcome": "No",
+                "price": 0.0045,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "box office",
+            "Movies",
+            "Pop Culture"
+        ]
+    },
+    "0x8fbfd38766cc418ffd335752fb2c4214cbd53f7940f3eb859e2272dc7d2a5ade": {
+        "question": "Israel x Hamas ceasefire by January 31?",
+        "event_slug": "israel-x-hamas-ceasefire-by-january-31",
+        "market_slug": "israel-x-hamas-ceasefire-by-january-31",
+        "end_date_iso": "2025-01-31T00:00:00Z",
+        "icon": "israel+palestine+dove+flag.jpeg",
+        "tokens": [
+            {
+                "token_id": "85290267909911820861145083593378862676389642289651946031594690199915872220140",
+                "outcome": "Yes",
+                "price": 0.315,
+                "winner": false
+            },
+            {
+                "token_id": "25291778869802603731995319780623677298056435555959700335335192878900091463358",
+                "outcome": "No",
+                "price": 0.685,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "hamas",
+            "Middle East",
+            "Israel",
+            "Breaking News",
+            "Geopolitics",
+            "Macro Graph"
+        ]
+    },
+    "0x061a0c2ab562330ff150623bd5b265e5c020827b4c340ff1f4343bab58eec3ff": {
+        "question": "Will 'Nosferatu' gross between $20-25m on 5-day opening weekend?",
+        "event_slug": "nosferatu-5-day-opening-weekend-box-office",
+        "market_slug": "will-nosferatu-gross-between-20-25m-on-5-day-opening-weekend",
+        "end_date_iso": "2024-12-30T00:00:00Z",
+        "icon": "will-nosferatu-gross-over-200m-on-5-day-opening-_YtINhmbF2X_.jpg",
+        "tokens": [
+            {
+                "token_id": "27364047466598328133817468834130582800364752432423254110782693089658695749494",
+                "outcome": "Yes",
+                "price": 0.0005,
+                "winner": false
+            },
+            {
+                "token_id": "4361555233383057771950997377178341534409859096027008361556126611968493190235",
+                "outcome": "No",
+                "price": 0.9995,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "box office",
+            "Movies",
+            "Pop Culture"
+        ]
+    },
+    "0x4ce544849038017c6c7ac0cdfe3d3bf21a00f520540d745c4ffe975240775b15": {
+        "question": "Will Wei Yi win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-wei-yi-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "77067989269073123485893823343764895646920919367097900718728056620024377434435",
+                "outcome": "Yes",
+                "price": 0.0025,
+                "winner": false
+            },
+            {
+                "token_id": "110503545849519125196822175188651848851720176289661140600608933681400504701887",
+                "outcome": "No",
+                "price": 0.9975,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x33ee9c635a5535bb5a0c0160342c5e1cae6ed70d46c671e2fe6f1b19848264bb": {
+        "question": "Will Trump increase cap on H-1B visas in first 100 days?",
+        "event_slug": "will-trump-increase-cap-on-h-1b-visas-in-first-100-days",
+        "market_slug": "will-trump-increase-cap-on-h-1b-visas-in-first-100-days",
+        "end_date_iso": "2025-04-29T00:00:00Z",
+        "icon": "will-trump-increase-cap-on-h-1b-visas-in-first-100-days-3bhfANvETF_2.jpg",
+        "tokens": [
+            {
+                "token_id": "39751908412545140206759452951931216220592509153299615020304043476209973070114",
+                "outcome": "Yes",
+                "price": 0.23,
+                "winner": false
+            },
+            {
+                "token_id": "68664448215878360951781396563156014687385437967837545689902882414597544352522",
+                "outcome": "No",
+                "price": 0.77,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "Breaking News",
+            "India",
+            "Immigration",
+            "Trump Presidency"
+        ]
+    },
+    "0x53f6b966701a41c8d98d57d9cc4d79a45de340c0f4d6dc67faeda54e8cc4afeb": {
+        "question": "Azerbaijan blames Russia for downing plane?",
+        "event_slug": "azerbaijan-claims-russia-responsible-for-downing-plane",
+        "market_slug": "azerbaijan-claims-russia-responsible-for-downing-plane",
+        "end_date_iso": "2024-12-31T00:00:00Z",
+        "icon": "azerbaijan-claims-russia-responsible-for-downing-plane-tGsZHvbnrBaC.jpg",
+        "tokens": [
+            {
+                "token_id": "61924669269848911075228395157447286901969024240081446238494850347793513118708",
+                "outcome": "Yes",
+                "price": 0.265,
+                "winner": false
+            },
+            {
+                "token_id": "86839981026082183556850655399187800757638539538966583504336456631320852122920",
+                "outcome": "No",
+                "price": 0.735,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Breaking News",
+            "Geopolitics"
+        ]
+    },
+    "0x7e7b4444705de810870a69df498bf00b7a6a24869f07586c6fcfd0ecee230bf8": {
+        "question": "Will Elon tweet less than 250 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-less-than-250-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "70539065921361278229834824912852031961811372037996377546577555974792265799252",
+                "outcome": "Yes",
+                "price": 0.125,
+                "winner": false
+            },
+            {
+                "token_id": "76415821457738428480062670178345871564854146310394012043122879608155224941345",
+                "outcome": "No",
+                "price": 0.875,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0xc950c22a8cb8b2027dd8f870e02306a990840c9abfabf2026c99ddeaef2648af": {
+        "question": "Will Elon tweet 425-449 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-425-449-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "91614035385450298559481345487277089384498366694231746825456771776712154113367",
+                "outcome": "Yes",
+                "price": 0.055,
+                "winner": false
+            },
+            {
+                "token_id": "80229582891973860010809826614784865162543697901362636655067039827371451165800",
+                "outcome": "No",
+                "price": 0.945,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x7acbdf7087ae0aed604b6b0dc2a112c2b22987a206d491d9638d596eeb3ecd48": {
+        "question": "Will Levon Aronian win the World Rapid Championship?",
+        "event_slug": "fide-world-rapid-chess-champion",
+        "market_slug": "will-levon-aronian-win-the-world-rapid-championship",
+        "end_date_iso": "2024-12-28T00:00:00Z",
+        "icon": "fide-world-rapid-chess-champion-3DkZomPhrBe5.png",
+        "tokens": [
+            {
+                "token_id": "16392656330573683994352287024320922562613567504016477840863841097824672478830",
+                "outcome": "Yes",
+                "price": 0.006,
+                "winner": false
+            },
+            {
+                "token_id": "28928505667027212943399075325818379717091946367865635934948737759893558299142",
+                "outcome": "No",
+                "price": 0.994,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Sports",
+            "Esports",
+            "Chess",
+            "Tournaments"
+        ]
+    },
+    "0x6b3d85dbc4ccbff370c2e1c7b02336860dce4eebe4a22aee07feb432afe635d7": {
+        "question": "Vivek out as Head of DOGE before July?",
+        "event_slug": "vivek-out-as-doge-head-before-july",
+        "market_slug": "vivek-out-as-doge-head-before-july",
+        "end_date_iso": "2025-06-30T00:00:00Z",
+        "icon": "vivek-out-as-doge-head-before-july-jdagqXm8Om29.png",
+        "tokens": [
+            {
+                "token_id": "68655236823980386031510830661315565898010805873102533149077283045452837163493",
+                "outcome": "Yes",
+                "price": 0.205,
+                "winner": false
+            },
+            {
+                "token_id": "5272160887828548953244753524813966792578054094682450668111865971699921307740",
+                "outcome": "No",
+                "price": 0.795,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Politics",
+            "Trump",
+            "Breaking News",
+            "Elon Musk",
+            "India",
+            "Immigration",
+            "Trump Presidency",
+            "H1b"
+        ]
+    },
+    "0x75e5614f2edefcaa5b9186a9defa1e5b4ea8ca8cb0578149fd7dff931c6b2446": {
+        "question": "Will Elon tweet 250-274 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-250-274-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "92721243517729551492688812013173415772055266740326120617063987664807297583585",
+                "outcome": "Yes",
+                "price": 0.095,
+                "winner": false
+            },
+            {
+                "token_id": "95075824682249435958293701682508060362299043441417239100489795735942943059656",
+                "outcome": "No",
+                "price": 0.905,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x422879e55967681be695af8b244e2fad8b080809f89fb33011c69fd2ffe5da9d": {
+        "question": "Will Elon tweet 400-424 times Dec 27-Jan 3?",
+        "event_slug": "elon-musk-of-tweets-december-27-january-3",
+        "market_slug": "will-elon-tweet-400-424-times-dec-27-jan-3",
+        "end_date_iso": "2025-01-03T00:00:00Z",
+        "icon": "elon-musk-of-tweets-nov-22-29-apMPG21-pzx_.jpg",
+        "tokens": [
+            {
+                "token_id": "15238441310274462942574426112954677754326083387882696666299672907534105820566",
+                "outcome": "Yes",
+                "price": 0.065,
+                "winner": false
+            },
+            {
+                "token_id": "12855766011815017695287491495784726389162139880413827731485630695597497827993",
+                "outcome": "No",
+                "price": 0.935,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "Twitter",
+            "Elon Musk",
+            "Pop Culture",
+            "Tweet Markets"
+        ]
+    },
+    "0x83be3a3bcb90828fc62d7ccc483aeb19eb48f82b00a2805f30e5676fb172b868": {
+        "question": "Will Kai and Speed win Fortnite in 75-99 tries?",
+        "event_slug": "attempts-kai-and-speed-need-to-beat-fortnite",
+        "market_slug": "will-kai-and-speed-win-fortnite-in-75-99-tries",
+        "end_date_iso": "2024-12-27T00:00:00Z",
+        "icon": "attempts-kai-and-speed-need-to-beat-fortnite-z1G6Gu3xjGhw.jpg",
+        "tokens": [
+            {
+                "token_id": "2587021221884038372406048856303432331104975821208896081336675695240513011823",
+                "outcome": "Yes",
+                "price": 0.095,
+                "winner": false
+            },
+            {
+                "token_id": "28953053719042836710909984395764010629444490796209709016069287388131531632828",
+                "outcome": "No",
+                "price": 0.905,
+                "winner": false
+            }
+        ],
+        "tags": [
+            "video games",
+            "Esports",
+            "Pop Culture"
+        ]
     }
 }
