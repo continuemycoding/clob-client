@@ -442,3 +442,19 @@ export interface UserRewardsEarning {
     earning_percentage: number;
     earnings: Earning[];
 }
+
+export interface MarketData {
+    question: string;
+    // description: string;
+    event_slug: string;
+    market_slug: string;
+    end_date_iso: string;
+    // game_start_time: string | null;
+    // maker_base_fee: number;
+    // taker_base_fee: number;
+
+    icon: string;
+
+    tokens: Token[];
+    tags: string[];
+}

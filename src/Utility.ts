@@ -81,6 +81,12 @@ export default class Utility {
             error("error:", new Date(), ...args);
             // error(new Error().stack.split('\n').slice(2).join('\n'));
         };
+
+        const debug = console.debug;
+        console.debug = function (...args) {
+            // debug("debug:", new Date(), ...args);
+            // debug(new Error().stack.split('\n').slice(2).join('\n'));
+        };
     }
 
     /**

@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { WebSocket } from "ws";
 import { ethers } from "ethers";
-import { ApiKeyCreds, AssetType, Chain, ClobClient, OpenOrder, OrderBookSummary, Side, Token, Trade, UserOrder } from "."; // from "@polymarket/clob-client";
+import { ApiKeyCreds, AssetType, Chain, ClobClient, MarketData, OpenOrder, OrderBookSummary, Side, Token, Trade, UserOrder } from "."; // from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import Utility from "./Utility";
@@ -42,21 +42,6 @@ enum OrderStatus {
 const userOrders: Record<string, UserOrder & { status: OrderStatus, timestamp: number }> = {};
 const orderBooks: Record<string, OrderBookSummary> = {};
 
-interface MarketData {
-    question: string;
-    // description: string;
-    event_slug: string;
-    market_slug: string;
-    end_date_iso: string;
-    // game_start_time: string | null;
-    // maker_base_fee: number;
-    // taker_base_fee: number;
-
-    icon: string;
-
-    tokens: Token[];
-    tags: string[];
-}
 
 (async () => {
     const agent = process.env.PROXY_URL && new HttpsProxyAgent(process.env.PROXY_URL);
