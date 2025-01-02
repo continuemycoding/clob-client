@@ -104,15 +104,27 @@ dotenv.config();
     const processedTransactionHashes = new Set<string>()
     let lastBlockNumber = 0;
     const exchange = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E";
-    const offset = 500;  // 每页请求的数量
+    const offset = 100;  // 每页请求的数量
 
     const addresses = [
         "0xA97b8f91F2F85e475c7A832911182320FF3A16B4",
         "0x4E8bD6FBCD4811dc7cDA3EC2c02e1B65f543C713",//2号
     ];
 
+    const addressAliasMap: Record<string, string> = {
+        "0xfb79181a9d9dcaceda40803c0aeb55f6c58ec2c6": "Terror",//Mar 2023
+        "0xe6a2b60aa401ff375c607631735936225cb56af8": "SexPistols",//Jul 2024
+        "0xad3e2be07448adf31ce8a2e3c5c24c8ca6fe4422": "buffalobill",//Dec 2024
+        "0x615363327b74b926fb4e75867e9bb62188400e04": "phantom07",//Dec 2024
+        "0xc174f8185c2b8243304108bb30bc0a4f26986941": "RealDeal",//Aug 2024
+        "0xee00ba338c59557141789b127927a55f5cc5cea1": "S-Works",//Aug 2024 太多市场
+
+        // "0x1e3e3375612e45cbd6ba905f955091f08c2db656": "ThePopo",//Dec 2024
+        // "0xd3989ba133ab48b5b3a81e3dba9b37b5966a46d7": "semi",//May 2024 仓位太多/市场太多
+    };
+
     while (true) {
-        const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${exchange}&startblock=${lastBlockNumber}&page=1&offset=${lastBlockNumber > 0 ? offset : 1}&sort=desc&apikey=${process.env.POLYGONSCAN_API_KEY}`;
+        const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${exchange}&startblock=${lastBlockNumber}&page=1&offset=${lastBlockNumber > 0 ? offset : 1}&sort=${lastBlockNumber > 0 ? 'asc' : 'desc'}&apikey=${process.env.POLYGONSCAN_API_KEY}`;
         const { data: { result: trades } } = await axios.get(url);
 
         if (trades.length == 0) {
@@ -121,12 +133,12 @@ dotenv.config();
             continue;
         }
 
-        if (trades.length == offset) {
-            console.error("可能还有数据，需要翻页");
+        if (trades.length == offset && trades[0].blockNumber == trades[trades.length - 1].blockNumber) {
+            console.error("可能还有数据，需要处理翻页");
             debugger;
         }
 
-        const blockNumber = trades[0].blockNumber;
+        const blockNumber = trades[trades.length - 1].blockNumber;
 
         if (lastBlockNumber == 0) {
             lastBlockNumber = blockNumber;
@@ -148,9 +160,13 @@ dotenv.config();
 
             console.log(hash);
 
-            const { data: { result: { logs } } } = await axios.get(`https://api.polygonscan.com/api?module=proxy&action=eth_getTransactionReceipt&txhash=${hash}&apikey=${process.env.POLYGONSCAN_API_KEY}`);
+            const { data } = await axios.get(`https://api.polygonscan.com/api?module=proxy&action=eth_getTransactionReceipt&txhash=${hash}&apikey=${process.env.POLYGONSCAN_API_KEY}`);
+            if (!data.result) {
+                console.error(data);
+                debugger;
+            }
 
-            for (const log of logs) {
+            for (const log of data.result.logs) {
                 if (![
                     "0xd0a08e8c493f9c94f29311604c9de1b4e8c8d4c06bd0c789af57f2d65bfec0f6",//OrderFilled
                     "0x63bf4d16b7fa898ef4c4b2b6d90fd201e9c56313b65638af6088d149d2ce956c",//OrdersMatched
