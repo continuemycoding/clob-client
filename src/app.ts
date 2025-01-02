@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { WebSocket } from "ws";
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { ApiKeyCreds, AssetType, Chain, ClobClient, MarketData, OpenOrder, OrderBookSummary, Side, Token, Trade, UserOrder } from "."; // from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
@@ -12,36 +12,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { CANCEL_ORDER, GET_EARNINGS_FOR_USER_FOR_DAY, GET_MARKET, GET_OPEN_ORDERS, GET_REWARDS_MARKETS_CURRENT, GET_TRADES, POST_ORDER } from "./endpoints";
 import { END_CURSOR, INITIAL_CURSOR } from "./constants";
+import axios from "axios";
 
 dotenv.config();
-
-const Yes = 0;
-const No = 1;
-
-const trades = {
-    "0x37d6fdb304d3b1ba850a0618afa7ee344ef2fd62672fdfcc7b61782e7e66a3a6": Yes, // Dogecoin above $0.31 on January 3?
-    "0x97480fb1ea30619d6682bedb183289eccf60da180311c8ba45985dcba13a05d6": Yes, // Solana above $185 on January 3?
-    "0x131ec938bb5f143a0d345349ae02624d82207e960ca0a6caa40ccd5b3b5a7a26": Yes, // Ripple above $2.15 on January 3?
-    "0x5f7842f5d3be987a52470265bd1909421cae8c318d6487fb38b902b0c5055d4d": Yes, // Ethereum above $3,300 on January 3?
-    "0xc201255ac4fd4ca73d38eb331681dd9c4597fc85ed52a89ef664fa399a2f185a": Yes, // Bitcoin above $94,000 on January 3?
-
-    // "0xf8df5cd1f0f97916b35c96743242a2f4ca377bf5c3e3f608f0d02196d36deae5": Yes, // Will MicroStrategy purchase more Bitcoin in 2024?
-    // "0x7b0f6f3b168bfeeb8356a2e525d0566bd54118d79a44433485a1ddef9b32dee2": Yes, // Will OpenAI have the top AI model on January 31?
-    // "0xc4f606569acc4d2871bf0cae1b53d0a12dae9f289d2f1011b4ead72b066ac00a": Yes, // Will Google have the top AI model on January 31?
-    // "0xa5ac4cdcfff44ddfb0d332d33575f766414465786fb7d4350782db40d5e9da11": Yes, // Trump ends Ukraine war by first 90 days?
-    "0x97587c58a3407fcc9a8df6396aaa8b66eff8b0c799fdf81880f258755b7d529c": Yes, // Will Bitcoin hit $100k again in 2024?
-};
-
-enum OrderStatus {
-    PendingCancellation = "待取消",
-    // Cancelled = "已取消",
-    PendingSubmission = "待提交",
-    Submitted = "已提交",
-};
-
-const userOrders: Record<string, UserOrder & { status: OrderStatus, timestamp: number }> = {};
-const orderBooks: Record<string, OrderBookSummary> = {};
-
 
 (async () => {
     const agent = process.env.PROXY_URL && new HttpsProxyAgent(process.env.PROXY_URL);
@@ -66,89 +39,183 @@ const orderBooks: Record<string, OrderBookSummary> = {};
     };
 
     const clobClient = new ClobClient(host, Chain.POLYGON, wallet, creds, SignatureType.POLY_PROXY, process.env.FUNDER_ADDRESS);
-    const gammaClient = new ClobClient("https://gamma-api.polymarket.com", Chain.POLYGON, wallet, creds, SignatureType.POLY_PROXY, process.env.FUNDER_ADDRESS);
 
     const markets: Record<string, MarketData> = JSON.parse(fs.readFileSync('markets.json').toString());
 
-    let hasChanged = false;
-    let next_cursor = INITIAL_CURSOR;
-    while (next_cursor != END_CURSOR) {
-        const response = await clobClient.getSamplingMarkets(next_cursor);
-        next_cursor = response.next_cursor;
-        console.log({ next_cursor });
+    // let hasChanged = false;
+    // let next_cursor = INITIAL_CURSOR;
+    // while (next_cursor != END_CURSOR) {
+    //     const response = await clobClient.getSamplingMarkets(next_cursor);
+    //     next_cursor = response.next_cursor;
+    //     console.log({ next_cursor });
 
-        for (const item of response.data) {
-            const { condition_id, question, end_date_iso, icon, tokens, tags } = item;
+    //     for (const item of response.data) {
+    //         const { condition_id, question, end_date_iso, icon, tokens, tags } = item;
 
-            if (markets[condition_id])
-                continue;
+    //         if (markets[condition_id])
+    //             continue;
 
-            hasChanged = true;
+    //         hasChanged = true;
 
-            const [{ event_slug, market_slug }] = await clobClient.getRawRewardsForMarket(condition_id);
+    //         const [{ event_slug, market_slug }] = await clobClient.getRawRewardsForMarket(condition_id);
 
-            console.log(condition_id, `https://polymarket.com/event/${event_slug}/${market_slug}`);
+    //         console.log(condition_id, `https://polymarket.com/event/${event_slug}/${market_slug}`, end_date_iso);
 
-            // "https://polymarket-upload.s3.us-east-2.amazonaws.com/"
-            const baseUrl = icon.match(/^(?:https?:\/\/)?[^\/]+\//);
+    //         // "https://polymarket-upload.s3.us-east-2.amazonaws.com/"
+    //         const baseUrl = icon.match(/^(?:https?:\/\/)?[^\/]+\//);
 
-            markets[condition_id] = {
-                question,
-                event_slug,
-                market_slug,
-                end_date_iso,
-                icon: icon.replace(baseUrl, ""),
-                tokens,
-                tags
-            };
-        }
-    }
+    //         markets[condition_id] = {
+    //             question,
+    //             event_slug,
+    //             market_slug,
+    //             end_date_iso,
+    //             icon: icon.replace(baseUrl, ""),
+    //             tokens,
+    //             tags
+    //         };
+    //     }
+    // }
 
-    for (const key of Object.keys(markets)) {
-        const market = markets[key];
-        if (Date.now() > new Date(market.end_date_iso).getTime() - 3600_000) {
-            console.log(market.question, "即将过期");
-            delete markets[key];
-            // hasChanged = true;
-        }
-    }
+    // hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
 
-    hasChanged && fs.writeFileSync('markets.json', JSON.stringify(markets, null, 4));
+    const assets_ids = Object.keys(markets).flatMap(item => [
+        markets[item].tokens[0].token_id,
+        markets[item].tokens[1].token_id
+    ]);
 
     const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
     const balance = Number(balanceAmount) / 10 ** 6;
 
-    // await clobClient.cancelAll();
+    const eventAbi = [
+        // "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
+        // "event TransferBatch(address indexed operator, address indexed from, address indexed to, uint256[] ids, uint256[] values)",
+        // "event ApprovalForAll(address indexed account, address indexed operator, bool approved)",
+        // "event Transfer(address indexed from, address indexed to, uint256 amount)",
+        // "event Approval(address indexed owner, address indexed spender, uint256 amount)",
+        // "event TradingPaused(address indexed pauser)",
+        // "event TradingUnpaused(address indexed pauser)",
+        // "event TokenRegistered(uint256 indexed token0, uint256 indexed token1, bytes32 indexed conditionId)",
+        "event OrderFilled(bytes32 indexed orderHash, address indexed maker, address indexed taker, uint256 makerAssetId, uint256 takerAssetId, uint256 makerAmountFilled, uint256 takerAmountFilled, uint256 fee)",
+        "event OrdersMatched(bytes32 indexed takerOrderHash, address indexed takerOrderMaker, uint256 makerAssetId, uint256 takerAssetId, uint256 makerAmountFilled, uint256 takerAmountFilled)"
+    ];
 
-    // const keys = Object.keys(markets).slice(0, 50);
-    // for (const key of keys) {
-    //     trades[key] = Yes;
-    // }
+    const iface = new ethers.utils.Interface(eventAbi);
 
-    for (const key of Object.keys(trades)) {
-        if (!markets[key])
-            delete trades[key];
-    }
+    const processedTransactionHashes = new Set<string>()
+    let lastBlockNumber = 0;
+    const exchange = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E";
+    const offset = 500;  // 每页请求的数量
 
-    const currentRewards: Record<string, { rewards_max_spread: number; rewards_min_size: number; rate_per_day: number; }> = (await clobClient.getCurrentRewards()).reduce((map, item) => {
-        map[item.condition_id] = {
-            rewards_max_spread: item.rewards_max_spread,
-            rewards_min_size: item.rewards_min_size,
-            rate_per_day: item.rewards_config[0].rate_per_day
-        };
-        return map;
-    }, {});
+    const addresses = [
+        "0xA97b8f91F2F85e475c7A832911182320FF3A16B4",
+        "0x4E8bD6FBCD4811dc7cDA3EC2c02e1B65f543C713",//2号
+    ];
 
-    const openOrders = await clobClient.getOpenOrders();
-    for (const { asset_id, price, side, size_matched, original_size, created_at } of openOrders) {
-        userOrders[asset_id] = {
-            tokenID: asset_id,
-            price: Number(price),
-            side: Side[side as keyof typeof Side],
-            size: Number(original_size) - Number(size_matched),
-            status: OrderStatus.Submitted,
-            timestamp: created_at * 1000,
-        };
+    while (true) {
+        const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${exchange}&startblock=${lastBlockNumber}&page=1&offset=${lastBlockNumber > 0 ? offset : 1}&sort=desc&apikey=${process.env.POLYGONSCAN_API_KEY}`;
+        const { data: { result: trades } } = await axios.get(url);
+
+        if (trades.length == 0) {
+            console.error("没有获取到交易数据");
+            debugger;
+            continue;
+        }
+
+        if (trades.length == offset) {
+            console.error("可能还有数据，需要翻页");
+            debugger;
+        }
+
+        const blockNumber = trades[0].blockNumber;
+
+        if (lastBlockNumber == 0) {
+            lastBlockNumber = blockNumber;
+            continue;
+        }
+
+        const uniqueTrades = Array.from<any>(
+            new Map(trades.map(trade => [trade.hash, trade])).values()
+        ).filter(tx => !processedTransactionHashes.has(tx.hash));
+
+        for (const { blockNumber, hash, from, to, contractAddress, input, tokenName } of uniqueTrades) {
+            // if (tokenName == "USD Coin")
+            //     continue;
+
+            if (contractAddress != "0x2791bca1f2de4661ed88a30c99a7a9449aa84174" || tokenName != "USD Coin (PoS)") {
+                console.error(contractAddress, tokenName);
+                continue;
+            }
+
+            console.log(hash);
+
+            const { data: { result: { logs } } } = await axios.get(`https://api.polygonscan.com/api?module=proxy&action=eth_getTransactionReceipt&txhash=${hash}&apikey=${process.env.POLYGONSCAN_API_KEY}`);
+
+            for (const log of logs) {
+                if (![
+                    "0xd0a08e8c493f9c94f29311604c9de1b4e8c8d4c06bd0c789af57f2d65bfec0f6",//OrderFilled
+                    "0x63bf4d16b7fa898ef4c4b2b6d90fd201e9c56313b65638af6088d149d2ce956c",//OrdersMatched
+                ].includes(log.topics[0]))
+                    continue;
+
+                const decodedLog = iface.parseLog(log);
+
+                if (decodedLog.name == "OrdersMatched") {
+                    // maker:挂单 taker:吃单
+                    const { takerOrderHash, takerOrderMaker, makerAssetId, takerAssetId, makerAmountFilled, takerAmountFilled } = decodedLog.args;
+
+                    // if (!addresses.includes(takerOrderMaker))
+                    //     continue;
+
+                    const url = `https://polymarket.com/profile/${takerOrderMaker}?tab=activity`;
+                    const side = Number(makerAmountFilled.toString()) < Number(takerAmountFilled.toString()) ? Side.BUY : Side.SELL;
+                    const price = side == Side.BUY ? makerAmountFilled / takerAmountFilled : takerAmountFilled / makerAmountFilled;
+                    const amountFilled = side == Side.BUY ? makerAmountFilled : takerAmountFilled;
+                    const shares = amountFilled / price / 10 ** 6;
+                    const assetId = (side == Side.BUY ? takerAssetId : makerAssetId).toString();
+
+
+                    console.log(`${decodedLog.name} ${url} 单价${Number(price.toFixed(3))} ${side} ${Number(shares.toFixed(3))}份 ${assetId} 价值${Number((amountFilled / 10 ** 6).toFixed(3))}`);
+
+                    // if (assets_ids.includes(assetId))
+                    //     debugger;
+
+                    if (assetId.toString() == '0')
+                        debugger;
+                }
+                else if (decodedLog.name == "OrderFilled") {
+                    // maker:挂单 taker:吃单
+                    const { orderHash, maker, taker, makerAssetId, takerAssetId, makerAmountFilled, takerAmountFilled, fee } = decodedLog.args;
+
+                    if (taker == exchange)
+                        continue;
+
+                    if (maker == exchange)
+                        debugger;
+
+                    const url = `https://polymarket.com/profile/${maker}?tab=activity`;
+                    const side = Number(makerAmountFilled.toString()) < Number(takerAmountFilled.toString()) ? Side.BUY : Side.SELL;
+                    const price = side == Side.BUY ? makerAmountFilled / takerAmountFilled : takerAmountFilled / makerAmountFilled;
+                    const amountFilled = side == Side.BUY ? makerAmountFilled : takerAmountFilled;
+                    const shares = amountFilled / price / 10 ** 6;
+                    const assetId = (side == Side.BUY ? takerAssetId : makerAssetId).toString();
+
+                    console.log(`${decodedLog.name} ${url} 单价${Number(price.toFixed(3))} ${side} ${Number(shares.toFixed(3))}份 ${assetId} 价值${Number((amountFilled / 10 ** 6).toFixed(3))}`);
+
+                    // if (assets_ids.includes(assetId))
+                    //     debugger;
+
+                    if (assetId.toString() == '0')
+                        debugger;
+                }
+            }
+        }
+
+        if (blockNumber != lastBlockNumber)
+            processedTransactionHashes.clear();
+
+        for (const tx of uniqueTrades) processedTransactionHashes.add(tx.hash);
+
+        lastBlockNumber = blockNumber;
     }
 
     const app = express();
@@ -211,278 +278,4 @@ const orderBooks: Record<string, OrderBookSummary> = {};
         const response = await clobClient.cancelOrder(req.body);//orderID
         res.json(response);
     });
-
-
-    async function executeTradingStrategy(orderBook: OrderBookSummary, sorted: boolean) {
-        const { bids, asks, market: market_id, asset_id: token_id } = orderBook;
-        const { rewards_max_spread, rewards_min_size } = currentRewards[market_id];
-        const market = markets[market_id];
-
-        if (bids.length == 0 || asks.length == 0)
-            return;
-
-        if (!sorted) {
-            bids.sort((a, b) => Number(b.price) - Number(a.price));
-            asks.sort((a, b) => Number(a.price) - Number(b.price));
-        }
-
-        const midpoint = (Number(bids[0].price) + Number(asks[0].price)) / 2;
-
-        const existingOrder = userOrders[token_id];
-
-        if (existingOrder) {
-            if (existingOrder.status === OrderStatus.PendingCancellation) {
-                console.debug(market.question, '等待订单取消完成');
-                return;
-            }
-
-            if (existingOrder.status === OrderStatus.PendingSubmission) {
-                console.debug(market.question, '等待订单提交完成');
-                return;
-            }
-
-            async function cancelMarketOrders(reason: string) {
-                console.debug(market.question, reason);
-                const userOrder = userOrders[token_id];
-                if (Date.now() < userOrder.timestamp + 1000) {
-                    // console.error("创建超过1秒才能取消");
-                    return;
-                }
-
-                existingOrder.status = OrderStatus.PendingCancellation;
-                const response = await clobClient.cancelMarketOrders({ asset_id: token_id });
-                if (response.canceled.length > 0)
-                    delete userOrders[token_id];
-                else
-                    console.error(market.question, reason, "取消订单错误", response);
-            }
-
-            if (Math.abs(existingOrder.price - midpoint) * 100 > rewards_max_spread) {
-                cancelMarketOrders("没有奖励就取消订单");
-                return;
-            }
-
-            if (midpoint < 0.1) {
-                cancelMarketOrders("概率太低就取消订单");
-                return;
-            }
-
-            let totalValue = 0;
-
-            for (const item of bids) {
-                if (Number(item.price) > existingOrder.price)
-                    totalValue += Number(item.price) * Number(item.size);
-            }
-
-            totalValue < 800 && cancelMarketOrders(`挂单不足就取消订单 totalValue:${totalValue}`);
-
-            return;
-        }
-
-        if (midpoint <= 0.15 || midpoint >= 0.6)
-            return;
-
-        let sum = 0;
-        for (let i = 0; i < bids.length; i++) {
-            const price = Number(bids[i].price);
-            const size = Number(bids[i].size);
-
-            if (Math.abs(price - midpoint) * 100 > rewards_max_spread)
-                return;
-
-            if (sum >= 1000) {
-                const userOrderParams = {
-                    tokenID: token_id,
-                    price, // min: 0.01 - max: 0.99
-                    side: Side.BUY,
-                    // size: Math.min(balance / price, rewards_min_size),
-                    size: Math.max(balance / price, rewards_min_size),
-                };
-
-                if (balance >= price * userOrderParams.size) {
-                    userOrders[token_id] = { ...userOrderParams, status: OrderStatus.PendingSubmission, timestamp: Date.now() };
-                    const userOrder = userOrders[token_id];
-
-                    const order = await clobClient.createOrder(userOrderParams);
-                    const { error } = await clobClient.postOrder(order);
-
-                    userOrder.status = OrderStatus.Submitted;
-                    userOrder.timestamp = Date.now();
-
-                    if (error) {
-                        console.error(market.question, "提交订单错误", userOrderParams, error);
-                        delete userOrders[token_id];
-                    }
-                }
-                return;
-            }
-
-            sum += price * size;
-        }
-    }
-
-    let reconnectAttempts = 0;
-    const maxReconnectAttempts = 20;
-
-    function connectWebSocket(type: string) {
-        const ws = new WebSocket(`wss://ws-subscriptions-clob.polymarket.com/ws/${type}`, { agent });
-
-        ws.on("error", function (err: Error) {
-            console.error("error", err.message || err.name);
-        });
-
-        let timer: NodeJS.Timer;
-
-        ws.on("open", function () {
-            console.log(type, "WebSocket connection established.");
-
-            timer = setInterval(() => {
-                ws.ping();
-            }, 10000);
-
-            reconnectAttempts = 0;
-
-            const subscriptionMessage = {
-                auth: type == "user"
-                    ? {
-                        apiKey: creds.key,
-                        secret: creds.secret,
-                        passphrase: creds.passphrase,
-                    }
-                    : undefined,
-                type,
-                markets: [] as string[],
-                assets_ids: [] as string[]
-            };
-
-            const keys = Object.keys(trades);
-
-            if (type == "user")
-                subscriptionMessage.markets = keys;
-            else
-                subscriptionMessage.assets_ids = keys.map(item => markets[item].tokens[trades[item]].token_id);
-
-            ws.send(JSON.stringify(subscriptionMessage));
-        });
-
-        ws.on("close", function (code: number, reason: Buffer) {
-            console.error("close", "code", code, "reason", reason.toString());
-
-            clearInterval(timer);
-
-            if (reconnectAttempts < maxReconnectAttempts) {
-                reconnectAttempts++;
-                console.log(`Reconnecting... Attempt ${reconnectAttempts}`);
-                setTimeout(() => {
-                    connectWebSocket(type);
-                }, 3000);
-            } else {
-                console.error("Max reconnect attempts reached. Connection failed.");
-            }
-        });
-
-        ws.onmessage = async function (msg: any) {
-            const data = JSON.parse(msg.data);
-
-            for (const item of data) {
-                const { event_type, side, market: market_id, asset_id: token_id, outcome, price, status, type, timestamp } = item;
-                const title = `${side} ${outcome} ${status}`;
-                const market = markets[market_id];
-
-                switch (event_type) {
-                    // 当市价单被匹配时（”MATCHED”）
-                    // 当用户的限价单被包含在一笔交易中时（”MATCHED”）
-                    // 交易的后续状态变化（”MINED”、”CONFIRMED”、”RETRYING”、”FAILED”）
-                    case 'trade': {
-                        const { taker_order_id, size, match_time, trader_side } = item as Trade;
-
-                        if (status != "MINED" && status != "CONFIRMED")
-                            Utility.sendTextToDingtalk(`
-## ${title}
-- **问题**: ${market.question}
-- **交易ID**: ${taker_order_id}
-- **价格**: $${price}
-- **数量**: ${size}
-- **方向**: ${trader_side}
-- **匹配时间**: ${new Date(Number(match_time) * 1000)}
-- **当前时间**: ${new Date(timestamp * 1)}
-`, title);
-                        break;
-                    }
-
-                    // 当订单被提交时（PLACEMENT）
-                    // 当订单被更新时（部分成交）（UPDATE）
-                    // 当订单被取消时（CANCELLATION）
-                    case 'order': {
-                        const { id, original_size, size_matched, created_at } = item as OpenOrder;
-
-                        console.log(`
-## ${title}
-- **问题**: ${market.question}
-- **订单ID**: ${id}
-- **价格**: $${price}
-- **数量**: ${size_matched} / ${original_size}
-- **类型**: ${type}
-- **创建时间**: ${new Date(created_at * 1000)}
-- **当前时间**: ${new Date(timestamp * 1)}
-`);
-                        break;
-                    }
-
-                    // 首次订阅市场时
-                    // 当有交易影响订单簿时（不会先触发price_change）
-                    case 'book': {
-                        orderBooks[token_id] = item;
-                        executeTradingStrategy(item, false);
-                        break;
-                    }
-
-                    // 一个新订单被提交
-                    // 一个订单被取消
-                    case 'price_change': {
-                        const orderBook = orderBooks[token_id];
-                        const { bids, asks } = orderBook;
-
-                        bids.sort((a, b) => Number(b.price) - Number(a.price));
-                        asks.sort((a, b) => Number(a.price) - Number(b.price));
-
-                        for (const { price, size, side } of item.changes) {
-                            if (side == Side.BUY) {
-                                if (asks[0] && Number(price) >= Number(asks[0].price))
-                                    continue;
-
-                                const bid = bids.find(item => item.price == price);
-                                if (bid) {
-                                    bid.size = size;
-                                }
-                                else {
-                                    bids.push({ price, size });
-                                    bids.sort((a, b) => Number(b.price) - Number(a.price));
-                                }
-                            }
-                            else {
-                                if (bids[0] && Number(price) <= Number(bids[0].price))
-                                    continue;
-
-                                const ask = asks.find(item => item.price == price);
-                                if (ask) {
-                                    ask.size = size;
-                                }
-                                else {
-                                    asks.push({ price, size });
-                                    asks.sort((a, b) => Number(a.price) - Number(b.price));
-                                }
-                            }
-                        }
-
-                        executeTradingStrategy(orderBook, true);
-                        break;
-                    }
-                }
-            }
-        };
-    }
-
-    connectWebSocket('user');
-    connectWebSocket('market');
 })();
