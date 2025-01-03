@@ -116,9 +116,11 @@ dotenv.config();
         "0xe6a2b60aa401ff375c607631735936225cb56af8": "SexPistols",//Jul 2024
         "0xad3e2be07448adf31ce8a2e3c5c24c8ca6fe4422": "buffalobill",//Dec 2024
         "0x615363327b74b926fb4e75867e9bb62188400e04": "phantom07",//Dec 2024
+        "0xb5111c580bf127908cb547923d6b93fea36701da": "Brainiac",//Nov 2024
         "0xc174f8185c2b8243304108bb30bc0a4f26986941": "RealDeal",//Aug 2024
         "0xee00ba338c59557141789b127927a55f5cc5cea1": "S-Works",//Aug 2024 太多市场
 
+        // "0xd42f6a1634a3707e27cbae14ca966068e5d1047d": "Apsalar",//Nov 2023 仓位太多/市场太多
         // "0x1e3e3375612e45cbd6ba905f955091f08c2db656": "ThePopo",//Dec 2024
         // "0xd3989ba133ab48b5b3a81e3dba9b37b5966a46d7": "semi",//May 2024 仓位太多/市场太多
     };
@@ -135,7 +137,7 @@ dotenv.config();
 
         if (trades.length == offset && trades[0].blockNumber == trades[trades.length - 1].blockNumber) {
             console.error("可能还有数据，需要处理翻页");
-            debugger;
+            break;
         }
 
         const blockNumber = trades[trades.length - 1].blockNumber;
