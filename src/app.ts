@@ -1,13 +1,11 @@
 import dotenv from "dotenv";
-import { WebSocket } from "ws";
-import { BigNumber, ethers } from "ethers";
+import { ethers } from "ethers";
 import { ApiKeyCreds, AssetType, Chain, ClobClient, MarketData, OpenOrder, OrderBookSummary, Side, Token, Trade, UserOrder } from "."; // from "@polymarket/clob-client";
 import { SignatureType } from "@polymarket/order-utils";
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import Utility from "./Utility";
 import fs from 'fs';
 import express, { Request, Response, NextFunction } from 'express';
-import jwt, { JwtPayload, Secret, VerifyCallback, VerifyErrors } from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { CANCEL_ORDER, GET_EARNINGS_FOR_USER_FOR_DAY, GET_MARKET, GET_OPEN_ORDERS, GET_REWARDS_MARKETS_CURRENT, GET_TRADES, POST_ORDER } from "./endpoints";
@@ -114,6 +112,8 @@ dotenv.config();
     const addressAliasMap: Record<string, string> = {
         "0xfb79181a9d9dcaceda40803c0aeb55f6c58ec2c6": "Terror",//Mar 2023
         "0xe6a2b60aa401ff375c607631735936225cb56af8": "SexPistols",//Jul 2024
+        "0x8b3eeb3ea135c9b2246b1b78adce71a4c580662c": "...",//Feb 2024 加密货币
+        "0x6a603ead2ab361654d867ea15eb610d81686d019": "chi3",//Sep 2024 加密货币
         "0xad3e2be07448adf31ce8a2e3c5c24c8ca6fe4422": "buffalobill",//Dec 2024
         "0x615363327b74b926fb4e75867e9bb62188400e04": "phantom07",//Dec 2024
         "0xb5111c580bf127908cb547923d6b93fea36701da": "Brainiac",//Nov 2024
