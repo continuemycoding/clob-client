@@ -171,7 +171,7 @@ export default class Utility {
         }
     }
 
-    static sendTextToDingtalk(markdown: string, title = "标题") {
+    static sendTextToDingtalk(markdown: string, title = "") {
         console.log("dingtalk send", markdown);
 
         const accessToken = process.env.DINGTALK_ACCESS_TOKEN;
@@ -186,7 +186,7 @@ export default class Utility {
         axios.post(`https://oapi.dingtalk.com/robot/send?access_token=${accessToken}&timestamp=${timestamp}&sign=${sign}`, {
             msgtype: "markdown",
             markdown: {
-                title,
+                title: title || markdown,
                 text: markdown
             }
         }).then(function (response) {
