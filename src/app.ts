@@ -136,7 +136,7 @@ dotenv.config();
         }
 
         if (trades.length == offset && trades[0].blockNumber == trades[trades.length - 1].blockNumber) {
-            console.error("可能还有数据，需要处理翻页");
+            Utility.sendTextToDingtalk(`区块${trades[0].blockNumber}可能不止${offset}条数据，需要处理翻页`);
             break;
         }
 
