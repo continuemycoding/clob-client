@@ -81,9 +81,6 @@ dotenv.config();
         markets[item].tokens[1].token_id
     ]);
 
-    const { balance: balanceAmount } = await clobClient.getBalanceAllowance({ asset_type: AssetType.COLLATERAL });
-    const balance = Number(balanceAmount) / 10 ** 6;
-
     const eventAbi = [
         // "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
         // "event TransferBatch(address indexed operator, address indexed from, address indexed to, uint256[] ids, uint256[] values)",
@@ -124,6 +121,12 @@ dotenv.config();
         // "0x1e3e3375612e45cbd6ba905f955091f08c2db656": "ThePopo",//Dec 2024
         // "0xd3989ba133ab48b5b3a81e3dba9b37b5966a46d7": "semi",//May 2024 仓位太多/市场太多
     };
+
+
+    const address = "0xA97b8f91F2F85e475c7A832911182320FF3A16B4";
+
+    const { data: { result: balanceAmount } } = await axios.get(`https://api.polygonscan.com/api?module=account&action=tokenbalance&contractaddress=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&address=${address}&tag=latest&apikey=${process.env.POLYGONSCAN_API_KEY}`);
+    const balance = Number(balanceAmount) / 10 ** 6;
 
     while (true) {
         const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${exchange}&startblock=${lastBlockNumber}&page=1&offset=${lastBlockNumber > 0 ? offset : 1}&sort=${lastBlockNumber > 0 ? 'asc' : 'desc'}&apikey=${process.env.POLYGONSCAN_API_KEY}`;
