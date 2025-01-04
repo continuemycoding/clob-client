@@ -127,11 +127,11 @@ dotenv.config();
 
     while (true) {
         const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${exchange}&startblock=${lastBlockNumber}&page=1&offset=${lastBlockNumber > 0 ? offset : 1}&sort=${lastBlockNumber > 0 ? 'asc' : 'desc'}&apikey=${process.env.POLYGONSCAN_API_KEY}`;
-        const { data: { result: trades } } = await axios.get(url);
+        const { data } = await axios.get(url);
+        const { result: trades } = data;
 
-        if (trades.length == 0) {
-            console.error("没有获取到交易数据");
-            debugger;
+        if (!trades) {
+            Utility.sendTextToDingtalk(`没有获取到交易数据:${JSON.stringify(data, null, 4)}`);
             continue;
         }
 
